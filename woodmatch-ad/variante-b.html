@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>WoodMatch Clip B</title>
+<style>
+  @font-face { font-family: "Fira Sans"; font-weight: 400; src: url(assets/fonts/fira-400.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 500; src: url(assets/fonts/fira-500.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 600; src: url(assets/fonts/fira-600.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 700; src: url(assets/fonts/fira-700.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Sans"; font-weight: 800; src: url(assets/fonts/fira-800.woff2) format("woff2"); }
+  :root { --green: #2d8d31; --app: #3a6b40; --mint: #84d68a; --brown: #643c2d; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  body { font-family: "Fira Sans", sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  .shot { position: absolute; inset: 0; overflow: hidden; }
+  .shot .img { position: absolute; inset: -40px; background-size: cover; background-position: center; }
+  /* Filmischer Look: warm-kühles Grading, Vignette, Korn, Balken */
+  #grade { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light; background: linear-gradient(180deg, rgba(40,70,90,.35), rgba(255,170,80,.18)); }
+  #vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 75% at 50% 45%, transparent 45%, rgba(0,0,0,.65) 100%); }
+  #shade { position: absolute; left: 0; right: 0; bottom: 0; height: 900px; pointer-events: none; background: linear-gradient(180deg, transparent, rgba(0,0,0,.72)); }
+  #grain { position: absolute; inset: 0; width: 1080px; height: 1920px; opacity: .10; mix-blend-mode: overlay; pointer-events: none; image-rendering: pixelated; }
+  .bar { position: absolute; left: 0; right: 0; height: 150px; background: #000; z-index: 50; }
+  #barT { top: 0; } #barB { bottom: 0; }
+
+  .sub { position: absolute; left: 80px; right: 80px; top: 1330px; text-align: center; font-size: 62px; line-height: 1.18; font-weight: 700; letter-spacing: -.005em; text-shadow: 0 2px 24px rgba(0,0,0,.55); }
+  .sub em { font-style: normal; color: var(--mint); }
+  .small { font-size: 40px; font-weight: 500; color: rgba(255,255,255,.88); margin-top: 16px; display: block; }
+
+  #black { position: absolute; inset: 0; background: #070a07; }
+  #logo { position: absolute; left: 0; right: 0; top: 860px; text-align: center; font-size: 150px; font-weight: 700; }
+  #logo .w { color: #fff; } #logo .m { color: var(--mint); }
+  #logoClaim { position: absolute; left: 0; right: 0; top: 1060px; text-align: center; font-size: 42px; font-weight: 500; color: rgba(255,255,255,.8); }
+  #early { position: absolute; left: 0; right: 0; top: 860px; text-align: center; font-size: 64px; font-weight: 700; line-height: 1.25; }
+  #early span { color: rgba(255,255,255,.55); }
+
+  /* Glas-Karten mit nachgebauter App-UI */
+  .glass { position: absolute; left: 90px; width: 900px; border-radius: 34px; padding: 34px 38px; color: #fff;
+    background: rgba(20,32,22,.45); backdrop-filter: blur(22px) saturate(140%); -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border: 1.5px solid rgba(255,255,255,.22); box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .glass .k { font-size: 26px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mint); }
+  .glass .v { font-size: 64px; font-weight: 800; margin-top: 6px; }
+  .glass .v small { font-size: 34px; font-weight: 600; color: rgba(255,255,255,.75); }
+  .glass .d { font-size: 28px; font-weight: 500; color: rgba(255,255,255,.8); margin-top: 6px; }
+  .row { display: flex; gap: 30px; }
+  .row > div { flex: 1; }
+  .chk { display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; font-size: 28px; font-weight: 700; background: var(--green); padding: 10px 20px; border-radius: 14px; }
+
+  /* CTA */
+  #ctaWrap { position: absolute; inset: 0; }
+  #ctaCard { position: absolute; left: 190px; top: 420px; width: 700px; height: 180px; background: #fff; border-radius: 40px; display: grid; place-items: center; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  #ctaCard img { width: 520px; }
+  #ctaQ { position: absolute; left: 0; right: 0; top: 740px; text-align: center; font-size: 60px; font-weight: 600; color: rgba(255,255,255,.9); }
+  #ctaH { position: absolute; left: 0; right: 0; top: 830px; text-align: center; font-size: 116px; line-height: 1.02; font-weight: 800; letter-spacing: -.02em; text-shadow: 0 4px 30px rgba(0,0,0,.4); }
+  #ctaH em { font-style: normal; color: var(--mint); }
+  #ctaBtn { position: absolute; left: 210px; top: 1150px; width: 660px; height: 124px; border-radius: 62px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 700; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  #ctaUrl { position: absolute; left: 0; right: 0; top: 1310px; text-align: center; font-size: 48px; font-weight: 700; text-shadow: 0 2px 20px rgba(0,0,0,.5); }
+  #ctaFine { position: absolute; left: 0; right: 0; top: 1390px; text-align: center; font-size: 32px; font-weight: 600; color: var(--mint); text-shadow: 0 2px 16px rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="shot" id="s1"><div class="img" id="i1" style="background-image:url(assets/cine/shot1-waldrand.jpg)"></div></div>
+  <div class="shot" id="s2"><div class="img" id="i2" style="background-image:url(assets/cine/shot2-karte.jpg)"></div></div>
+  <div class="shot" id="s3"><div class="img" id="i3" style="background-image:url(assets/cine/shot3-laptop.jpg)"></div></div>
+  <div class="shot" id="s4"><div class="img" id="i4" style="background-image:url(assets/cine/shot4-handschlag.jpg)"></div></div>
+  <div class="shot" id="s5"><div class="img" id="i5" style="background-image:url(assets/cine/shot5-kronen.jpg)"></div></div>
+
+  <div id="black">
+    <div id="early">Früher: Aktenordner,<br>Telefonate <span>&amp;</span> Fragezeichen.</div>
+    <div id="logo"><span class="w">Wood</span><span class="m">Match</span></div>
+    <div id="logoClaim">Die Plattform für Privatwaldbesitzer</div>
+  </div>
+
+  <div id="grade"></div>
+  <div id="shade"></div>
+  <div id="vig"></div>
+
+  <!-- Untertitel (Ton aus-tauglich) -->
+  <div class="sub" id="t1">Das ist Waldemar.</div>
+  <div class="sub" id="t2">Er hat <em>6 Hektar Wald</em> geerbt.</div>
+  <div class="sub" id="t3">Aber wo genau liegt er?</div>
+  <div class="sub" id="t4">Was steht drin?</div>
+  <div class="sub" id="t5">Und was ist er <em>wert</em>?</div>
+  <div class="sub" id="t6">Heute hat Waldemar<br>seinen Wald <em>im Griff.</em></div>
+  <div class="sub" id="t7">Maßnahmen planen –<br><em>und umsetzen.</em><span class="small">Pflanzung, Durchforstung, Holzernte &amp; mehr</span></div>
+  <div class="sub" id="t8" style="top:1250px">Weil jeder Wald<br><em>eine Zukunft</em> verdient.</div>
+
+  <!-- Glas-Karten -->
+  <div class="glass" id="g1" style="top:200px">
+    <div class="k">Meine Flurstücke</div>
+    <div class="v">8 Flurstücke <small>· 6,6 ha</small></div>
+    <svg width="824" height="200" viewBox="0 0 824 200" style="margin-top:18px;display:block">
+      <rect width="824" height="200" rx="18" fill="rgba(255,255,255,.08)"/>
+      <path d="M-5 150 C 180 130, 360 180, 520 140 S 760 110, 830 125" stroke="rgba(255,255,255,.45)" stroke-width="6" fill="none"/>
+      <g fill="rgba(132,214,138,.28)" stroke="#84d68a" stroke-width="4" stroke-linejoin="round">
+        <path id="pp1" d="M60 40 L 230 28 L 250 120 L 80 135 Z" pathLength="1" stroke-dasharray="1 1"/>
+        <path id="pp2" d="M290 50 L 450 36 L 470 118 L 300 126 Z" pathLength="1" stroke-dasharray="1 1"/>
+        <path id="pp3" d="M520 30 L 760 44 L 740 120 L 540 110 Z" pathLength="1" stroke-dasharray="1 1"/>
+      </g>
+    </svg>
+  </div>
+  <div class="glass" id="g2" style="top:230px">
+    <div class="row">
+      <div><div class="k">Holzvorrat</div><div class="v"><span id="nFm">0</span> <small>Fm</small></div><div class="d">geschätzt</div></div>
+      <div><div class="k">Holzwert</div><div class="v">≈ <span id="nEur">0</span> <small>€</small></div><div class="d">zur Orientierung</div></div>
+    </div>
+  </div>
+  <div class="glass" id="g3" style="top:230px">
+    <div class="k">Forstbetriebs­gemeinschaft</div>
+    <div class="v" style="font-size:48px">FBG in seiner Nähe</div>
+    <div class="chk" id="g3ok">✓ Beitritt angefragt</div>
+  </div>
+
+  <!-- CTA -->
+  <div id="ctaWrap">
+    <div style="position:absolute;inset:0;background:radial-gradient(110% 70% at 50% 48%, rgba(8,18,9,.72) 0%, rgba(8,18,9,.55) 60%, rgba(0,0,0,.7) 100%)"></div>
+    <div id="ctaCard"><img src="assets/logo-woodmatch.svg" alt="WoodMatch"></div>
+    <div id="ctaQ">Und dein Wald?</div>
+    <div id="ctaH"><span id="ctaL1" style="display:block">Dein Wald.</span><span id="ctaL2" style="display:block">In <em>deiner</em> Hand.</span></div>
+    <div id="ctaBtn">Kostenlos starten →</div>
+    <div id="ctaUrl">app.woodmatch.de</div>
+    <div id="ctaFine">Kein Abo · Keine Grundgebühr</div>
+  </div>
+
+  <canvas id="grain" width="360" height="640"></canvas>
+  <div class="bar" id="barT"></div><div class="bar" id="barB"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const DURATION = 31;
+const E = {
+  lin: t => t,
+  out: t => 1 - Math.pow(1 - t, 3),
+  in: t => t * t * t,
+  io: t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+  sine: t => .5 - Math.cos(Math.PI * t) / 2,
+};
+const tracks = {};
+function tw(id, t0, t1, props, ease = 'out') {
+  tracks[id] ??= {};
+  for (const [k, v] of Object.entries(props)) (tracks[id][k] ??= []).push({ t0, t1, from: v[0], to: v[1], ease: E[ease] });
+}
+function val(list, t) {
+  if (t < list[0].t0) return list[0].from;
+  let cur = list[0];
+  for (const x of list) if (t >= x.t0) cur = x;
+  const p = cur.t1 === cur.t0 ? 1 : Math.min(1, Math.max(0, (t - cur.t0) / (cur.t1 - cur.t0)));
+  return cur.from + (cur.to - cur.from) * cur.ease(p);
+}
+const fmt = (n, d = 0) => n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// Filmkorn: deterministisches Rauschen pro Frame
+const gctx = $('grain').getContext('2d'), gimg = gctx.createImageData(360, 640);
+function grain(frame) {
+  let s = (frame * 7919 + 1) % 2147483647;
+  const d = gimg.data;
+  for (let i = 0; i < d.length; i += 4) { s = (s * 16807) % 2147483647; const v = s & 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  gctx.putImageData(gimg, 0, 0);
+}
+
+function render(t) {
+  for (const id in tracks) {
+    const el = $(id); const tr = tracks[id]; const s = {};
+    for (const k in tr) { tr[k].sort((a, b) => a.t0 - b.t0); s[k] = val(tr[k], t); }
+    const tf = [];
+    if ('x' in s || 'y' in s) tf.push(`translate(${s.x || 0}px, ${s.y || 0}px)`);
+    if ('scale' in s) tf.push(`scale(${s.scale})`);
+    if (tf.length) el.style.transform = tf.join(' ');
+    if ('o' in s) { el.style.opacity = s.o; el.style.visibility = s.o <= 0.001 ? 'hidden' : 'visible'; }
+    if ('blur' in s) el.style.filter = s.blur > .05 ? `blur(${s.blur}px)` : 'none';
+    if ('h' in s) el.style.height = s.h + 'px';
+    if ('num' in s) el.textContent = fmt(s.num);
+    if ('draw' in s) el.setAttribute('stroke-dashoffset', s.draw);
+  }
+  grain(Math.floor(t * 24));
+}
+
+/* ---------- Timeline ---------- */
+// Kinobalken fahren zu Beginn ein, öffnen sich zum CTA
+tw('barT', 0, 1.2, { h: [960, 150] }, 'io');
+tw('barB', 0, 1.2, { h: [960, 150] }, 'io');
+tw('barT', 25.6, 26.6, { h: [150, 0] }, 'io');
+tw('barB', 25.6, 26.6, { h: [150, 0] }, 'io');
+
+// Einstellung 1: Waldemar am Waldrand (0 – 4.2)
+tw('i1', 0, 4.6, { scale: [1.0, 1.10] }, 'lin');
+tw('s1', 4.0, 4.6, { o: [1, 0] }, 'io');
+tw('t1', 0.9, 1.4, { o: [0, 1], y: [20, 0] }); tw('t1', 2.1, 2.4, { o: [1, 0] }, 'in');
+tw('t2', 2.4, 2.9, { o: [0, 1], y: [20, 0] }); tw('t2', 3.8, 4.1, { o: [1, 0] }, 'in');
+
+// Einstellung 2: alte Karte am Küchentisch (4.2 – 8.6)
+tw('s2', 4.0, 4.6, { o: [0, 1] }, 'io');
+tw('i2', 4.0, 8.8, { scale: [1.14, 1.02], x: [30, -20] }, 'lin');
+tw('s2', 8.4, 8.9, { o: [1, 0] }, 'io');
+tw('t3', 4.5, 5.0, { o: [0, 1], y: [20, 0] }); tw('t3', 5.8, 6.05, { o: [1, 0] }, 'in');
+tw('t4', 6.1, 6.5, { o: [0, 1], y: [20, 0] }); tw('t4', 7.0, 7.25, { o: [1, 0] }, 'in');
+tw('t5', 7.3, 7.7, { o: [0, 1], y: [20, 0] }); tw('t5', 8.3, 8.6, { o: [1, 0] }, 'in');
+
+// Schwarzblende: früher … → WoodMatch (8.6 – 12.2)
+tw('black', 8.4, 8.9, { o: [0, 1] }, 'io');
+tw('early', 8.9, 9.4, { o: [0, 1], y: [20, 0] }); tw('early', 10.1, 10.4, { o: [1, 0], blur: [0, 8] }, 'in');
+tw('logo', 10.5, 11.2, { o: [0, 1], scale: [.92, 1], blur: [10, 0] }, 'out');
+tw('logoClaim', 10.9, 11.4, { o: [0, 1], y: [20, 0] });
+tw('black', 12.0, 12.6, { o: [1, 0] }, 'io');
+
+// Einstellung 3: Laptop am Waldweg + Glas-Karten (12.2 – 20.4)
+tw('s3', 11.9, 12.2, { o: [0, 1] });
+tw('i3', 12.0, 20.8, { scale: [1.02, 1.14], y: [0, -20] }, 'lin');
+tw('s3', 20.2, 20.8, { o: [1, 0] }, 'io');
+tw('t6', 12.8, 13.3, { o: [0, 1], y: [20, 0] }); tw('t6', 19.8, 20.2, { o: [1, 0] }, 'in');
+tw('g1', 13.4, 14.0, { o: [0, 1], y: [40, 0] });
+tw('pp1', 13.8, 14.4, { draw: [1, 0] }, 'io'); tw('pp2', 14.0, 14.6, { draw: [1, 0] }, 'io'); tw('pp3', 14.2, 14.8, { draw: [1, 0] }, 'io');
+tw('g1', 15.0, 15.35, { o: [1, 0], y: [0, -20] }, 'in');
+tw('g2', 15.4, 16.0, { o: [0, 1], y: [40, 0] });
+tw('g2', 17.0, 17.35, { o: [1, 0], y: [0, -20] }, 'in');
+tw('nFm', 15.6, 17.0, { num: [0, 1920] });
+tw('nEur', 15.7, 17.1, { num: [0, 96000] });
+tw('g3', 17.3, 17.9, { o: [0, 1], y: [40, 0] });
+tw('g3ok', 18.3, 18.6, { o: [0, 1], scale: [.8, 1] });
+tw('g3', 19.8, 20.2, { o: [1, 0], y: [0, -20] }, 'in');
+
+// Einstellung 4: Handschlag mit Forstprofi (20.4 – 24.8)
+tw('s4', 20.2, 20.8, { o: [0, 1] }, 'io');
+tw('i4', 20.2, 25.2, { scale: [1.12, 1.02] }, 'lin');
+tw('s4', 24.6, 25.2, { o: [1, 0] }, 'io');
+tw('t7', 20.9, 21.4, { o: [0, 1], y: [20, 0] }); tw('t7', 24.3, 24.6, { o: [1, 0] }, 'in');
+
+// Einstellung 5: Baumkronen + CTA (24.8 – 31)
+tw('s5', 24.6, 25.2, { o: [0, 1] }, 'io');
+tw('i5', 24.6, 31, { scale: [1.0, 1.12] }, 'lin');
+tw('t8', 25.2, 25.7, { o: [0, 1], y: [20, 0] }); tw('t8', 26.7, 27.0, { o: [1, 0] }, 'in');
+tw('ctaWrap', 26.9, 27.3, { o: [0, 1] });
+tw('ctaCard', 27.0, 27.7, { o: [0, 1], y: [-30, 0], scale: [.92, 1] });
+tw('ctaQ', 27.3, 27.8, { o: [0, 1], y: [20, 0] });
+tw('ctaL1', 27.6, 28.2, { o: [0, 1], y: [40, 0] });
+tw('ctaL2', 27.8, 28.4, { o: [0, 1], y: [40, 0] });
+tw('ctaBtn', 28.4, 29.0, { o: [0, 1], scale: [.8, 1] });
+tw('ctaUrl', 28.8, 29.3, { o: [0, 1], y: [20, 0] });
+tw('ctaFine', 29.1, 29.6, { o: [0, 1], y: [20, 0] });
+tw('shade', 0, 0, { o: [1, 1] });
+
+window.DURATION = DURATION;
+window.render = render;
+const imgs = [...document.querySelectorAll('.img')].map(d => new Promise(r => { const i = new Image(); i.onload = i.onerror = r; i.src = getComputedStyle(d).backgroundImage.slice(5, -2); }));
+window.ready = document.fonts.ready.then(() => Promise.all([...imgs, ...[...document.images].map(i => i.decode().catch(() => {}))]));
+
+const qt = new URLSearchParams(location.search).get('t');
+if (qt !== null) render(+qt);
+else if (!navigator.webdriver) {
+  const t0 = performance.now();
+  (function loop() { render(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+} else render(0);
+</script>
+</body>
+</html>

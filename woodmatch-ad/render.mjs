@@ -1,5 +1,6 @@
 // Rendert index.html Frame für Frame zu MP4 (H.264, 1080x1920, 30 fps).
 // Nutzung: node render.mjs [out.mp4]      – komplettes Video
+//          PAGE=variante-b.html MUSIC_START=7 node render.mjs woodmatch-reel-B-story.mp4
 //          node render.mjs --stills 1,5,9 – einzelne Vorschaubilder
 import { chromium } from 'playwright';
 import { spawn } from 'node:child_process';
@@ -10,11 +11,12 @@ const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 const FPS = 30;
 // Musik: "Forest" von Damtaro (freetouse.com). Ab 10,6 s, damit der Drop (0:34) auf die Marktplatz-Szene fällt.
 const MUSIC = process.env.MUSIC ?? 'assets/music-damtaro-forest.mp3';
-const MUSIC_START = 10.6;
+const MUSIC_START = +(process.env.MUSIC_START ?? 10.6);
+const PAGE = process.env.PAGE || 'index.html';
 const args = process.argv.slice(2);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-await page.goto(pathToFileURL(path.resolve('index.html')).href);
+await page.goto(pathToFileURL(path.resolve(PAGE)).href);
 await page.evaluate(() => window.ready);
 
 if (args[0] === '--stills') {
