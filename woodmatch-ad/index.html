@@ -15,12 +15,14 @@
     --green-d: #246d27;
     --forest: #1f3a20;
     --forest-2: #2c4d2d;
+    --app-green: #3a6b40;
     --mint: #84d68a;
     --brown: #643c2d;
     --paper: #f7f9f5;
     --ink: #2f343b;
-    --muted: #7b828b;
+    --muted: #6f7680;
     --line: #e4e9e1;
+    --amber: #e39b2d;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
@@ -31,327 +33,199 @@
   .brand-wood { color: var(--green); }
   .brand-match { color: var(--brown); }
 
-  /* ---------- Hintergrund Wald ---------- */
+  /* ---------- Wald-Hintergrund ---------- */
   #forest { position: absolute; inset: -60px; background: url(assets/forest.jpg) center / cover no-repeat; }
   #forestShade { position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(20,38,21,.45) 0%, rgba(20,38,21,.10) 30%, rgba(16,30,17,.55) 48%, rgba(16,30,17,.88) 66%, rgba(12,24,13,.95) 100%); }
   #ctaShade { position: absolute; inset: 0; background: radial-gradient(120% 80% at 50% 50%, rgba(14,28,15,.78) 0%, rgba(14,28,15,.62) 60%, rgba(10,20,11,.85) 100%); }
 
-  /* ---------- Szene 1: Hook ---------- */
+  /* ---------- Hook ---------- */
   #hook { color: #fff; }
   #hook .kicker { left: 90px; top: 1010px; font-size: 34px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); display: flex; align-items: center; gap: 22px; }
   #hook .kicker i { display: block; width: 70px; height: 3px; background: var(--mint); }
   #hook h1 { left: 86px; top: 1070px; font-size: 138px; line-height: 1.0; font-weight: 800; letter-spacing: -.02em; }
   #hook p { left: 90px; top: 1360px; width: 860px; font-size: 50px; line-height: 1.3; font-weight: 500; color: rgba(255,255,255,.92); }
 
-  /* ---------- Szene 2: Logo ---------- */
+  /* ---------- Logo ---------- */
   #logoScene { background: var(--paper); }
   #logoScene .logo { left: 0; right: 0; top: 760px; text-align: center; font-size: 172px; font-weight: 700; letter-spacing: -.01em; }
   #logoScene .logo span { display: inline-block; }
   #logoScene .claim { left: 0; right: 0; top: 1000px; text-align: center; font-size: 46px; font-weight: 600; color: var(--ink); }
   #logoScene .claim b { color: var(--green); }
-  #logoScene .rule { left: 390px; top: 975px; width: 300px; height: 4px; background: var(--green); border-radius: 2px; transform-origin: center; }
-  .leaf { position: absolute; width: 60px; height: 60px; border-radius: 0 60px 0 60px; background: var(--green); opacity: .12; }
+  #logoScene .rule { left: 390px; top: 975px; width: 300px; height: 4px; background: var(--green); border-radius: 2px; }
+  .leaf { position: absolute; background: var(--green); opacity: .12; }
 
   /* ---------- Feature-Teil ---------- */
   #features { background: var(--paper); }
-  #features .bgblob { position: absolute; border-radius: 50%; filter: blur(0px); }
-  .stepHead { position: absolute; left: 90px; right: 90px; top: 250px; }
+  .bgblob { position: absolute; border-radius: 50%; }
+  .stepHead { position: absolute; left: 70px; right: 60px; top: 250px; }
   .stepHead .num { font-size: 32px; font-weight: 700; letter-spacing: .14em; color: var(--green); text-transform: uppercase; display: flex; align-items: center; gap: 18px; }
   .stepHead .num i { display: block; width: 56px; height: 3px; background: var(--green); }
   .stepHead h2 { margin-top: 18px; font-size: 84px; line-height: 1.04; font-weight: 800; letter-spacing: -.015em; color: var(--ink); }
   .stepHead h2 em { font-style: normal; color: var(--green); }
+  .stepHead p { margin-top: 22px; font-size: 36px; line-height: 1.3; font-weight: 500; color: var(--muted); }
+  .soon { display: inline-block; font-size: 24px; letter-spacing: .08em; font-weight: 800; color: #fff; background: var(--amber); padding: 7px 16px; border-radius: 12px; margin-left: 6px; }
+  .usp { display: inline-block; font-size: 24px; letter-spacing: .08em; font-weight: 800; color: #fff; background: var(--green); padding: 7px 16px; border-radius: 12px; }
 
-  #dots { position: absolute; left: 90px; top: 200px; display: flex; gap: 12px; }
+  #dots { position: absolute; left: 70px; top: 200px; display: flex; gap: 12px; }
   #dots b { display: block; height: 10px; width: 44px; border-radius: 5px; background: #d8dfd4; overflow: hidden; position: relative; }
   #dots b s { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--green); }
 
-  /* Handy */
-  #phone { position: absolute; left: 250px; top: 610px; width: 580px; height: 1090px; border-radius: 76px; background: #16241a;
-    box-shadow: 0 60px 120px rgba(31,58,32,.28), 0 20px 40px rgba(31,58,32,.18), inset 0 0 0 3px #3a4a3d; padding: 18px; }
-  #screen { position: relative; width: 100%; height: 100%; border-radius: 60px; overflow: hidden; background: #fff; }
-  #notch { position: absolute; left: 50%; top: 18px; margin-left: -70px; width: 140px; height: 38px; border-radius: 20px; background: #16241a; z-index: 50; }
-  .appbar { position: absolute; left: 0; right: 0; top: 0; height: 150px; padding: 84px 34px 0; display: flex; align-items: center; justify-content: space-between; background: #fff; z-index: 10; border-bottom: 1px solid var(--line); }
-  .appbar .lg { font-size: 34px; font-weight: 700; }
-  .appbar .av { width: 46px; height: 46px; border-radius: 50%; background: var(--forest-2); color: #fff; font-size: 20px; font-weight: 600; display: grid; place-items: center; }
-  .scr { position: absolute; left: 0; right: 0; top: 150px; bottom: 0; overflow: hidden; }
+  .sub { position: absolute; left: 70px; right: 70px; top: 1290px; font-size: 38px; line-height: 1.32; font-weight: 500; color: var(--muted); }
+  .sub b { color: var(--ink); font-weight: 700; }
 
-  /* Screen A: Karte */
-  #scrA { background: #eef3ea; }
-  .search { position: absolute; left: 26px; right: 26px; top: 24px; height: 74px; background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.08); display: flex; align-items: center; padding: 0 24px; gap: 16px; font-size: 27px; z-index: 5; }
-  .search .lbl { color: var(--muted); font-weight: 500; }
-  .search .typed { font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; }
-  .search .caret { width: 3px; height: 32px; background: var(--green); }
-  #map { position: absolute; inset: 0; }
-  .sheet { position: absolute; left: 18px; right: 18px; bottom: 18px; background: #fff; border-radius: 30px; padding: 28px 30px 30px; box-shadow: 0 -6px 30px rgba(0,0,0,.12); }
-  .sheet .t { font-size: 20px; font-weight: 700; letter-spacing: .1em; color: var(--green); text-transform: uppercase; }
-  .sheet .h { margin-top: 8px; font-size: 36px; font-weight: 700; color: var(--ink); }
-  .sheet .row { margin-top: 18px; display: flex; gap: 12px; }
-  .chip { font-size: 22px; font-weight: 600; padding: 10px 16px; border-radius: 14px; background: #eaf5ea; color: var(--green-d); white-space: nowrap; }
+  /* Laptop */
+  #laptop { position: absolute; left: 40px; top: 660px; width: 1000px; height: 590px; }
+  #lid { position: absolute; left: 0; top: 0; width: 1000px; height: 552px; border-radius: 30px 30px 8px 8px; background: #1c211e;
+    box-shadow: inset 0 0 0 2px #3b423d; padding: 18px 18px 21px; }
+  #cam { position: absolute; left: 496px; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #3b4a3f; }
+  #screen { position: relative; width: 964px; height: 513px; overflow: hidden; background: #fff; border-radius: 4px; }
+  #base { position: absolute; left: -30px; top: 548px; width: 1060px; height: 30px; border-radius: 4px 4px 22px 22px;
+    background: linear-gradient(180deg, #d9ddd8 0%, #b9beb8 55%, #8e948d 100%); }
+  #base::before { content: ""; position: absolute; left: 440px; top: 0; width: 180px; height: 12px; border-radius: 0 0 12px 12px; background: #a3a9a2; }
+  #shadow { position: absolute; left: 20px; top: 575px; width: 960px; height: 50px; border-radius: 50%; background: rgba(31,58,32,.28); filter: blur(22px); }
+  .shot { position: absolute; left: 0; top: 0; width: 1916px; height: 1020px; transform-origin: 0 0; overflow: hidden; background: #fff; }
+  .shot > img { position: absolute; left: 0; top: 0; width: 1916px; }
+  .ring { position: absolute; border-radius: 14px; box-shadow: 0 0 0 5px var(--green), 0 0 0 16px rgba(45,141,49,.25); }
+  #soonTag { position: absolute; right: 30px; top: 30px; z-index: 5; font-size: 26px; font-weight: 800; letter-spacing: .06em; color: #fff; background: var(--amber); padding: 12px 22px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
 
-  /* Screen B: Infos */
-  #scrB { background: var(--paper); padding: 30px 26px; }
-  .hello { font-size: 36px; font-weight: 700; }
-  .hello small { display: block; margin-top: 4px; font-size: 22px; font-weight: 500; color: var(--muted); }
-  .grid2 { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 20px 22px; }
-  .card .k { font-size: 20px; font-weight: 500; color: var(--muted); }
-  .card .v { margin-top: 6px; font-size: 40px; font-weight: 700; color: var(--ink); white-space: nowrap; }
-  .card .v small { font-size: 22px; font-weight: 600; color: var(--muted); margin-left: 4px; }
-  .card .up { font-size: 20px; font-weight: 700; color: var(--green); margin-left: 8px; }
-  .wide { grid-column: span 2; }
-  .donutRow { display: flex; align-items: center; gap: 26px; margin-top: 10px; }
-  .legend { display: grid; gap: 10px; font-size: 22px; font-weight: 500; }
-  .legend span { display: flex; align-items: center; gap: 10px; }
-  .legend i { width: 16px; height: 16px; border-radius: 5px; display: block; }
-  .legend b { margin-left: auto; padding-left: 16px; font-weight: 700; }
+  /* Objekte-Menü (echter Screenshot) */
+  #menuCard { position: absolute; left: 600px; top: 760px; width: 432px; height: 642px; border-radius: 22px; overflow: hidden; z-index: 20;
+    box-shadow: 0 40px 80px rgba(31,58,32,.30), 0 8px 20px rgba(31,58,32,.15); background: #fff; }
+  #menuCard img { position: absolute; left: -2px; top: -2px; width: 436px; }
+  #menuHi { position: absolute; left: 44px; top: 297px; width: 350px; height: 42px; border-radius: 10px; background: rgba(45,141,49,.14); box-shadow: inset 0 0 0 3px var(--green); }
 
-  /* Screen C: Maßnahme */
-  #scrC { background: var(--paper); padding: 30px 26px; }
-  .q { font-size: 34px; font-weight: 700; }
-  .q small { display: block; margin-top: 4px; font-size: 22px; font-weight: 500; color: var(--muted); }
-  .tiles { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .tile { background: #fff; border: 2px solid var(--line); border-radius: 22px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; font-size: 23px; font-weight: 600; position: relative; }
-  .tile svg { width: 44px; height: 44px; }
-  .tile .sel { position: absolute; inset: -2px; border-radius: 22px; border: 3px solid var(--green); background: rgba(45,141,49,.08); }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--forest-2); color: #fff; font-weight: 700; border-radius: 18px; }
+  /* Matching-Karten */
+  .match { position: absolute; top: 1270px; width: 300px; height: 220px; background: #fff; border-radius: 26px; padding: 26px 24px;
+    box-shadow: 0 24px 50px rgba(31,58,32,.18), 0 5px 14px rgba(31,58,32,.08); }
+  .match .ic { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; background: #e8f3e7; }
+  .match .ic svg { width: 36px; height: 36px; }
+  .match .tt { margin-top: 16px; font-size: 32px; font-weight: 700; line-height: 1.1; }
+  .match .ok { position: absolute; left: 24px; bottom: 22px; font-size: 22px; font-weight: 800; letter-spacing: .06em; color: var(--green-d); background: #e2f2e1; padding: 6px 14px; border-radius: 10px; }
 
-  /* Screen D: Holz */
-  #scrD { background: var(--paper); padding: 30px 26px; }
-  .polter .ph { display: flex; align-items: center; gap: 16px; }
-  .polter .ph .ic { width: 64px; height: 64px; border-radius: 18px; background: #f3ece8; display: grid; place-items: center; }
-  .kv { display: flex; justify-content: space-between; font-size: 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-  .kv:last-child { border-bottom: 0; }
-  .kv span { color: var(--muted); font-weight: 500; }
-  .kv b { font-weight: 700; }
-  .price { margin-top: 20px; }
-  .bars { display: flex; align-items: flex-end; gap: 12px; height: 150px; margin-top: 14px; }
-  .bars div { flex: 1; background: #cfe5cf; border-radius: 8px 8px 4px 4px; transform-origin: bottom; }
-  .bars div.hi { background: var(--green); }
-
-  /* Schwebende Karten */
-  .float { position: absolute; background: #fff; border-radius: 26px; box-shadow: 0 30px 60px rgba(31,58,32,.20), 0 6px 16px rgba(31,58,32,.10); padding: 24px 28px; z-index: 60; }
-  .float .t { font-size: 20px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
-  .float .h { font-size: 32px; font-weight: 700; margin-top: 6px; }
-  .pro { display: flex; align-items: center; gap: 16px; padding: 12px 0; }
-  .pro .pa { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 22px; }
-  .pro .pn { font-size: 26px; font-weight: 700; }
-  .pro .ps { font-size: 20px; color: var(--muted); font-weight: 500; margin-top: 2px; }
-  .pro .pr { margin-left: auto; font-size: 24px; font-weight: 700; color: var(--ink); white-space: nowrap; }
-  .star { color: #e3a008; }
-  .badge { display: inline-block; font-size: 18px; font-weight: 800; letter-spacing: .08em; padding: 5px 10px; border-radius: 8px; background: var(--green); color: #fff; }
+  /* ---------- Preis ---------- */
+  #pricing { background: var(--forest); color: #fff; }
+  #pricing .kick { left: 90px; top: 430px; font-size: 32px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); display: flex; align-items: center; gap: 18px; }
+  #pricing .kick i { display: block; width: 56px; height: 3px; background: var(--mint); }
+  #pricing h2 { left: 86px; top: 500px; font-size: 104px; line-height: 1.04; font-weight: 800; letter-spacing: -.02em; }
+  #pricing h2 em { font-style: normal; color: var(--mint); }
+  #pricing .list { left: 90px; top: 800px; display: grid; gap: 34px; }
+  #pricing .li { display: flex; align-items: center; gap: 28px; font-size: 52px; font-weight: 700; }
+  #pricing .li .ck { width: 78px; height: 78px; border-radius: 50%; background: var(--green); display: grid; place-items: center; flex: none; }
+  #pricing .li small { display: block; font-size: 32px; font-weight: 500; color: rgba(255,255,255,.75); margin-top: 4px; }
+  #pricing .note { left: 90px; right: 90px; top: 1270px; font-size: 40px; line-height: 1.35; font-weight: 500; color: rgba(255,255,255,.85); border-left: 6px solid var(--mint); padding-left: 30px; }
 
   /* ---------- CTA ---------- */
   #cta { color: #fff; }
   #cta .logoCard { left: 190px; top: 380px; width: 700px; height: 190px; background: #fff; border-radius: 40px; display: grid; place-items: center; box-shadow: 0 30px 80px rgba(0,0,0,.25); }
   #cta .logoCard img { width: 540px; }
-  #cta h2 { left: 0; right: 0; top: 760px; text-align: center; font-size: 118px; line-height: 1.02; font-weight: 800; letter-spacing: -.02em; }
+  #cta h2 { left: 0; right: 0; top: 740px; text-align: center; font-size: 118px; line-height: 1.02; font-weight: 800; letter-spacing: -.02em; }
   #cta h2 em { font-style: normal; color: var(--mint); }
-  #cta .sub { left: 110px; right: 110px; top: 1030px; text-align: center; font-size: 42px; line-height: 1.3; font-weight: 500; color: rgba(255,255,255,.9); }
-  #cta .button { left: 210px; top: 1210px; width: 660px; height: 128px; border-radius: 64px; background: var(--green); display: flex; align-items: center; justify-content: center; gap: 18px; font-size: 50px; font-weight: 700; color: #fff; box-shadow: 0 20px 50px rgba(45,141,49,.45); }
-  #cta .url { left: 0; right: 0; top: 1375px; text-align: center; font-size: 46px; font-weight: 700; color: #fff; letter-spacing: .01em; }
-  #cta .stats { left: 120px; right: 120px; top: 1480px; display: flex; justify-content: space-between; }
-  #cta .stats div { text-align: center; }
-  #cta .stats b { display: block; font-size: 52px; font-weight: 800; }
-  #cta .stats span { font-size: 24px; font-weight: 500; color: rgba(255,255,255,.8); }
+  #cta .sub2 { left: 110px; right: 110px; top: 1010px; text-align: center; font-size: 42px; line-height: 1.3; font-weight: 500; color: rgba(255,255,255,.9); }
+  #cta .button { left: 210px; top: 1190px; width: 660px; height: 128px; border-radius: 64px; background: var(--green); display: flex; align-items: center; justify-content: center; gap: 18px; font-size: 50px; font-weight: 700; color: #fff; box-shadow: 0 20px 50px rgba(45,141,49,.45); }
+  #cta .url { left: 0; right: 0; top: 1355px; text-align: center; font-size: 48px; font-weight: 700; color: #fff; }
+  #cta .fine { left: 0; right: 0; top: 1435px; text-align: center; font-size: 30px; font-weight: 600; color: var(--mint); letter-spacing: .02em; }
 </style>
 </head>
 <body>
 <div id="stage">
 
-  <!-- Wald-Hintergrund (Szene 1 + CTA) -->
-  <div id="forestWrap" class="scene">
-    <div id="forest"></div>
-    <div id="forestShade"></div>
-  </div>
+  <div id="forestWrap" class="scene"><div id="forest"></div><div id="forestShade"></div></div>
 
-  <!-- Szene 1: Hook -->
+  <!-- Hook -->
   <div id="hook" class="scene">
     <div class="abs kicker" id="hookKicker"><i></i>Privatwald</div>
     <h1 class="abs"><span id="hookL1" style="display:block">Du hast</span><span id="hookL2" style="display:block">Wald?</span></h1>
-    <p class="abs" id="hookSub">Und weißt nicht genau, wo er liegt, was drinsteht – und was er wert ist?</p>
+    <p class="abs" id="hookSub">Und willst endlich wissen, was in ihm steckt – und was du daraus machen kannst?</p>
   </div>
 
-  <!-- Szene 2: Logo -->
+  <!-- Logo -->
   <div id="logoScene" class="scene">
     <div class="leaf" id="leaf1" style="left:150px;top:420px;width:120px;height:120px;border-radius:0 120px 0 120px"></div>
     <div class="leaf" id="leaf2" style="left:820px;top:1320px;width:160px;height:160px;border-radius:0 160px 0 160px"></div>
-    <div class="leaf" id="leaf3" style="left:780px;top:520px;width:70px;height:70px"></div>
+    <div class="leaf" id="leaf3" style="left:780px;top:520px;width:70px;height:70px;border-radius:0 70px 0 70px"></div>
     <div class="abs logo"><span id="lgW" class="brand-wood">Wood</span><span id="lgM" class="brand-match">Match</span></div>
     <div class="abs rule" id="lgRule"></div>
     <div class="abs claim" id="lgClaim">Die Plattform für <b>Privatwaldbesitzer</b></div>
   </div>
 
-  <!-- Feature-Teil -->
+  <!-- Features -->
   <div id="features" class="scene">
-    <div class="bgblob" id="blob1" style="left:-220px;top:900px;width:620px;height:620px;background:#e6f1e3"></div>
+    <div class="bgblob" id="blob1" style="left:-220px;top:1000px;width:620px;height:620px;background:#e6f1e3"></div>
     <div class="bgblob" id="blob2" style="left:720px;top:1350px;width:520px;height:520px;background:#efe7e2"></div>
 
-    <div id="dots"><b><s id="d1"></s></b><b><s id="d2"></s></b><b><s id="d3"></s></b><b><s id="d4"></s></b></div>
+    <div id="dots"><b><s id="d1"></s></b><b><s id="d2"></s></b><b><s id="d3"></s></b><b><s id="d4"></s></b><b><s id="d5"></s></b></div>
 
-    <div class="stepHead" id="h1"><div class="num"><i></i>01 · Wald finden</div><h2>Flurnummer eingeben.<br><em>Wald sehen.</em></h2></div>
-    <div class="stepHead" id="h2"><div class="num"><i></i>02 · Wald verstehen</div><h2>Fläche, Baumarten,<br><em>Holzvorrat.</em></h2></div>
-    <div class="stepHead" id="h3"><div class="num"><i></i>03 · Profis finden</div><h2>Maßnahme planen.<br><em>Forstprofis finden.</em></h2></div>
-    <div class="stepHead" id="h4"><div class="num"><i></i>04 · Holz verkaufen</div><h2>Direkt vermarkten.<br><em>Fair verdienen.</em></h2></div>
+    <div class="stepHead" id="h1"><div class="num"><i></i>01 · Überblick</div><h2>Dein Wald.<br><em>Auf einen Blick.</em></h2></div>
+    <div class="stepHead" id="h2"><div class="num"><i></i>02 · Karte &amp; Geodaten</div><h2>Satellit, Baumart,<br><em>Kronenhöhe.</em></h2></div>
+    <div class="stepHead" id="h3"><div class="num"><i></i>03 · Objekte</div><h2>Bestände, Bäume<br><em>&amp; Polter erfassen.</em></h2></div>
+    <div class="stepHead" id="h4"><div class="num"><i></i>04 · Maßnahmen <span class="soon">BALD VERFÜGBAR</span></div><h2>Maßnahmen planen.<br><em>Schritt für Schritt.</em></h2></div>
+    <div class="stepHead" id="h5"><div class="num"><span class="usp">NUR BEI WOODMATCH</span></div><h2>Marktplatz<br><em>mit Matching.</em></h2><p>Passende Partner finden dich – automatisch.</p></div>
 
-    <div id="phone">
-      <div id="screen">
-        <div id="notch"></div>
-        <div class="appbar"><div class="lg"><span class="brand-wood">Wood</span><span class="brand-match">Match</span></div><div class="av">WH</div></div>
+    <div class="sub" id="sub1">Kennzahlen, Schätzungen und <b>persönliche Handlungsempfehlungen</b> für deinen digitalen Wald.</div>
+    <div class="sub" id="sub2"><b>Öffentliche Geodaten &amp; Satellitenbilder</b> für jedes deiner Flurstücke – ohne Fachwissen.</div>
+    <div class="sub" id="sub3" style="right:470px">Einfach auf der Karte <b>einzeichnen</b> – alles sicher dokumentiert.</div>
+    <div class="sub" id="sub4">Pflanzung, Durchforstung, Holzernte &amp; mehr – <b>geführt in 4 Schritten.</b></div>
 
-        <!-- A: Karte -->
-        <div class="scr" id="scrA">
-          <svg id="map" viewBox="0 0 544 904" preserveAspectRatio="xMidYMid slice">
-            <rect width="544" height="904" fill="#eef3ea"/>
-            <path d="M-20 160 C 120 120, 200 220, 330 170 S 520 120, 580 160" stroke="#d9e4d3" stroke-width="2" fill="none"/>
-            <path d="M-20 260 C 100 230, 220 320, 340 270 S 520 230, 580 270" stroke="#d9e4d3" stroke-width="2" fill="none"/>
-            <path d="M-20 380 C 110 350, 230 430, 350 380 S 520 350, 580 390" stroke="#d9e4d3" stroke-width="2" fill="none"/>
-            <path d="M-20 520 C 120 490, 240 560, 360 510 S 520 480, 580 520" stroke="#d9e4d3" stroke-width="2" fill="none"/>
-            <path d="M-20 650 C 120 620, 240 690, 360 640 S 520 610, 580 650" stroke="#d9e4d3" stroke-width="2" fill="none"/>
-            <!-- Waldflächen -->
-            <path d="M-10 120 L 250 90 L 300 260 L 200 380 L -10 400 Z" fill="#cfe3c6"/>
-            <path d="M320 300 L 560 260 L 560 560 L 380 600 L 300 470 Z" fill="#c4dcba"/>
-            <path d="M40 470 L 250 440 L 290 640 L 120 700 L 20 620 Z" fill="#d3e6ca"/>
-            <!-- Weg und Bach -->
-            <path d="M-10 430 C 120 420, 230 470, 300 440 S 450 380, 560 420" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M200 -10 C 230 120, 180 240, 260 360 S 300 600, 240 920" stroke="#bcd8e8" stroke-width="7" fill="none"/>
-            <!-- Flurstücke -->
-            <g stroke="#9fb89a" stroke-width="1.5" fill="none" stroke-dasharray="6 5">
-              <path d="M60 150 L 230 130 L 250 280 L 80 300 Z"/>
-              <path d="M340 320 L 520 300 L 520 520 L 360 540 Z"/>
-              <path d="M60 490 L 230 470 L 250 610 L 90 640 Z"/>
-            </g>
-            <path id="parcel" d="M340 320 L 520 300 L 520 520 L 360 540 Z" fill="rgba(45,141,49,.22)" stroke="#2d8d31" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>
-            <path id="parcel2" d="M60 150 L 230 130 L 250 280 L 80 300 Z" fill="rgba(45,141,49,.18)" stroke="#2d8d31" stroke-width="4" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>
-            <path id="parcel3" d="M60 490 L 230 470 L 250 610 L 90 640 Z" fill="rgba(45,141,49,.18)" stroke="#2d8d31" stroke-width="4" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>
-            <!-- Pin -->
-            <g id="pin" transform="translate(435 420)">
-              <ellipse cx="0" cy="6" rx="16" ry="6" fill="rgba(0,0,0,.18)"/>
-              <path d="M0 0 C -30 -40, -30 -80, 0 -80 C 30 -80, 30 -40, 0 0 Z" fill="#2d8d31"/>
-              <circle cx="0" cy="-56" r="11" fill="#fff"/>
-            </g>
-          </svg>
-          <div class="search"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7b828b" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/></svg><span class="lbl">Flurnr.</span><span class="typed" id="typed" style="width:0px">Flur 7 · 112/3</span><span class="caret" id="caret"></span></div>
-          <div class="sheet" id="sheetA">
-            <div class="t">Mein Wald</div>
-            <div class="h">3 Flurstücke · 42,7 ha</div>
-            <div class="row"><span class="chip">Mischwald</span><span class="chip">Hanglage</span><span class="chip">Erfasst ✓</span></div>
-          </div>
+    <div id="laptop">
+      <div id="shadow"></div>
+      <div id="base"></div>
+      <div id="lid"><div id="cam"></div>
+        <div id="screen">
+          <div class="shot" id="sc1"><img src="assets/screens/uebersicht.png"></div>
+          <div class="shot" id="sc2"><img src="assets/screens/flurstuecke.png"></div>
+          <div class="shot" id="sc4"><img src="assets/screens/massnahmen.png"></div>
+          <div class="shot" id="sc5"><img src="assets/screens/suche.png"><div class="ring" id="ring5" style="left:404px;top:228px;width:203px;height:24px"></div></div>
+          <div id="soonTag">BALD VERFÜGBAR</div>
         </div>
-
-        <!-- B: Infos -->
-        <div class="scr" id="scrB">
-          <div class="hello">Hallo Waldemar 👋<small>Dein digitaler Wald im Überblick</small></div>
-          <div class="grid2">
-            <div class="card" id="cB1"><div class="k">Waldfläche</div><div class="v"><span id="nArea" data-d="2">0</span><small>ha</small></div></div>
-            <div class="card" id="cB2"><div class="k">Flurstücke</div><div class="v"><span id="nParc">0</span></div></div>
-            <div class="card wide" id="cB3"><div class="k">Gesamtvorrat (geschätzt)</div><div class="v"><span id="nStock">0</span><small>Efm</small><span class="up">▲ 6,8 %</span></div>
-              <svg viewBox="0 0 460 90" width="100%" height="90" style="margin-top:8px">
-                <path id="spark" d="M0 78 C 40 74, 70 70, 100 64 S 160 60, 190 50 S 250 44, 280 36 S 350 30, 380 20 S 430 12, 460 8" fill="none" stroke="#2d8d31" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/>
-              </svg>
-            </div>
-            <div class="card wide" id="cB4"><div class="k">Baumarten-Verteilung</div>
-              <div class="donutRow">
-                <svg width="170" height="170" viewBox="0 0 42 42" style="transform:rotate(-90deg)">
-                  <circle cx="21" cy="21" r="15.915" fill="none" stroke="#eef1ec" stroke-width="7"/>
-                  <circle id="dn1" cx="21" cy="21" r="15.915" fill="none" stroke="#2d8d31" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="0"/>
-                  <circle id="dn2" cx="21" cy="21" r="15.915" fill="none" stroke="#84d68a" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="-45"/>
-                  <circle id="dn3" cx="21" cy="21" r="15.915" fill="none" stroke="#643c2d" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="-75"/>
-                  <circle id="dn4" cx="21" cy="21" r="15.915" fill="none" stroke="#c9a27e" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="-90"/>
-                </svg>
-                <div class="legend">
-                  <span><i style="background:#2d8d31"></i>Fichte<b>45 %</b></span>
-                  <span><i style="background:#84d68a"></i>Buche<b>30 %</b></span>
-                  <span><i style="background:#643c2d"></i>Eiche<b>15 %</b></span>
-                  <span><i style="background:#c9a27e"></i>Kiefer<b>10 %</b></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- C: Maßnahme planen -->
-        <div class="scr" id="scrC">
-          <div class="q">Maßnahme planen<small>Was möchtest du in deinem Wald tun?</small></div>
-          <div class="tiles">
-            <div class="tile" id="t1"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7"/><path d="M12 14c-4 0-6-3-6-6 3 0 6 2 6 6z"/><path d="M12 14c4 0 6-3 6-6-3 0-6 2-6 6z"/></svg>Pflanzung</div>
-            <div class="tile" id="t2"><div class="sel" id="tSel"></div><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21v-4"/><path d="M7 17L3 17 7 4 11 17z"/><path d="M17 21v-4"/><path d="M17 17h-4l4-13 4 13z"/></svg>Durchforstung</div>
-            <div class="tile" id="t3"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6" cy="12" rx="3" ry="6"/><path d="M6 6h12a3 6 0 0 1 0 12H6"/></svg>Holzernte</div>
-            <div class="tile" id="t4"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V6l2-3 2 3v15"/><path d="M15 21V6l2-3 2 3v15"/><path d="M3 10h18M3 16h18"/></svg>Zaunbau</div>
-            <div class="tile" id="t5"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg>Verkehrssicherung</div>
-            <div class="tile" id="t6"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-3-1.5c-1.7 0-3 .9-3 2s1.3 1.6 3 2 3 .9 3 2-1.3 2-3 2a3 3 0 0 1-3-1.5M12 6.5v11"/></svg>Förderung</div>
-          </div>
-          <div style="margin-top:22px;text-align:right"><span class="btn" id="btnC" style="font-size:26px;padding:18px 34px">Weiter →</span></div>
-        </div>
-
-        <!-- D: Holz verkaufen -->
-        <div class="scr" id="scrD">
-          <div class="q">Holz verkaufen<small>Polter anlegen, Angebote erhalten</small></div>
-          <div class="card polter" id="cD1" style="margin-top:22px">
-            <div class="ph"><div class="ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#643c2d" stroke-width="2"><circle cx="6" cy="16" r="3"/><circle cx="12" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><circle cx="9" cy="10.5" r="3"/><circle cx="15" cy="10.5" r="3"/></svg></div>
-              <div><div style="font-size:28px;font-weight:700">Polter „Althang“</div><div style="font-size:20px;color:#7b828b;font-weight:500">Abfuhrbereit · am Waldweg</div></div></div>
-            <div style="margin-top:12px">
-              <div class="kv"><span>Sortiment</span><b>Fi/Ta L2b</b></div>
-              <div class="kv"><span>Menge</span><b><span id="nVol">0</span> Efm</b></div>
-            </div>
-          </div>
-          <div class="card price" id="cD2"><div class="k">Marktpreis Fichte (tagesaktuell)</div>
-            <div class="bars"><div id="bar1" style="height:52%"></div><div id="bar2" style="height:60%"></div><div id="bar3" style="height:57%"></div><div id="bar4" style="height:70%"></div><div id="bar5" style="height:76%"></div><div id="bar6" class="hi" style="height:88%"></div></div>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- schwebende Karten -->
-    <div class="float" id="fA" style="left:560px;top:1250px;width:420px">
-      <div class="t">Flurstück gefunden</div>
-      <div class="h">4,2 ha Mischwald</div>
-      <div style="margin-top:8px;font-size:22px;color:#7b828b;font-weight:500">Geländeprofil · Baumarten · Vorrat</div>
+    <div id="menuCard"><img src="assets/screens/objekte-menu.png"><div id="menuHi"></div></div>
+
+    <div class="match" id="m1" style="left:60px">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+      <div class="tt">FBG vor Ort</div><div class="ok">✓ MATCH</div>
     </div>
-    <div class="float" id="fB" style="left:560px;top:1545px;width:400px">
-      <div class="t">Satellit + Geodaten</div>
-      <div class="h">Immer aktuell</div>
-      <div style="margin-top:8px;font-size:22px;color:#7b828b;font-weight:500">Auch ohne Fachwissen</div>
+    <div class="match" id="m2" style="left:390px">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+      <div class="tt">Forstprofis</div><div class="ok">✓ MATCH</div>
     </div>
-    <div class="float" id="fC" style="left:500px;top:1400px;width:520px">
-      <div class="t">3 Angebote erhalten</div>
-      <div class="pro"><div class="pa" style="background:#2c4d2d">FS</div><div><div class="pn">Forstservice Nord</div><div class="ps"><span class="star">★★★★★</span> 4,9 · geprüft</div></div></div>
-      <div class="pro" style="border-top:1px solid #e4e9e1"><div class="pa" style="background:#643c2d">WP</div><div><div class="pn">Waldpflege Team</div><div class="ps"><span class="star">★★★★★</span> 4,8 · geprüft</div></div></div>
+    <div class="match" id="m3" style="left:720px">
+      <div class="ic" style="background:#f3ece8"><svg viewBox="0 0 24 24" fill="none" stroke="#643c2d" stroke-width="2"><circle cx="6" cy="16" r="3"/><circle cx="12" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><circle cx="9" cy="10.5" r="3"/><circle cx="15" cy="10.5" r="3"/></svg></div>
+      <div class="tt">Holzkäufer</div><div class="ok">✓ MATCH</div>
     </div>
-    <div class="float" id="fD" style="left:470px;top:1270px;width:540px">
-      <div style="display:flex;align-items:center;gap:16px">
-        <div class="pa" style="width:62px;height:62px;border-radius:16px;background:#a8814f;color:#fff;font-weight:700;font-size:24px;display:grid;place-items:center">SW</div>
-        <div><div style="font-size:28px;font-weight:700">Neues Angebot</div><div style="font-size:20px;color:#7b828b;font-weight:500">Sägewerk · gerade eben</div></div>
-        <span class="badge" style="margin-left:auto">NEU</span>
-      </div>
-      <div style="margin-top:14px;background:#f7f9f5;border-radius:16px;padding:6px 18px">
-        <div class="kv"><span>Menge</span><b>1.491 Efm</b></div>
-        <div class="kv"><span>Preis</span><b style="color:#2d8d31">89 €/Efm</b></div>
-      </div>
-      <div class="btn" id="btnD" style="margin-top:16px;width:100%;height:70px;font-size:26px">Angebot annehmen →</div>
+  </div>
+
+  <!-- Preis -->
+  <div id="pricing" class="scene">
+    <div class="leaf" id="pleaf1" style="left:760px;top:180px;width:220px;height:220px;border-radius:0 220px 0 220px;background:var(--mint);opacity:.10"></div>
+    <div class="leaf" id="pleaf2" style="left:-60px;top:1500px;width:260px;height:260px;border-radius:0 260px 0 260px;background:var(--mint);opacity:.08"></div>
+    <div class="abs kick" id="pKick"><i></i>Fair &amp; transparent</div>
+    <h2 class="abs"><span id="pL1" style="display:block">Kostenlos starten.</span><span id="pL2" style="display:block"><em>Kostenlos bleiben.</em></span></h2>
+    <div class="abs list">
+      <div class="li" id="li1"><div class="ck"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div>Kein Abo</div></div>
+      <div class="li" id="li2"><div class="ck"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div>Keine Grundgebühr</div></div>
+      <div class="li" id="li3"><div class="ck"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div>Keine versteckten Kosten</div></div>
     </div>
+    <div class="abs note" id="pNote">Wir verdienen nur eine <b style="color:#fff">Provision</b>, wenn über den Marktplatz ein Auftrag zustande kommt.</div>
   </div>
 
   <!-- CTA -->
   <div id="cta" class="scene">
     <div id="ctaShade"></div>
     <div class="abs logoCard" id="ctaLogo"><img src="assets/logo-woodmatch.svg" alt="WoodMatch"></div>
-    <h2 class="abs" id="ctaH"><span id="ctaL1" style="display:block">Dein Wald.</span><span id="ctaL2" style="display:block">In <em>deiner</em> Hand.</span></h2>
-    <div class="abs sub" id="ctaSub">Überblick, Forstprofis &amp; Holzverkauf – alles auf einer Plattform.</div>
+    <h2 class="abs"><span id="ctaL1" style="display:block">Dein Wald.</span><span id="ctaL2" style="display:block">In <em>deiner</em> Hand.</span></h2>
+    <div class="abs sub2" id="ctaSub">Digitaler Wald, Marktplatz &amp; Matching – alles auf einer Plattform.</div>
     <div class="abs button" id="ctaBtn">Kostenlos starten <span>→</span></div>
     <div class="abs url" id="ctaUrl">app.woodmatch.de</div>
-    <div class="abs stats" id="ctaStats">
-      <div><b>1.200+</b><span>Hektar verwaltet</span></div>
-      <div><b>340</b><span>Waldbesitzer</span></div>
-      <div><b>0 €</b><span>Nutzungsgebühr</span></div>
-    </div>
+    <div class="abs fine" id="ctaFine">Kein Abo · Keine Grundgebühr</div>
   </div>
 </div>
 
 <script>
 /* ============ Mini-Timeline (deterministisch, per Frame gesetzt) ============ */
-const DURATION = 30;
+const DURATION = 37;
 const E = {
   lin: t => t,
   out: t => 1 - Math.pow(1 - t, 3),
@@ -359,7 +233,7 @@ const E = {
   io: t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
   back: t => { const c = 1.9; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); },
 };
-const tracks = {}; // id -> prop -> [tweens]
+const tracks = {};
 function tw(id, t0, t1, props, ease = 'out') {
   tracks[id] ??= {};
   for (const [k, v] of Object.entries(props)) (tracks[id][k] ??= []).push({ t0, t1, from: v[0], to: v[1], ease: E[ease] });
@@ -367,157 +241,138 @@ function tw(id, t0, t1, props, ease = 'out') {
 function val(list, t) {
   if (t < list[0].t0) return list[0].from;
   let cur = list[0];
-  for (const tw of list) if (t >= tw.t0) cur = tw;
+  for (const x of list) if (t >= x.t0) cur = x;
   const p = cur.t1 === cur.t0 ? 1 : Math.min(1, Math.max(0, (t - cur.t0) / (cur.t1 - cur.t0)));
   return cur.from + (cur.to - cur.from) * cur.ease(p);
 }
-const fmt = (n, d = 0) => n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d });
+// Kamera im Laptop-Bildschirm: fokussiert Punkt (cx, cy) des 1916×1020-Screenshots mit Zoom z
+const SW = 964, SH = 513, K = SW / 1916;
+function cam(id, t0, t1, from, to, ease = 'io') { tw(id, t0, t1, { cx: [from[0], to[0]], cy: [from[1], to[1]], z: [from[2], to[2]] }, ease); }
 
 function render(t) {
   for (const id in tracks) {
     const el = document.getElementById(id); const tr = tracks[id]; const s = {};
     for (const k in tr) { tr[k].sort((a, b) => a.t0 - b.t0); s[k] = val(tr[k], t); }
-    const tf = [];
-    if ('x' in s || 'y' in s) tf.push(`translate(${s.x || 0}px, ${s.y || 0}px)`);
-    if ('scale' in s) tf.push(`scale(${s.scale})`);
-    if ('sx' in s) tf.push(`scaleX(${s.sx})`);
-    if ('sy' in s) tf.push(`scaleY(${s.sy})`);
-    if ('rot' in s) tf.push(`rotate(${s.rot}deg)`);
-    if (el instanceof SVGElement && el.tagName === 'g') {
-      if ('y' in s) el.setAttribute('transform', `translate(435 ${420 + s.y}) scale(${s.scale ?? 1})`);
-    } else if (tf.length) el.style.transform = tf.join(' ');
+    if ('z' in s) {
+      const sc = K * s.z;
+      const tx = Math.min(0, Math.max(SW - 1916 * sc, SW / 2 - s.cx * sc));
+      const ty = Math.min(0, Math.max(SH - 1020 * sc, SH / 2 - s.cy * sc));
+      el.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`;
+    } else {
+      const tf = [];
+      if ('x' in s || 'y' in s) tf.push(`translate(${s.x || 0}px, ${s.y || 0}px)`);
+      if ('scale' in s) tf.push(`scale(${s.scale})`);
+      if ('sx' in s) tf.push(`scaleX(${s.sx})`);
+      if ('rot' in s) tf.push(`rotate(${s.rot}deg)`);
+      if (tf.length) el.style.transform = tf.join(' ');
+    }
     if ('o' in s) { el.style.opacity = s.o; el.style.visibility = s.o <= 0.001 ? 'hidden' : 'visible'; }
-    if ('w' in s) el.style.width = s.w + 'px';
     if ('pct' in s) el.style.width = s.pct + '%';
-    if ('draw' in s) el.setAttribute('stroke-dashoffset', s.draw);
-    if ('arc' in s) el.setAttribute('stroke-dasharray', `${s.arc} ${100 - s.arc}`);
-    if ('blur' in s) el.style.filter = `blur(${s.blur}px)`;
-    if ('num' in s) el.textContent = fmt(s.num, +(el.dataset.d || 0));
   }
-  // blinkender Cursor
-  const c = document.getElementById('caret');
-  c.style.opacity = (t > 7.6 && t < 9.4) ? 1 : (Math.floor(t * 2.5) % 2 ? 0 : 1) * (t < 11.6 ? 1 : 0);
 }
 
-/* ================= Szene 1: Hook (0 – 3.6 s) ================= */
-tw('forest', 0, 3.8, { scale: [1.12, 1.0] }, 'lin');
-tw('forest', 3.8, 3.8, { scale: [1, 1] });
-tw('forest', 25.0, 30, { scale: [1.14, 1.02] }, 'lin');
-tw('forestWrap', 3.3, 3.8, { o: [1, 0] }, 'io');
-tw('forestWrap', 24.9, 25.5, { o: [0, 1] }, 'io');
+/* ================= Hook (0 – 3.2 s) ================= */
+tw('forest', 0, 3.4, { scale: [1.12, 1.0] }, 'lin');
+tw('forest', 31.8, 37, { scale: [1.14, 1.02] }, 'lin');
+tw('forestWrap', 2.9, 3.3, { o: [1, 0] }, 'io');
+tw('forestWrap', 31.7, 32.2, { o: [0, 1] }, 'io');
 tw('hookKicker', 0.2, 0.9, { o: [0, 1], x: [-40, 0] });
-tw('hookL1', 0.35, 1.05, { o: [0, 1], y: [70, 0] });
-tw('hookL2', 0.55, 1.25, { o: [0, 1], y: [70, 0] });
-tw('hookSub', 1.3, 2.0, { o: [0, 1], y: [30, 0] });
-tw('hook', 3.2, 3.6, { o: [1, 0], y: [0, -60] }, 'in');
+tw('hookL1', 0.3, 1.0, { o: [0, 1], y: [70, 0] });
+tw('hookL2', 0.5, 1.2, { o: [0, 1], y: [70, 0] });
+tw('hookSub', 1.2, 1.9, { o: [0, 1], y: [30, 0] });
+tw('hook', 2.8, 3.2, { o: [1, 0], y: [0, -60] }, 'in');
 
-/* ================= Szene 2: Logo (3.6 – 7.0 s) ================= */
-tw('logoScene', 3.3, 3.8, { o: [0, 1] }, 'io');
-tw('logoScene', 6.7, 7.1, { o: [1, 0] }, 'io');
-tw('lgW', 3.7, 4.4, { o: [0, 1], x: [-120, 0] }, 'out');
-tw('lgM', 3.85, 4.55, { o: [0, 1], x: [120, 0] }, 'out');
-tw('lgRule', 4.4, 5.0, { sx: [0, 1] }, 'io');
-tw('lgClaim', 4.7, 5.3, { o: [0, 1], y: [30, 0] });
-tw('leaf1', 3.6, 7.0, { y: [40, -40], rot: [0, 25] }, 'lin');
-tw('leaf2', 3.6, 7.0, { y: [60, -30], rot: [0, -20] }, 'lin');
-tw('leaf3', 3.6, 7.0, { y: [20, -60], rot: [0, 40] }, 'lin');
+/* ================= Logo (3.2 – 6.0 s) ================= */
+tw('logoScene', 2.9, 3.3, { o: [0, 1] }, 'io');
+tw('logoScene', 5.7, 6.1, { o: [1, 0] }, 'io');
+tw('lgW', 3.2, 3.9, { o: [0, 1], x: [-120, 0] });
+tw('lgM', 3.35, 4.05, { o: [0, 1], x: [120, 0] });
+tw('lgRule', 3.9, 4.5, { sx: [0, 1] }, 'io');
+tw('lgClaim', 4.2, 4.8, { o: [0, 1], y: [30, 0] });
+tw('leaf1', 3, 6, { y: [40, -40], rot: [0, 25] }, 'lin');
+tw('leaf2', 3, 6, { y: [60, -30], rot: [0, -20] }, 'lin');
+tw('leaf3', 3, 6, { y: [20, -60], rot: [0, 40] }, 'lin');
 
-/* ================= Feature-Teil (7.0 – 25.2 s) ================= */
-tw('features', 6.8, 7.2, { o: [0, 1] }, 'io');
-tw('features', 24.9, 25.4, { o: [1, 0] }, 'io');
-tw('phone', 7.0, 7.9, { y: [700, 0], rot: [6, 0] }, 'out');
-tw('phone', 24.6, 25.2, { y: [0, 120], scale: [1, .92] }, 'in');
-tw('blob1', 7, 25, { y: [0, -160] }, 'lin');
-tw('blob2', 7, 25, { y: [0, -220] }, 'lin');
-tw('dots', 7.2, 7.7, { o: [0, 1] });
-tw('d1', 7.3, 11.6, { pct: [0, 100] }, 'lin');
-tw('d2', 11.6, 16.0, { pct: [0, 100] }, 'lin');
-tw('d3', 16.0, 20.6, { pct: [0, 100] }, 'lin');
-tw('d4', 20.6, 25.0, { pct: [0, 100] }, 'lin');
-
-// Überschriften
-const heads = [['h1', 7.1, 11.4], ['h2', 11.6, 15.8], ['h3', 16.0, 20.4], ['h4', 20.6, 24.8]];
-for (const [id, a, b] of heads) {
-  tw(id, a + .15, a + .75, { o: [0, 1], y: [50, 0] });
-  tw(id, b - .3, b, { o: [1, 0], y: [0, -40] }, 'in');
+/* ================= Features (6.0 – 27.0 s) ================= */
+const STEPS = [['1', 6.0, 10.2], ['2', 10.2, 14.4], ['3', 14.4, 18.4], ['4', 18.4, 22.4], ['5', 22.4, 27.0]];
+tw('features', 5.8, 6.2, { o: [0, 1] }, 'io');
+tw('features', 26.8, 27.2, { o: [1, 0] }, 'io');
+tw('laptop', 5.9, 6.8, { y: [700, 0], scale: [.9, 1] }, 'out');
+tw('laptop', 26.4, 27.0, { y: [0, 120], scale: [1, .94] }, 'in');
+tw('blob1', 6, 27, { y: [0, -200] }, 'lin');
+tw('blob2', 6, 27, { y: [0, -260] }, 'lin');
+tw('dots', 6.1, 6.6, { o: [0, 1] });
+for (const [n, a, b] of STEPS) {
+  tw('d' + n, a + .1, b, { pct: [0, 100] }, 'lin');
+  tw('h' + n, a + .15, a + .75, { o: [0, 1], y: [50, 0] });
+  if (n !== '5') tw('h' + n, b - .3, b, { o: [1, 0], y: [0, -40] }, 'in');
+  if (document.getElementById('sub' + n)) {
+    tw('sub' + n, a + .7, a + 1.2, { o: [0, 1], y: [30, 0] });
+    tw('sub' + n, b - .3, b, { o: [1, 0] }, 'in');
+  }
 }
-// Screen-Wechsel (horizontal slide)
-const scr = [['scrA', 7.0, 11.6], ['scrB', 11.6, 16.0], ['scrC', 16.0, 20.6], ['scrD', 20.6, 99]];
-scr.forEach(([id, a, b], i) => {
-  if (i > 0) tw(id, a - .1, a + .45, { x: [560, 0] }, 'io'); else tw(id, 0, 0, { x: [0, 0] });
-  if (b < 99) tw(id, b - .1, b + .45, { x: [0, -560] }, 'io');
-});
 
-// A: Karte
-tw('typed', 7.7, 9.3, { w: [0, 190] }, 'lin');
-tw('parcel', 9.4, 10.2, { draw: [1, 0] }, 'io');
-tw('parcel', 9.4, 9.7, { o: [0, 1] }, 'lin');
-tw('parcel2', 10.0, 10.3, { o: [0, 1] }, 'lin');
-tw('parcel3', 10.2, 10.5, { o: [0, 1] }, 'lin');
-tw('parcel2', 10.0, 10.6, { draw: [1, 0] }, 'io');
-tw('parcel3', 10.2, 10.8, { draw: [1, 0] }, 'io');
-tw('pin', 9.9, 10.4, { y: [-300, 0] }, 'back');
-tw('pin', 9.85, 9.9, { scale: [0, 1] });
-tw('sheetA', 10.3, 10.9, { y: [300, 0] }, 'out');
-tw('fA', 10.4, 10.9, { o: [0, 1], y: [40, 0], scale: [.9, 1] }, 'back');
-tw('fA', 11.3, 11.6, { o: [1, 0] }, 'in');
+// 01 Übersicht: Gesamtansicht → Handlungsempfehlungen
+tw('sc1', 0, 0, { o: [1, 1] });
+cam('sc1', 7.0, 8.0, [958, 510, 1], [830, 300, 1.35]);
+cam('sc1', 8.4, 9.6, [830, 300, 1.35], [1505, 300, 2.6]);
 
-// B: Infos
-tw('cB1', 11.9, 12.4, { o: [0, 1], y: [30, 0] });
-tw('cB2', 12.0, 12.5, { o: [0, 1], y: [30, 0] });
-tw('cB3', 12.2, 12.7, { o: [0, 1], y: [30, 0] });
-tw('cB4', 12.5, 13.0, { o: [0, 1], y: [30, 0] });
-tw('nArea', 12.0, 13.4, { num: [0, 45.59] }, 'out');
-tw('nParc', 12.1, 13.0, { num: [0, 15] }, 'out');
-tw('nStock', 12.3, 14.0, { num: [0, 16613] }, 'out');
-tw('spark', 12.5, 14.0, { draw: [1, 0] }, 'io');
-tw('dn1', 12.8, 13.6, { arc: [0, 45] }, 'out');
-tw('dn2', 13.2, 13.9, { arc: [0, 30] }, 'out');
-tw('dn3', 13.5, 14.1, { arc: [0, 15] }, 'out');
-tw('dn4', 13.7, 14.3, { arc: [0, 10] }, 'out');
-tw('fB', 13.6, 14.1, { o: [0, 1], y: [40, 0], scale: [.9, 1] }, 'back');
-tw('fB', 15.6, 15.9, { o: [1, 0] }, 'in');
+// 02 Flurstücke & Karte: Gesamtansicht → Kartenebenen
+tw('sc2', 9.95, 10.35, { o: [0, 1] }, 'io');
+cam('sc2', 10.8, 12.1, [958, 510, 1], [1650, 420, 2.2]);
+// 03 Objekte: in die Baumarten-Karte, Menü „Neues Objekt“ poppt auf
+cam('sc2', 14.4, 15.5, [1650, 420, 2.2], [1610, 848, 3.4]);
+tw('menuCard', 15.0, 15.6, { o: [0, 1], y: [60, 0], scale: [.9, 1] }, 'back');
+tw('menuHi', 15.2, 15.2, { o: [0, 0] });
+tw('menuHi', 16.2, 16.5, { o: [0, 1] }, 'out');
+tw('menuCard', 18.0, 18.35, { o: [1, 0], y: [0, 40] }, 'in');
 
-// C: Maßnahme planen
-['t1', 't2', 't3', 't4', 't5', 't6'].forEach((id, i) => tw(id, 16.2 + i * .08, 16.7 + i * .08, { o: [0, 1], scale: [.85, 1] }, 'back'));
-tw('tSel', 17.2, 17.5, { o: [0, 1], scale: [1.1, 1] }, 'out');
-tw('t2', 17.15, 17.3, { scale: [1, .94] }, 'out');
-tw('t2', 17.3, 17.55, { scale: [.94, 1] }, 'back');
-tw('btnC', 17.7, 17.85, { scale: [1, .92] }, 'out');
-tw('btnC', 17.85, 18.1, { scale: [.92, 1] }, 'back');
-tw('fC', 18.1, 18.7, { o: [0, 1], y: [60, 0], scale: [.9, 1] }, 'back');
-tw('fC', 20.2, 20.5, { o: [1, 0] }, 'in');
+// 04 Maßnahmen (bald verfügbar)
+tw('sc4', 18.15, 18.55, { o: [0, 1] }, 'io');
+cam('sc4', 18.9, 20.0, [958, 510, 1], [960, 511, 1.95]);
+tw('soonTag', 19.0, 19.5, { o: [0, 1], scale: [.6, 1] }, 'back');
+tw('soonTag', 22.1, 22.4, { o: [1, 0] }, 'in');
 
-// D: Holz verkaufen
-tw('cD1', 20.8, 21.3, { o: [0, 1], y: [30, 0] });
-tw('nVol', 21.0, 22.0, { num: [0, 1491] }, 'out');
-tw('cD2', 21.1, 21.6, { o: [0, 1], y: [30, 0] });
-['bar1', 'bar2', 'bar3', 'bar4', 'bar5', 'bar6'].forEach((id, i) => tw(id, 21.3 + i * .08, 21.9 + i * .08, { sy: [0, 1] }, 'out'));
-tw('fD', 22.2, 22.8, { o: [0, 1], y: [80, 0], scale: [.9, 1] }, 'back');
-tw('btnD', 23.6, 23.75, { scale: [1, .95] }, 'out');
-tw('btnD', 23.75, 24.0, { scale: [.95, 1] }, 'back');
-tw('fD', 24.5, 24.9, { o: [1, 0], y: [0, 40] }, 'in');
+// 05 Marktplatz & Matching
+tw('sc5', 22.15, 22.55, { o: [0, 1] }, 'io');
+cam('sc5', 22.9, 24.0, [958, 510, 1], [590, 262, 2.5]);
+tw('ring5', 24.0, 24.4, { o: [0, 1], scale: [1.4, 1] }, 'out');
+tw('m1', 24.3, 24.8, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+tw('m2', 24.5, 25.0, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+tw('m3', 24.7, 25.2, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
 
-/* ================= CTA (25.2 – 30 s) ================= */
-tw('cta', 25.0, 25.4, { o: [0, 1] }, 'io');
-tw('ctaLogo', 25.3, 26.0, { o: [0, 1], y: [-40, 0], scale: [.9, 1] }, 'back');
-tw('ctaL1', 25.6, 26.3, { o: [0, 1], y: [60, 0] });
-tw('ctaL2', 25.8, 26.5, { o: [0, 1], y: [60, 0] });
-tw('ctaSub', 26.4, 27.0, { o: [0, 1], y: [30, 0] });
-tw('ctaBtn', 26.8, 27.4, { o: [0, 1], scale: [.7, 1] }, 'back');
-tw('ctaBtn', 28.2, 28.5, { scale: [1, 1.05] }, 'io');
-tw('ctaBtn', 28.5, 28.8, { scale: [1.05, 1] }, 'io');
-tw('ctaUrl', 27.3, 27.9, { o: [0, 1], y: [20, 0] });
-tw('ctaStats', 27.7, 28.3, { o: [0, 1], y: [30, 0] });
+/* ================= Preis (27.0 – 32.0 s) ================= */
+tw('pricing', 26.8, 27.2, { o: [0, 1] }, 'io');
+tw('pricing', 31.7, 32.1, { o: [1, 0] }, 'io');
+tw('pKick', 27.1, 27.7, { o: [0, 1], x: [-40, 0] });
+tw('pL1', 27.2, 27.9, { o: [0, 1], y: [60, 0] });
+tw('pL2', 27.5, 28.2, { o: [0, 1], y: [60, 0] });
+tw('li1', 28.3, 28.8, { o: [0, 1], x: [-60, 0] });
+tw('li2', 28.6, 29.1, { o: [0, 1], x: [-60, 0] });
+tw('li3', 28.9, 29.4, { o: [0, 1], x: [-60, 0] });
+tw('pNote', 29.6, 30.2, { o: [0, 1], y: [30, 0] });
+tw('pleaf1', 27, 32, { y: [0, -80], rot: [0, 20] }, 'lin');
+tw('pleaf2', 27, 32, { y: [0, -60], rot: [0, -15] }, 'lin');
 
-// Szenen-Sichtbarkeit (außerhalb ihres Fensters ausblenden)
+/* ================= CTA (32.0 – 37 s) ================= */
+tw('cta', 31.8, 32.2, { o: [0, 1] }, 'io');
+tw('ctaLogo', 32.1, 32.8, { o: [0, 1], y: [-40, 0], scale: [.9, 1] }, 'back');
+tw('ctaL1', 32.4, 33.1, { o: [0, 1], y: [60, 0] });
+tw('ctaL2', 32.6, 33.3, { o: [0, 1], y: [60, 0] });
+tw('ctaSub', 33.2, 33.8, { o: [0, 1], y: [30, 0] });
+tw('ctaBtn', 33.6, 34.2, { o: [0, 1], scale: [.7, 1] }, 'back');
+tw('ctaBtn', 35.0, 35.3, { scale: [1, 1.05] }, 'io');
+tw('ctaBtn', 35.3, 35.6, { scale: [1.05, 1] }, 'io');
+tw('ctaUrl', 34.1, 34.7, { o: [0, 1], y: [20, 0] });
+tw('ctaFine', 34.5, 35.1, { o: [0, 1], y: [20, 0] });
+
 tw('hook', 0, 0, { o: [1, 1] });
 
 window.DURATION = DURATION;
 window.render = render;
 window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
 
-// Vorschau im Browser: ?t=12.5 zeigt einen Frame, sonst Endlos-Loop in Echtzeit
+// Vorschau: ?t=12.5 zeigt einen Frame, sonst Endlos-Loop in Echtzeit
 const qt = new URLSearchParams(location.search).get('t');
 if (qt !== null) render(+qt);
 else if (!navigator.webdriver) {

@@ -1,37 +1,39 @@
 # WoodMatch – Werbeclip für Instagram & Facebook
 
-**Datei:** `woodmatch-reel-9x16.mp4` · 1080×1920 (9:16) · 30 s · 30 fps · H.264, ohne Ton
+**Datei:** `woodmatch-reel-9x16.mp4` · 1080×1920 (9:16) · 37 s · 30 fps · H.264 + AAC-Ton
 Passt für Instagram Reels/Stories, Facebook Reels/Stories und als 9:16-Anzeige im Meta-Werbeanzeigenmanager.
 
 ## Ablauf
-| Zeit | Szene | Botschaft |
+| Zeit | Szene | Inhalt |
 |---|---|---|
-| 0–3,5 s | Waldfoto, Hook | „Du hast Wald? Und weißt nicht genau, wo er liegt, was drinsteht – und was er wert ist?“ |
-| 3,5–7 s | Logo | WoodMatch – Die Plattform für Privatwaldbesitzer |
-| 7–11,5 s | 01 Wald finden | Flurnummer eingeben → Flurstücke auf der Karte |
-| 11,5–16 s | 02 Wald verstehen | Fläche, Baumarten, Holzvorrat (Dashboard) |
-| 16–20,5 s | 03 Profis finden | Maßnahme planen → Angebote geprüfter Forstprofis, Förderung |
-| 20,5–25 s | 04 Holz verkaufen | Polter anlegen → Angebot vom Sägewerk |
-| 25–30 s | Call-to-Action | „Dein Wald. In deiner Hand.“ · Kostenlos starten · app.woodmatch.de |
+| 0–3 s | Hook (Waldfoto) | „Du hast Wald? Und willst endlich wissen, was in ihm steckt?“ |
+| 3–6 s | Logo | WoodMatch – Die Plattform für Privatwaldbesitzer |
+| 6–10 s | 01 Überblick | Screenshot Übersicht, Zoom auf Handlungsempfehlungen |
+| 10–14 s | 02 Karte & Geodaten | Screenshot Flurstücke, Zoom auf Kartenebenen (Baumart, Kronenhöhe, Sentinel-2 …) |
+| 14–18 s | 03 Objekte | Baumarten-Karte + Menü „Neues Objekt“ (Polter setzen) |
+| 18–22 s | 04 Maßnahmen – **Bald verfügbar** | Screenshot Maßnahme-Assistent, deutlich als „Bald verfügbar“ markiert |
+| 22–27 s | 05 **Nur bei WoodMatch: Marktplatz mit Matching** | Screenshot Suche („Deine Flurstücke im Arbeitsgebiet“) + Match-Karten FBG / Forstprofis / Holzkäufer – Musik-Drop genau hier |
+| 27–32 s | Preis | Kostenlos starten. Kostenlos bleiben. Kein Abo · keine Grundgebühr · keine versteckten Kosten · Provision nur bei Vermittlung |
+| 32–37 s | Call-to-Action | „Dein Wald. In deiner Hand.“ · Kostenlos starten · app.woodmatch.de |
 
 ## Vorschlag Beitragstext
 
 > Du hast Wald – aber keinen Überblick? 🌲
 >
-> Mit WoodMatch findest du deine Flurstücke per Flurnummer, siehst Fläche, Baumarten und Holzvorrat auf einen Blick, findest geprüfte Forstprofis und verkaufst dein Holz direkt – ohne Zwischenhandel.
+> Mit WoodMatch siehst du deine Flurstücke mit Satelliten- und Geodaten, erfasst Bestände, Bäume und Polter – und findest über unseren Marktplatz mit Matching automatisch die passenden Partner: FBGs, Forstprofis und Holzkäufer.
 >
-> ✅ Kostenlos & unverbindlich
+> ✅ Kostenlos starten – und kostenlos bleiben
+> ✅ Kein Abo, keine Grundgebühr
 > ✅ Auch ohne forstliches Fachwissen
-> ✅ Bereits 340 Waldbesitzer & 1.200+ Hektar
 >
 > 👉 Jetzt starten: app.woodmatch.de
 >
 > #Privatwald #Waldbesitzer #Forstwirtschaft #Wald #Holzverkauf #Waldumbau #Nachhaltigkeit #WoodMatch
 
 ## Hinweise
-- **Musik:** Das Video hat bewusst keine Tonspur. Lizenzfreie Musik direkt in Instagram/Facebook aus der Musikbibliothek wählen (bei Anzeigen: „Sound Collection“ von Meta).
-- Beispieldaten im Clip (Waldemar, Polter „Althang“, 89 €/Efm, Anbieternamen) sind illustrativ – angelehnt an die Mockups auf woodmatch.de.
-- Die Zahlen im CTA (1.200+ ha, 340 Waldbesitzer, 0 €) stammen von woodmatch.de – vor dem Posten auf Aktualität prüfen.
+- **Musik:** „Forest“ von Damtaro (freetouse.com), Ausschnitt ab 0:11,6 mit Ein-/Ausblendung. Bitte die Lizenzbedingungen von freetouse.com prüfen (ggf. Credit in der Beschreibung: „Music: Damtaro – Forest, freetouse.com“).
+- **Screenshots** sind echte App-Screenshots (Account Olaf Kocanda). Die Flurstücksliste ist nur kurz und klein im Bild; bei Bedarf kann sie unkenntlich gemacht werden.
+- Maßnahmen sind als „Bald verfügbar“ gekennzeichnet. Keine Nutzer-/Flächenzahlen mehr im Video.
 
 ## Video anpassen & neu rendern
 Der Clip ist eine HTML-Animation (`index.html`), die Frame für Frame aufgenommen wird.
