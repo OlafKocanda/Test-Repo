@@ -26,7 +26,7 @@ Stand: 25.09.2026 · Grundlage: Briefing „WoodMatch – Briefing für Marketin
 | Comeback-Karussell „Es war still bei uns“ | 4:5, 4 Slides | `woodmatch-kampagne/posts/export/post-1-comeback/` | Erster organischer Post |
 | „Wusstest du? 48 % Privatwald“ | 4:5, 1 Bild | `woodmatch-kampagne/posts/export/post-2-wusstest-du/` | Zweiter organischer Post |
 | 6 Blog-Karussells (Waldwert, Wald geerbt, Borkenkäfer, Versicherung, Pflegevertrag, EUDR) | 4:5, je 6 Slides | `woodmatch-kampagne/posts/export/blog-*/` | Organisch, auf Facebook mit Link zum Artikel |
-| Eigene Musik (lizenzfrei, per Code erzeugt) | 40 s | `woodmatch-kampagne/video/musik/` | Liegt unter allen drei Videos |
+| Eigene Musik (lizenzfrei, per Code erzeugt) | 122 BPM, je Video passend geschnitten | `woodmatch-kampagne/video/musik/` | Motivierender Beat ab Sekunde 2, Drop bei 23,6 s (A, B) bzw. 7,9 s (kurz) |
 
 ## Bezahlter Test (500 €, ca. 4 Wochen)
 
