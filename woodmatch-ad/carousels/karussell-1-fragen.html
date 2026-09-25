@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><title>Karussell 1 – 5 Fragen</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  #stage { background: linear-gradient(90deg, #10231a 0%, #173222 45%, #1f3a20 80%, #24472a 100%); color: #fff; }
+  .kick { color: var(--mint); }
+  .q { top: 170px; font-size: 92px; color: #fff; }
+  .a { top: 430px; color: rgba(255,255,255,.86); }
+  .a b { color: var(--mint); font-weight: 700; }
+  .qn { position: absolute; left: 90px; top: 110px; font-size: 30px; font-weight: 800; letter-spacing: .14em; color: var(--mint); }
+  .glow { position: absolute; border-radius: 50%; filter: blur(60px); }
+  .legend { display: grid; gap: 16px; font-size: 30px; font-weight: 600; }
+  .legend span { display: flex; align-items: center; gap: 14px; }
+  .legend i { width: 24px; height: 24px; border-radius: 7px; display: block; }
+  .legend b { margin-left: auto; padding-left: 30px; }
+  .rec { display: flex; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 2px solid #eef1ec; font-size: 30px; font-weight: 700; }
+  .rec:last-child { border-bottom: 0; }
+  .rec .c { width: 48px; height: 48px; border-radius: 50%; flex: none; display: grid; place-items: center; font-size: 26px; color: #fff; background: var(--green); }
+  .rec .c.o { background: #fff; border: 3px solid #cfd8cc; color: transparent; }
+  .rec small { display: block; font-size: 22px; font-weight: 500; color: var(--muted); margin-top: 2px; }
+  .ex { position: absolute; right: 28px; top: 24px; font-size: 18px; font-weight: 800; letter-spacing: .08em; color: var(--muted); border: 2px solid #e1e5df; border-radius: 10px; padding: 4px 10px; }
+</style></head>
+<body><div id="stage"></div>
+<script src="shared.js"></script>
+<script>
+const N = 7, WW = N * W;
+const bg =
+  `<div class="glow" style="left:${WW - 900}px;top:200px;width:900px;height:700px;background:rgba(132,214,138,.20)"></div>` +
+  topoSVG(WW, 11, '#84d68a', .10) +
+  forestSVG(WW, 5, [
+    { y: 1230, hill: 50, step: 70, scale: .75, spruce: .6, tree: '#1c3a22', ground: '#1c3a22' },
+    { y: 1290, hill: 40, step: 60, scale: .9, spruce: .55, tree: '#12291a', ground: '#12291a' },
+    { y: 1345, hill: 24, step: 55, scale: 1.05, spruce: .5, tree: '#0b1c11', ground: '#0b1c11' },
+  ]) +
+  trailSVG(WW, [[160, 1110], [1080 + 900, 1100], [2160 + 900, 1130], [3240 + 900, 1100], [4320 + 900, 1130], [5400 + 900, 1100], [6480 + 700, 1120]], '#84d68a', [null, '1', '2', '3', '4', '5', null]);
+
+const slides = [
+  // 1 – Cover
+  `<div class="kick"><i></i>Für Privatwaldbesitzer</div>
+   <div class="h" style="top:230px;font-size:128px;color:#fff">Weißt du, was in deinem Wald <span style="color:var(--mint)">steckt?</span></div>
+   <div class="p" style="top:700px;color:rgba(255,255,255,.86)">5 Fragen, die sich fast jeder Waldbesitzer stellt – und wo du die Antworten findest.</div>
+   <div class="swipe" style="background:var(--mint);color:#10240f;bottom:260px">Wischen →</div>`,
+  // 2 – Wo liegt mein Wald?
+  `<div class="qn">FRAGE 1 / 5</div>
+   <div class="h q">Wo genau liegt mein Wald?</div>
+   <div class="p a">Flurnummer eingeben – <b>WoodMatch zeigt dir deine Flurstücke auf der Karte.</b></div>
+   <div class="card" style="left:90px;top:650px;width:900px;height:380px;overflow:hidden">
+     <svg width="900" height="380" viewBox="0 0 900 380">
+       <rect width="900" height="380" fill="#eef3e8"/>
+       <path d="M-10 290 C 200 260, 420 330, 620 280 S 860 240, 910 260" stroke="#fff" stroke-width="16" fill="none"/>
+       <path d="M300 -10 C 330 120, 280 220, 360 390" stroke="#b7d6e8" stroke-width="8" fill="none"/>
+       <g fill="#d6e6cb" stroke="#9fb89a" stroke-width="2" stroke-dasharray="7 6">
+         <path d="M60 60 L 250 40 L 270 190 L 80 210 Z"/><path d="M610 70 L 820 90 L 800 230 L 620 220 Z"/></g>
+       <path d="M390 80 L 560 60 L 590 220 L 410 245 Z" fill="rgba(45,141,49,.3)" stroke="#2d8d31" stroke-width="6" stroke-linejoin="round"/>
+       <g transform="translate(490 150)"><path d="M0 0 C -26 -34, -26 -70, 0 -70 C 26 -70, 26 -34, 0 0 Z" fill="#2d8d31"/><circle cx="0" cy="-48" r="10" fill="#fff"/></g>
+     </svg>
+     <div style="position:absolute;left:30px;bottom:26px;background:#fff;border-radius:16px;padding:12px 20px;font-size:26px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.12)">Flur 23 · Flurstück 7 · <span style="color:var(--green)">2,52 ha</span></div>
+     <div class="ex">BEISPIEL</div>
+   </div>`,
+  // 3 – Baumarten
+  `<div class="qn">FRAGE 2 / 5</div>
+   <div class="h q">Welche Bäume stehen drin?</div>
+   <div class="p a"><b>Baumarten aus Satellitendaten</b> – für jedes deiner Flurstücke, auch ohne Fachwissen.</div>
+   <div class="card" style="left:90px;top:650px;width:900px;height:380px;padding:50px 60px;display:flex;align-items:center;gap:60px">
+     <svg width="260" height="260" viewBox="0 0 42 42" style="transform:rotate(-90deg);flex:none">
+       <circle cx="21" cy="21" r="15.915" fill="none" stroke="#eef1ec" stroke-width="7"/>
+       <circle cx="21" cy="21" r="15.915" fill="none" stroke="#2d8d31" stroke-width="7" stroke-dasharray="45 55"/>
+       <circle cx="21" cy="21" r="15.915" fill="none" stroke="#84d68a" stroke-width="7" stroke-dasharray="30 70" stroke-dashoffset="-45"/>
+       <circle cx="21" cy="21" r="15.915" fill="none" stroke="#643c2d" stroke-width="7" stroke-dasharray="15 85" stroke-dashoffset="-75"/>
+       <circle cx="21" cy="21" r="15.915" fill="none" stroke="#c9a27e" stroke-width="7" stroke-dasharray="10 90" stroke-dashoffset="-90"/>
+     </svg>
+     <div class="legend" style="flex:1">
+       <span><i style="background:#2d8d31"></i>Fichte<b>45 %</b></span><span><i style="background:#84d68a"></i>Buche<b>30 %</b></span>
+       <span><i style="background:#643c2d"></i>Eiche<b>15 %</b></span><span><i style="background:#c9a27e"></i>Kiefer<b>10 %</b></span>
+     </div>
+     <div class="ex">BEISPIEL</div>
+   </div>`,
+  // 4 – Vorrat & Wert
+  `<div class="qn">FRAGE 3 / 5</div>
+   <div class="h q">Wie viel Holz – und was ist es wert?</div>
+   <div class="p a" style="top:530px"><b>Holzvorrat und Holzwert – geschätzt</b>, zur Orientierung.</div>
+   <div class="card" style="left:90px;top:700px;width:435px;height:300px;padding:44px 40px">
+     <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:var(--green)">HOLZVORRAT</div>
+     <div style="font-size:84px;font-weight:800;margin-top:14px">1.920<span style="font-size:40px;color:var(--muted)"> Fm</span></div>
+     <div style="font-size:24px;color:var(--muted);margin-top:8px">geschätzt</div></div>
+   <div class="card" style="left:555px;top:700px;width:435px;height:300px;padding:44px 40px">
+     <div style="font-size:24px;font-weight:700;letter-spacing:.1em;color:var(--brown)">HOLZWERT</div>
+     <div style="font-size:84px;font-weight:800;margin-top:14px">≈ 96<span style="font-size:40px;color:var(--muted)"> T€</span></div>
+     <div style="font-size:24px;color:var(--muted);margin-top:8px">zur Orientierung</div><div class="ex">BEISPIEL</div></div>`,
+  // 5 – Was tun?
+  `<div class="qn">FRAGE 4 / 5</div>
+   <div class="h q">Was sollte ich als Nächstes tun?</div>
+   <div class="p a" style="top:530px"><b>Persönliche Empfehlungen</b> – und Maßnahmen Schritt für Schritt planen.</div>
+   <div class="card" style="left:90px;top:700px;width:900px;height:350px;padding:10px 44px">
+     <div class="rec"><div class="c">✓</div><div>Flurstücke erfasst<small>8 Flurstücke · 6,6 ha</small></div></div>
+     <div class="rec"><div class="c o">·</div><div>Erste Maßnahme planen<small>Pflanzung, Durchforstung, Holzernte …</small></div><span class="pill" style="background:var(--green);margin-left:auto">+20 PUNKTE</span></div>
+     <div class="rec"><div class="c o">·</div><div>Waldbesitzer-Vereinigung finden<small>gemeinsam vermarkten & beraten lassen</small></div></div>
+   </div>`,
+  // 6 – Wer hilft?
+  `<div class="qn">FRAGE 5 / 5</div>
+   <div class="h q">Wer hilft mir dabei?</div>
+   <div class="p a"><b>Finde die Forstbetriebsgemeinschaft in deiner Nähe</b> – mit einem Klick.</div>
+   <div class="card" style="left:90px;top:650px;width:900px;height:380px;padding:48px 52px">
+     <div style="font-size:40px;font-weight:700">FBG in deiner Region</div>
+     <div style="margin-top:22px"><span class="pill" style="background:#34b53a">◎ DEINE FLURSTÜCKE IM ARBEITSGEBIET</span></div>
+     <div style="font-size:28px;color:var(--muted);margin-top:22px">Gemeinsam vermarkten, Maßnahmen bündeln, Beratung erhalten.</div>
+     <div class="btn" style="position:absolute;right:52px;bottom:44px;height:78px;padding:0 36px;font-size:30px;border-radius:18px;background:#2d8d31">✓ Beitritt angefragt</div>
+   </div>`,
+  // 7 – CTA
+  `<div class="card" style="left:190px;top:170px;width:700px;height:180px;display:grid;place-items:center"><img src="../assets/logo-woodmatch.svg" style="width:520px"></div>
+   <div class="h" style="top:450px;font-size:112px;text-align:center;left:60px;right:60px;color:#fff">Alle Antworten.<br><span style="color:var(--mint)">Eine Plattform.</span></div>
+   <div class="p" style="top:720px;text-align:center;color:rgba(255,255,255,.86)">Kostenlos starten – kein Abo, keine Grundgebühr.</div>
+   <div class="btn" style="position:absolute;left:240px;top:840px;width:600px;height:118px;font-size:46px">Jetzt starten →</div>
+   <div class="abs" style="left:0;right:0;top:990px;text-align:center;font-size:40px;font-weight:700;color:#fff">app.woodmatch.de</div>`,
+];
+buildStage(N, bg, slides);
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+</script></body></html>

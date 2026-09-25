@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><title>Karussell 2 – Kostenlos</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  #stage { background: var(--paper); }
+  .kick { color: var(--green); }
+  .big { position: absolute; font-weight: 800; letter-spacing: -.04em; line-height: .9; }
+  .tag { position: absolute; display: flex; align-items: center; gap: 26px; background: #fff; border-radius: 26px; padding: 30px 40px; font-size: 52px; font-weight: 800; box-shadow: 0 24px 60px rgba(31,58,32,.14), 0 4px 12px rgba(31,58,32,.08); }
+  .tag .x { width: 74px; height: 74px; border-radius: 50%; background: #fbe9e4; display: grid; place-items: center; flex: none; }
+  .tag .ok { background: #e2f2e1; }
+  .feat { display: flex; align-items: center; gap: 22px; font-size: 40px; font-weight: 700; padding: 18px 0; }
+  .feat i { width: 58px; height: 58px; border-radius: 16px; background: #e2f2e1; display: grid; place-items: center; font-style: normal; font-size: 30px; flex: none; }
+</style></head>
+<body><div id="stage"></div>
+<script src="shared.js"></script>
+<script>
+const N = 6, WW = N * W;
+const X = '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d9534f" stroke-width="3.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const C = '<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+const bg = topoSVG(WW, 23, '#2d8d31', .12) +
+  `<div class="abs" style="left:${W * 3}px;top:0;width:${W * 2}px;height:1350px;background:var(--forest)"></div>` +
+  forestSVG(WW, 9, [
+    { y: 1250, hill: 50, step: 75, scale: .7, spruce: .5, tree: '#cfe3c6', ground: '#cfe3c6' },
+    { y: 1310, hill: 30, step: 60, scale: .85, spruce: .5, tree: '#9cc79a', ground: '#9cc79a' },
+    { y: 1350, hill: 20, step: 55, scale: .95, spruce: .5, tree: '#2d8d31', ground: '#2d8d31' },
+  ]);
+
+const slides = [
+  // 1 – Frage
+  `<div class="kick"><i></i>Die ehrliche Antwort</div>
+   <div class="h" style="top:230px;font-size:140px">Was kostet <span style="color:var(--green)">WoodMatch?</span></div>
+   <div class="big" style="right:-30px;top:470px;font-size:600px;color:#e2f2e1">?</div>
+   <div class="p" style="top:620px;right:470px;color:var(--muted)">Die Frage bekommen wir am häufigsten. Hier ist die Antwort.</div>
+   <div class="swipe" style="background:var(--green);color:#fff;bottom:220px;left:90px;right:auto">Wischen →</div>`,
+  // 2 – 0 €
+  `<div class="kick"><i></i>Für Waldbesitzer</div>
+   <div class="big" style="left:70px;top:220px;font-size:520px;color:var(--green)">0 €</div>
+   <div class="h" style="top:720px;font-size:80px">Nutzungsgebühr.</div>
+   <div class="p" style="top:830px;color:var(--muted)">Kostenlos starten – <b style="color:var(--ink)">und kostenlos bleiben.</b></div>`,
+  // 3 – Kein …
+  `<div class="kick"><i></i>Das heißt konkret</div>
+   <div class="tag" style="left:90px;top:260px"><div class="x">${X}</div>Kein Abo</div>
+   <div class="tag" style="left:190px;top:450px"><div class="x">${X}</div>Keine Grundgebühr</div>
+   <div class="tag" style="left:90px;top:640px"><div class="x">${X}</div>Keine Laufzeit</div>
+   <div class="tag" style="left:190px;top:830px"><div class="x">${X}</div>Keine versteckten Kosten</div>`,
+  // 4 – Frage Geld (dunkel)
+  `<div class="kick" style="color:var(--mint)"><i></i>Berechtigte Frage</div>
+   <div class="h" style="top:260px;font-size:124px;color:#fff">Und wie verdient ihr dann <span style="color:var(--mint)">Geld?</span></div>
+   <div class="p" style="top:800px;color:rgba(255,255,255,.8)">Ganz transparent →</div>`,
+  // 5 – Provision (dunkel)
+  `<div class="kick" style="color:var(--mint)"><i></i>Unser Modell</div>
+   <div class="h" style="top:230px;font-size:104px;color:#fff">Nur über <span style="color:var(--mint)">Provision.</span></div>
+   <div class="p" style="top:500px;color:rgba(255,255,255,.88)">Wenn über den WoodMatch-Marktplatz ein Auftrag zustande kommt – zum Beispiel mit einem Forstdienstleister.</div>
+   <div class="card" style="left:90px;top:790px;width:900px;height:220px;padding:44px 50px;background:rgba(255,255,255,.08);box-shadow:none;border:2px solid rgba(132,214,138,.5);color:#fff">
+     <div style="font-size:44px;font-weight:800;line-height:1.2">Wir verdienen erst, wenn über uns <span style="color:var(--mint)">etwas zustande kommt.</span></div></div>`,
+  // 6 – CTA
+  `<div class="logo abs" style="left:90px;top:100px;font-size:56px"><span class="w">Wood</span><span class="m">Match</span></div>
+   <div class="h" style="top:200px;font-size:80px">Das bekommst du –<br><span style="color:var(--green)">für 0&nbsp;€:</span></div>
+   <div class="abs" style="left:90px;top:420px;right:90px">
+     <div class="feat"><i>${C}</i>Flurstücke auf der Karte</div>
+     <div class="feat"><i>${C}</i>Baumarten, Vorrat & Wert</div>
+     <div class="feat"><i>${C}</i>Bestände, Bäume & Polter</div>
+     <div class="feat"><i>${C}</i>Maßnahmen planen</div>
+     <div class="feat"><i>${C}</i>FBG in deiner Nähe finden</div>
+   </div>
+   <div class="btn" style="position:absolute;left:90px;top:960px;width:560px;height:110px;font-size:42px">Kostenlos starten →</div>
+   <div class="abs" style="left:680px;top:992px;font-size:34px;font-weight:700">app.woodmatch.de</div>`,
+];
+buildStage(N, bg, slides);
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+</script></body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><title>Karussell 3 – So geht's</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  #stage { background: linear-gradient(180deg, #eaf3e6 0%, #f4f8f1 100%); }
+  .kick { color: var(--green); }
+  .step { position: absolute; left: 90px; top: 100px; display: flex; align-items: center; gap: 20px; font-size: 30px; font-weight: 800; letter-spacing: .12em; color: var(--green); }
+  .step b { width: 70px; height: 70px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-size: 36px; letter-spacing: 0; }
+  .t { top: 200px; font-size: 88px; }
+  .d { top: 410px; color: var(--muted); }
+  .d b { color: var(--ink); }
+  .lap { position: absolute; left: 0; top: 560px; width: 1080px; }
+  .chip { display: inline-block; font-size: 28px; font-weight: 700; padding: 10px 20px; border-radius: 14px; background: #fff; box-shadow: 0 6px 18px rgba(31,58,32,.1); margin: 0 10px 12px 0; }
+</style></head>
+<body><div id="stage"></div>
+<script src="shared.js"></script>
+<script>
+const N = 6, WW = N * W;
+const bg = topoSVG(WW, 31, '#2d8d31', .10) +
+  forestSVG(WW, 17, [
+    { y: 1290, hill: 40, step: 80, scale: .6, spruce: .5, tree: '#cfe3c6', ground: '#cfe3c6' },
+    { y: 1350, hill: 20, step: 60, scale: .75, spruce: .5, tree: '#9cc79a', ground: '#9cc79a' },
+  ]);
+const lap = f => `<img class="lap" src="assets/${f}">`;
+
+const slides = [
+  `<div class="kick"><i></i>Schritt für Schritt</div>
+   <div class="h" style="top:200px;font-size:124px">So wird dein Wald <span style="color:var(--green)">digital.</span></div>
+   <div class="p" style="top:500px;color:var(--muted)">In 3 Schritten – ohne forstliches Fachwissen.</div>
+   ${lap('laptop-uebersicht.png')}
+   <div class="swipe" style="background:var(--green);color:#fff;bottom:90px">Wischen →</div>`,
+  `<div class="step"><b>1</b>SCHRITT 1</div>
+   <div class="h t">Flurstück suchen.</div>
+   <div class="p d">Gemarkung, Flur und Flurstücksnummer eingeben – <b>dein Wald erscheint auf der Karte.</b></div>
+   ${lap('laptop-suche-flurstueck.png')}`,
+  `<div class="step"><b>2</b>SCHRITT 2</div>
+   <div class="h t">Wald verstehen.</div>
+   <div class="p d" style="top:330px"><span class="chip">Baumart</span><span class="chip">Kronenhöhe</span><span class="chip">Biomasse</span><span class="chip">Satellit (NDVI)</span><br><b>Geodaten als Kartenebene</b> – per Klick.</div>
+   ${lap('laptop-karte-baumart.png')}`,
+  `<div class="step"><b>3</b>SCHRITT 3</div>
+   <div class="h t">Planen &amp; erfassen.</div>
+   <div class="p d"><b>Maßnahmen planen</b> – Pflanzung, Durchforstung, Holzernte & mehr, geführt in 4 Schritten.</div>
+   ${lap('laptop-massnahme.png')}`,
+  `<div class="step"><b>+</b>BONUS</div>
+   <div class="h t">Vernetzen.</div>
+   <div class="p d">Finde die <b>Forstbetriebsgemeinschaft in deiner Nähe</b> – und frag den Beitritt direkt an.</div>
+   ${lap('laptop-fbg.png')}`,
+  `<div class="card" style="left:190px;top:200px;width:700px;height:180px;display:grid;place-items:center"><img src="../assets/logo-woodmatch.svg" style="width:520px"></div>
+   <div class="h" style="top:480px;font-size:112px;text-align:center;left:60px;right:60px">Probier's <span style="color:var(--green)">aus.</span></div>
+   <div class="p" style="top:640px;text-align:center;color:var(--muted)">Kostenlos starten – kein Abo, keine Grundgebühr.</div>
+   <div class="btn" style="position:absolute;left:240px;top:780px;width:600px;height:118px;font-size:46px">Jetzt starten →</div>
+   <div class="abs" style="left:0;right:0;top:930px;text-align:center;font-size:40px;font-weight:700">app.woodmatch.de</div>`,
+];
+buildStage(N, bg, slides);
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+</script></body></html>
