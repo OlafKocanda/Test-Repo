@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><title>Post 2 – Wusstest du?</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  #stage { background: var(--forest); }
+  .kick { color: var(--mint); }
+  .big { position: absolute; left: 76px; top: 190px; font-size: 400px; font-weight: 800; letter-spacing: -.05em; line-height: .9; color: var(--mint); }
+</style></head>
+<body><div id="stage"></div>
+<script src="shared.js"></script>
+<script>
+const N = 1, WW = N * W;
+const bg = topoSVG(WW, 53, '#84d68a', .10) +
+  forestSVG(WW, 21, [
+    { y: 1290, hill: 40, step: 70, scale: .65, spruce: .6, tree: '#2c4d2d', ground: '#2c4d2d' },
+    { y: 1350, hill: 20, step: 55, scale: .8, spruce: .6, tree: '#142818', ground: '#142818' },
+  ]);
+const slides = [
+  `<div class="kick"><i></i>Wusstest du?</div>
+   <div class="big">48&nbsp;%</div>
+   <div class="h" style="top:590px;font-size:80px;color:#fff">des Waldes in Deutschland gehört <span style="color:var(--mint)">Privatleuten.</span></div>
+   <div class="p" style="top:860px;color:rgba(255,255,255,.85)">Gehörst du dazu? Dann ist WoodMatch für dich gemacht.</div>
+   <div class="abs" style="left:90px;bottom:80px;font-size:26px;font-weight:500;color:rgba(255,255,255,.55)">Quelle: Bundeswaldinventur 2022</div>
+   <div class="logo abs" style="right:90px;bottom:70px;font-size:40px"><span style="color:var(--mint)">Wood</span><span style="color:#fff">Match</span></div>`,
+];
+buildStage(N, bg, slides);
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
+</script></body></html>

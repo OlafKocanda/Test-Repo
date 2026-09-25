@@ -17,16 +17,16 @@ Stand: 25.09.2026 · Grundlage: Briefing „WoodMatch – Briefing für Marketin
 
 | Asset | Format | Datei | Einsatz |
 |---|---|---|---|
-| Video A: Produkt-Demo mit Waldemar | 9:16, 38 s | `woodmatch-ad/woodmatch-reel-9x16.mp4` | Anzeige + organisches Reel |
-| Video A kurz (19 s) | 9:16, 19 s | `woodmatch-kampagne/video/woodmatch-reel-kurz-9x16.mp4` | Anzeige (Hook → Flurnummer → Wald auf einen Blick → Kostenlos → CTA) |
-| Video B: „Waldemars Geschichte“ | 9:16, 31 s | `woodmatch-ad/woodmatch-reel-B-story.mp4` | Anzeige + organisches Reel |
+| Video A: Produkt-Demo mit Waldemar | 9:16, 38 s | `woodmatch-kampagne/video/woodmatch-reel-A-eigene-musik.mp4` | Organisches Reel |
+| Video A kurz | 9:16, 19 s | `woodmatch-kampagne/video/woodmatch-reel-kurz-eigene-musik.mp4` | Anzeige (Hook → Flurnummer → Wald auf einen Blick → Kostenlos → CTA) |
+| Video B: „Waldemars Geschichte“ | 9:16, 31 s | `woodmatch-kampagne/video/woodmatch-reel-B-eigene-musik.mp4` | Anzeige + organisches Reel |
 | Karussell 1: „Weißt du, was in deinem Wald steckt?“ | 4:5, 7 Slides | `woodmatch-ad/carousels/export/karussell-1-fragen/` | Organisch + dritte Anzeigenvariante |
 | Karussell 2: „Was kostet WoodMatch?“ | 4:5, 6 Slides | `…/karussell-2-kostenlos/` | Organisch (räumt den Einwand „Was kostet das?“ aus) |
 | Karussell 3: „So wird dein Wald digital“ | 4:5, 6 Slides | `…/karussell-3-so-gehts/` | Organisch + Retargeting auf Video-Zuschauer |
 | Comeback-Karussell „Es war still bei uns“ | 4:5, 4 Slides | `woodmatch-kampagne/posts/export/post-1-comeback/` | Erster organischer Post |
-| Umfrage „Was beschäftigt dich?“ | 4:5, 1 Bild | `woodmatch-kampagne/posts/export/post-2-umfrage/` | Zweiter organischer Post |
-| Karussell „Was ist dein Wald 2026 wert?“ | 4:5, 5 Slides | Canva: https://canva.link/7ory9ufugfhykgq | Nur als Entwurf, anderer Stil. Besser im Stil der Karussells 1–3 nachbauen |
-| Blog (6 Artikel) | Link | woodmatch.de/wissen | Karussells + Facebook-Link-Posts |
+| „Wusstest du? 48 % Privatwald“ | 4:5, 1 Bild | `woodmatch-kampagne/posts/export/post-2-wusstest-du/` | Zweiter organischer Post |
+| 6 Blog-Karussells (Waldwert, Wald geerbt, Borkenkäfer, Versicherung, Pflegevertrag, EUDR) | 4:5, je 6 Slides | `woodmatch-kampagne/posts/export/blog-*/` | Organisch, auf Facebook mit Link zum Artikel |
+| Eigene Musik (lizenzfrei, per Code erzeugt) | 40 s | `woodmatch-kampagne/video/musik/` | Liegt unter allen drei Videos |
 
 ## Bezahlter Test (500 €, ca. 4 Wochen)
 
@@ -49,23 +49,24 @@ UTM-Vorlage für alle Anzeigen:
 
 Die ersten 1–2 Wochen läuft das Profil organisch an, danach starten die Anzeigen. Wer dann auf eine Anzeige klickt, sieht schon ein gefülltes Profil.
 
-Vorlauf: Comeback-Karussell „Es war still bei uns“, 2–3 Tage später die Umfrage.
+Vorlauf: Comeback-Karussell „Es war still bei uns“, 2–3 Tage später „Wusstest du? 48 %“. Die Umfrage lieber als Story mit Umfrage-Sticker.
 
 | Woche | Mo | Mi | Fr |
 |---|---|---|---|
 | 1 | Karussell 1 „Weißt du, was in deinem Wald steckt?“ | Reel: Video A | Karussell 2 „Was kostet WoodMatch?“ |
-| 2 | Blog: „Wald geerbt: Was jetzt?“ | Reel: Video B | Karussell 3 „So wird dein Wald digital“ |
-| 3 | Blog: „Was ist mein Wald 2026 wert?“ | Reel: A1-Konzept „Was ist dein Wald wert?“ (neu drehen) | Blog: „Waldpflegevertrag“ |
-| 4 | Blog: „Borkenkäfer-Check“ | Reel: Andreas als Talking Head (A3) | Blog: „Waldversicherung“ / „EUDR“ |
+| 2 | Blog-Karussell „Wald geerbt“ | Reel: Video B | Blog-Karussell „Waldwert“ |
+| 3 | Karussell 3 „So wird dein Wald digital“ | Reel: A1-Konzept oder Video A kurz | Blog-Karussell „Waldpflegevertrag“ |
+| 4 | Blog-Karussell „Borkenkäfer“ | Reel: Andreas als Talking Head (A3) | Blog-Karussell „Waldversicherung“ |
+| 5 | Blog-Karussell „EUDR“ | | |
 
 Blog-Posts: Auf Instagram als Karussell mit „Link in Bio“ oder Link-Sticker in der Story, auf Facebook als Link-Post mit
 `?utm_source=facebook&utm_medium=organic&utm_campaign=blog` (bzw. `utm_source=instagram`).
 
-## Vor dem Start klären
+## Geklärt
 
-1. **„Keine Laufzeit“** (Karussell 2, Slide 3): Die Slide sagt, dass es keine Vertragslaufzeit gibt. Das stimmt nur, wenn Waldbesitzer jederzeit kündigen bzw. ihr Konto löschen können. Wenn ja, bleibt die Slide so.
-2. **Musik (geprüft):** Die kostenlose Lizenz von freetouse.com deckt nur private Inhalte (User-Generated Content) ab. **Werbeanzeigen und Firmen-Posts gelten als Commercial Content** und brauchen den Commercial Plan oder eine Pro-Lizenz für den einzelnen Track (Quelle: freetouse.com/license). Optionen: Lizenz kaufen oder die Tonspur durch lizenzfreie Musik aus der Meta Sound Collection ersetzen.
-3. **KI-Bilder in Video B:** Offenlegen reicht im Anzeigentext, z. B. am Ende: „Bilder KI-generiert, Personen fiktiv.“ Zusätzlich kann Meta automatisch das Label „KI-Info“ setzen.
+1. **„Keine Laufzeit“** (Karussell 2): stimmt, die Slide bleibt.
+2. **Musik:** Die kostenlose Lizenz von freetouse.com deckt keine Werbung und keine Firmen-Posts ab (freetouse.com/license). Deshalb ist die Tonspur in allen drei Videos durch eine **eigene, per Code erzeugte Musik** ersetzt (`video/musik/make_music.py`). Keine Samples, keine fremden Rechte. Die Originaldateien mit freetouse-Musik aus `woodmatch-ad/` nicht mehr verwenden.
+3. **KI-Bilder in Video B:** Im Anzeigentext am Ende ergänzen: „Bilder KI-generiert, Personen fiktiv.“ Meta setzt eventuell zusätzlich das Label „KI-Info“.
 4. **Matching „BALD“** (Video A) und **Beispielwerte** (1.920 Fm, ≈ 96 T€) bleiben so gekennzeichnet.
 
 ## Checkliste bis zum Start
@@ -74,7 +75,6 @@ Blog-Posts: Auf Instagram als Karussell mit „Link in Bio“ oder Link-Sticker 
 - [ ] UTM-Quelle bei der Registrierung speichern
 - [ ] Werbekonto anlegen, Facebook-Seite und Instagram verbinden, Ausgabenlimit von 500 € setzen
 - [ ] Link in Bio einrichten (Registrierung + Blog)
-- [ ] Offene Punkte 1–3 klären (Laufzeit, Musiklizenz, KI-Hinweis im Text)
-- [ ] Comeback-Post und Umfrage posten
+- [ ] Comeback-Post und „Wusstest du?“ posten
 - [ ] Woche 1 organisch posten
 - [ ] Anzeigen starten (ca. Mitte Oktober)
