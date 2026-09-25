@@ -1,26 +1,28 @@
 # WoodMatch – Werbeclip für Instagram & Facebook
 
-**Datei:** `woodmatch-reel-9x16.mp4` · 1080×1920 (9:16) · 37 s · 30 fps · H.264 + AAC-Ton
+**Datei:** `woodmatch-reel-9x16.mp4` · 1080×1920 (9:16) · 38 s · 30 fps · H.264 + AAC-Ton
 Passt für Instagram Reels/Stories, Facebook Reels/Stories und als 9:16-Anzeige im Meta-Werbeanzeigenmanager.
 
+Die App-Oberflächen sind **nach den echten Screenshots nachgebaut** (HTML) und animiert: Mauszeiger, Eingaben, hochzählende Kennzahlen, Kamerafahrten. Beispielnutzer: *Waldemar Holzhausen*, alle Flurstücks- und Objektdaten sind fiktiv.
+
 ## Ablauf
-| Zeit | Szene | Inhalt |
+| Zeit | Szene | Animation |
 |---|---|---|
-| 0–3 s | Hook (Waldfoto) | „Du hast Wald? Und willst endlich wissen, was in ihm steckt?“ |
-| 3–6 s | Logo | WoodMatch – Die Plattform für Privatwaldbesitzer |
-| 6–10 s | 01 Überblick | Screenshot Übersicht, Zoom auf Handlungsempfehlungen |
-| 10–14 s | 02 Karte & Geodaten | Screenshot Flurstücke, Zoom auf Kartenebenen (Baumart, Kronenhöhe, Sentinel-2 …) |
-| 14–18 s | 03 Objekte | Baumarten-Karte + Menü „Neues Objekt“ (Polter setzen) |
-| 18–22 s | 04 Maßnahmen – **Bald verfügbar** | Screenshot Maßnahme-Assistent, deutlich als „Bald verfügbar“ markiert |
-| 22–27 s | 05 **Nur bei WoodMatch: Marktplatz mit Matching** | Screenshot Suche („Deine Flurstücke im Arbeitsgebiet“) + Match-Karten FBG / Forstprofis / Holzkäufer – Musik-Drop genau hier |
-| 27–32 s | Preis | Kostenlos starten. Kostenlos bleiben. Kein Abo · keine Grundgebühr · keine versteckten Kosten · Provision nur bei Vermittlung |
-| 32–37 s | Call-to-Action | „Dein Wald. In deiner Hand.“ · Kostenlos starten · app.woodmatch.de |
+| 0–2,6 s | Hook (Waldfoto) | „Du hast Wald? Hol mehr aus ihm raus.“ |
+| 2,6–5 s | Logo | WoodMatch – Die Plattform für Privatwaldbesitzer |
+| 5–9,8 s | 01 Überblick | „Guten Morgen, Waldemar“ – Kennzahlen zählen hoch, Zoom auf Handlungsempfehlungen (Score 49) |
+| 9,8–14,8 s | 02 Flurstücke | Klick „Flurstück suchen“, Eingabe „Holzhausen · Flur 23 · 7“, Treffer in Tabelle + Karte, Kartenebene „Baumart“ wird eingeschaltet |
+| 14,8–19,2 s | 03 Objekte | „Neues Objekt“ → „Polter setzen“ → Klick in die Karte → „Polter angelegt · 48 Fm“ |
+| 19,2–23,4 s | 04 Maßnahmen | Assistent: „Holzernte“ wählen → Weiter → 2 Objekte auf der Karte auswählen |
+| 23,4–28 s | 05 **Nur bei WoodMatch: Marktplatz & Matching** | Suche: „Deine Flurstücke im Arbeitsgebiet“ → „Beitritt anfragen“ ✓ · danach **BALD:** automatisches Matching mit Forstprofis, Holzkäufern, Sägewerken – Musik-Drop hier |
+| 28–32,8 s | Preis | Kostenlos starten. Kostenlos bleiben. Kein Abo · keine Grundgebühr · keine versteckten Kosten · Provision nur bei Vermittlung |
+| 32,8–38 s | Call-to-Action | „Dein Wald. In deiner Hand.“ · Kostenlos starten · app.woodmatch.de |
 
 ## Vorschlag Beitragstext
 
 > Du hast Wald – aber keinen Überblick? 🌲
 >
-> Mit WoodMatch siehst du deine Flurstücke mit Satelliten- und Geodaten, erfasst Bestände, Bäume und Polter – und findest über unseren Marktplatz mit Matching automatisch die passenden Partner: FBGs, Forstprofis und Holzkäufer.
+> Mit WoodMatch siehst du deine Flurstücke mit Satelliten- und Geodaten, erfasst Bestände, Bäume und Polter – und planst Maßnahmen Schritt für Schritt und findest die FBG in deiner Nähe. Bald neu: automatisches Matching mit Forstprofis und Holzkäufern.
 >
 > ✅ Kostenlos starten – und kostenlos bleiben
 > ✅ Kein Abo, keine Grundgebühr
@@ -31,9 +33,9 @@ Passt für Instagram Reels/Stories, Facebook Reels/Stories und als 9:16-Anzeige 
 > #Privatwald #Waldbesitzer #Forstwirtschaft #Wald #Holzverkauf #Waldumbau #Nachhaltigkeit #WoodMatch
 
 ## Hinweise
-- **Musik:** „Forest“ von Damtaro (freetouse.com), Ausschnitt ab 0:11,6 mit Ein-/Ausblendung. Bitte die Lizenzbedingungen von freetouse.com prüfen (ggf. Credit in der Beschreibung: „Music: Damtaro – Forest, freetouse.com“).
-- **Screenshots** sind echte App-Screenshots (Account Olaf Kocanda). Die Flurstücksliste ist nur kurz und klein im Bild; bei Bedarf kann sie unkenntlich gemacht werden.
-- Maßnahmen sind als „Bald verfügbar“ gekennzeichnet. Keine Nutzer-/Flächenzahlen mehr im Video.
+- **Musik:** „Forest“ von Damtaro (freetouse.com), Ausschnitt ab 0:10,6 mit Ein-/Ausblendung. Bitte die Lizenzbedingungen von freetouse.com prüfen (ggf. Credit in der Beschreibung: „Music: Damtaro – Forest, freetouse.com“).
+- Maßnahmen sind als verfügbar dargestellt, das automatische Matching als „BALD“. Keine Nutzer-/Flächenzahlen im Video.
+- Die Kennzahlen im Dashboard (6,6 ha, 1.920 Fm, ≈ 96.000 €, 1.760 t) sind Beispielwerte der fiktiven Person.
 
 ## Video anpassen & neu rendern
 Der Clip ist eine HTML-Animation (`index.html`), die Frame für Frame aufgenommen wird.

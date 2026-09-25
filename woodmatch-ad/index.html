@@ -15,7 +15,8 @@
     --green-d: #246d27;
     --forest: #1f3a20;
     --forest-2: #2c4d2d;
-    --app-green: #3a6b40;
+    --app: #3a6b40;
+    --app-l: #e3eee2;
     --mint: #84d68a;
     --brown: #643c2d;
     --paper: #f7f9f5;
@@ -41,10 +42,10 @@
 
   /* ---------- Hook ---------- */
   #hook { color: #fff; }
-  #hook .kicker { left: 90px; top: 1010px; font-size: 34px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); display: flex; align-items: center; gap: 22px; }
+  #hook .kicker { left: 90px; top: 1050px; font-size: 34px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); display: flex; align-items: center; gap: 22px; }
   #hook .kicker i { display: block; width: 70px; height: 3px; background: var(--mint); }
-  #hook h1 { left: 86px; top: 1070px; font-size: 138px; line-height: 1.0; font-weight: 800; letter-spacing: -.02em; }
-  #hook p { left: 90px; top: 1360px; width: 860px; font-size: 50px; line-height: 1.3; font-weight: 500; color: rgba(255,255,255,.92); }
+  #hook h1 { left: 86px; top: 1110px; font-size: 150px; line-height: 1.0; font-weight: 800; letter-spacing: -.02em; }
+  #hook p { left: 90px; top: 1430px; font-size: 58px; font-weight: 600; color: rgba(255,255,255,.95); }
 
   /* ---------- Logo ---------- */
   #logoScene { background: var(--paper); }
@@ -55,7 +56,7 @@
   #logoScene .rule { left: 390px; top: 975px; width: 300px; height: 4px; background: var(--green); border-radius: 2px; }
   .leaf { position: absolute; background: var(--green); opacity: .12; }
 
-  /* ---------- Feature-Teil ---------- */
+  /* ---------- Feature-Rahmen ---------- */
   #features { background: var(--paper); }
   .bgblob { position: absolute; border-radius: 50%; }
   .stepHead { position: absolute; left: 70px; right: 60px; top: 250px; }
@@ -64,8 +65,9 @@
   .stepHead h2 { margin-top: 18px; font-size: 84px; line-height: 1.04; font-weight: 800; letter-spacing: -.015em; color: var(--ink); }
   .stepHead h2 em { font-style: normal; color: var(--green); }
   .stepHead p { margin-top: 22px; font-size: 36px; line-height: 1.3; font-weight: 500; color: var(--muted); }
-  .soon { display: inline-block; font-size: 24px; letter-spacing: .08em; font-weight: 800; color: #fff; background: var(--amber); padding: 7px 16px; border-radius: 12px; margin-left: 6px; }
-  .usp { display: inline-block; font-size: 24px; letter-spacing: .08em; font-weight: 800; color: #fff; background: var(--green); padding: 7px 16px; border-radius: 12px; }
+  .pill { display: inline-block; font-size: 24px; letter-spacing: .08em; font-weight: 800; color: #fff; padding: 7px 16px; border-radius: 12px; }
+  .pill.g { background: var(--green); }
+  .pill.a { background: var(--amber); }
 
   #dots { position: absolute; left: 70px; top: 200px; display: flex; gap: 12px; }
   #dots b { display: block; height: 10px; width: 44px; border-radius: 5px; background: #d8dfd4; overflow: hidden; position: relative; }
@@ -84,24 +86,111 @@
     background: linear-gradient(180deg, #d9ddd8 0%, #b9beb8 55%, #8e948d 100%); }
   #base::before { content: ""; position: absolute; left: 440px; top: 0; width: 180px; height: 12px; border-radius: 0 0 12px 12px; background: #a3a9a2; }
   #shadow { position: absolute; left: 20px; top: 575px; width: 960px; height: 50px; border-radius: 50%; background: rgba(31,58,32,.28); filter: blur(22px); }
-  .shot { position: absolute; left: 0; top: 0; width: 1916px; height: 1020px; transform-origin: 0 0; overflow: hidden; background: #fff; }
-  .shot > img { position: absolute; left: 0; top: 0; width: 1916px; }
-  .ring { position: absolute; border-radius: 14px; box-shadow: 0 0 0 5px var(--green), 0 0 0 16px rgba(45,141,49,.25); }
-  #soonTag { position: absolute; right: 30px; top: 30px; z-index: 5; font-size: 26px; font-weight: 800; letter-spacing: .06em; color: #fff; background: var(--amber); padding: 12px 22px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
 
-  /* Objekte-Menü (echter Screenshot) */
-  #menuCard { position: absolute; left: 600px; top: 760px; width: 432px; height: 642px; border-radius: 22px; overflow: hidden; z-index: 20;
-    box-shadow: 0 40px 80px rgba(31,58,32,.30), 0 8px 20px rgba(31,58,32,.15); background: #fff; }
-  #menuCard img { position: absolute; left: -2px; top: -2px; width: 436px; }
-  #menuHi { position: absolute; left: 44px; top: 297px; width: 350px; height: 42px; border-radius: 10px; background: rgba(45,141,49,.14); box-shadow: inset 0 0 0 3px var(--green); }
+  /* ================= Nachgebaute App (Designgröße 1600×852) ================= */
+  #app { position: absolute; left: 0; top: 0; width: 1600px; height: 852px; transform-origin: 0 0; background: #fff; overflow: hidden; font-size: 16px; }
+  #side { position: absolute; left: 0; top: 0; bottom: 0; width: 250px; background: #f4f6f3; border-right: 1px solid #e3e7e1; }
+  #side .lg { position: absolute; left: 24px; top: 20px; font-size: 30px; font-weight: 700; }
+  #side .sec { position: absolute; left: 24px; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #7b828b; }
+  .nav { position: absolute; left: 12px; width: 226px; height: 38px; border-radius: 8px; display: flex; align-items: center; gap: 12px; padding-left: 14px; font-size: 15.5px; font-weight: 600; color: #2f343b; z-index: 2; }
+  .nav svg { width: 18px; height: 18px; flex: none; }
+  .nav.on { color: #fff; }
+  #navHi { position: absolute; left: 12px; top: 92px; width: 226px; height: 38px; border-radius: 8px; background: var(--app); z-index: 1; }
+  #user { position: absolute; left: 12px; right: 12px; bottom: 60px; height: 58px; border-radius: 10px; background: #e9ece8; padding: 10px 14px 0 44px; font-size: 14px; font-weight: 600; }
+  #user small { display: block; font-size: 12px; color: #7b828b; font-weight: 500; margin-top: 2px; }
+  #user svg { position: absolute; left: 14px; top: 19px; width: 18px; height: 18px; }
+  #sideFoot { position: absolute; left: 0; right: 0; bottom: 0; height: 50px; border-top: 1px solid #e3e7e1; display: flex; justify-content: space-around; align-items: center; }
+  #sideFoot i { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--green); display: block; }
+
+  .page { position: absolute; left: 250px; top: 0; right: 0; bottom: 0; background: #fff; }
+  .page h1 { position: absolute; left: 40px; top: 22px; font-size: 32px; font-weight: 700; color: #111; }
+  .page .ps { position: absolute; left: 40px; top: 68px; font-size: 16px; color: #7b828b; }
+  .lbl { position: absolute; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #5d646d; }
+  .kc { position: absolute; width: 286px; height: 170px; border: 1px solid #e3e7e1; border-left: 4px solid var(--app); border-radius: 8px; background: #fff; padding: 20px 22px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .kc.br { border-left-color: #a0673f; }
+  .kc .ib { width: 46px; height: 46px; border-radius: 8px; background: #e6eee5; display: grid; place-items: center; }
+  .kc.br .ib { background: #fbe3cf; }
+  .kc .ib svg { width: 22px; height: 22px; }
+  .kc .vv { position: absolute; left: 82px; top: 22px; font-size: 34px; font-weight: 700; color: #111; white-space: nowrap; }
+  .kc .gs { position: absolute; left: 82px; top: 66px; font-size: 9px; font-weight: 800; letter-spacing: .06em; border: 1px solid #ddd; border-radius: 6px; padding: 2px 6px; }
+  .kc .kl { position: absolute; left: 22px; top: 112px; font-size: 16px; font-weight: 700; color: #222; }
+  .kc .ks { position: absolute; left: 22px; top: 136px; font-size: 13.5px; color: #7b828b; white-space: nowrap; }
+  .card { position: absolute; border: 1px solid #e3e7e1; border-radius: 8px; background: #fff; }
+  .rec { position: absolute; left: 14px; right: 14px; height: 106px; border: 1px solid #e3e7e1; border-left: 4px solid var(--app); border-radius: 8px; padding: 12px 14px 0 56px; background: #fff; }
+  .rec.bl { border-left-color: #5b8fc9; }
+  .rec .ri { position: absolute; left: 12px; top: 14px; width: 32px; height: 32px; border-radius: 8px; background: #e6eee5; display: grid; place-items: center; }
+  .rec .rt { font-size: 14px; font-weight: 700; color: #111; }
+  .rec .rd { font-size: 11.5px; color: #7b828b; margin-top: 5px; line-height: 1.3; }
+  .rec .rb { position: absolute; right: 12px; bottom: 10px; font-size: 13px; font-weight: 700; color: var(--app); background: var(--app-l); border-radius: 6px; padding: 4px 10px; }
+  .rec .pts { position: absolute; left: 56px; bottom: 12px; font-size: 9px; font-weight: 800; color: var(--app); background: #d7ecd4; border-radius: 6px; padding: 3px 7px; }
+
+  .btnG { position: absolute; height: 38px; border-radius: 8px; background: var(--app); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; padding: 0 14px; white-space: nowrap; }
+  .btnL { position: absolute; height: 38px; border-radius: 8px; background: #f1f3f0; color: #555; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; padding: 0 14px; }
+  .tbl { position: absolute; font-size: 13.5px; }
+  .tr { position: absolute; left: 0; right: 0; height: 44px; border-bottom: 1px solid #edf0ec; display: flex; align-items: center; }
+  .tr.hd { font-weight: 700; color: #222; font-size: 13px; }
+  .tr span { display: block; padding-left: 12px; white-space: nowrap; overflow: hidden; }
+  .tr .rt { text-align: right; padding-right: 12px; }
+  .rowHi { position: absolute; left: 0; right: 0; height: 44px; background: #e9f4e8; box-shadow: inset 4px 0 0 var(--green); }
+  .mapBox { position: absolute; border: 1px solid #e3e7e1; border-radius: 10px; overflow: hidden; background: #f2efe6; }
+  .mapBox svg { position: absolute; left: 0; top: 0; }
+  .layers { position: absolute; right: 14px; top: 14px; width: 300px; background: #fff; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.14); padding: 12px 14px 8px; }
+  .layers .lh { font-size: 12px; font-weight: 700; color: #6f7680; }
+  .layers .lh small { display: block; font-weight: 500; margin-top: 2px; }
+  .lr { position: relative; height: 44px; display: flex; align-items: center; gap: 10px; }
+  .lr .th { width: 32px; height: 32px; border-radius: 6px; flex: none; }
+  .lr .ln { font-size: 13px; font-weight: 700; color: #222; line-height: 1.15; }
+  .lr .ln small { display: block; font-size: 10.5px; font-weight: 500; color: #7b828b; }
+  .tg { position: absolute; right: 0; top: 14px; width: 30px; height: 16px; border-radius: 8px; background: #e2e5e1; }
+  .tg .on { position: absolute; inset: 0; border-radius: 8px; background: var(--app); }
+  .tg .kn { position: absolute; left: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+  .mctl { position: absolute; right: 12px; width: 30px; height: 30px; border-radius: 6px; background: var(--app); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 18px; }
+
+  .menu { position: absolute; width: 300px; background: #fff; border-radius: 8px; box-shadow: 0 8px 28px rgba(0,0,0,.16); padding: 6px; transform-origin: 20px 0; }
+  .mi { height: 36px; display: flex; align-items: center; gap: 10px; padding-left: 12px; font-size: 14px; border-radius: 6px; position: relative; }
+  .mi i { width: 14px; height: 14px; border-radius: 3px; display: block; flex: none; }
+  .mdiv { height: 1px; background: #eceeea; margin: 5px 0; }
+  .miHi { position: absolute; left: 6px; right: 6px; height: 36px; border-radius: 6px; background: #eaf3e9; box-shadow: inset 0 0 0 2px var(--app); }
+
+  .dim { position: absolute; inset: 0; background: rgba(20,24,22,.42); }
+  .modal { position: absolute; left: 360px; top: 150px; width: 880px; height: 590px; background: #fff; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+  .modal .mt { position: absolute; left: 24px; top: 20px; font-size: 18px; font-weight: 600; }
+  .stp { position: absolute; top: 62px; display: flex; align-items: center; gap: 10px; }
+  .stp b { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #cfd6ce; display: grid; place-items: center; font-size: 13px; color: #555; background: #f2f4f1; position: relative; }
+  .stp b s { position: absolute; inset: -2px; border-radius: 50%; background: var(--app); color: #fff; display: grid; place-items: center; text-decoration: none; }
+  .stp .st { font-size: 14px; font-weight: 700; }
+  .stp .st small { display: block; font-size: 11px; font-weight: 500; color: #7b828b; }
+  .sline { position: absolute; top: 78px; height: 2px; background: #dfe4de; }
+  .sline s { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--app); }
+  .tiles { position: absolute; left: 24px; top: 160px; width: 832px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .tile { position: relative; height: 100px; border: 1px solid #dfe4de; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; font-size: 14px; font-weight: 600; background: #fff; }
+  .tile .ti { width: 40px; height: 40px; border-radius: 6px; background: #e3efe2; display: grid; place-items: center; }
+  .tile .ti svg { width: 22px; height: 22px; }
+  .tile .sel { position: absolute; inset: -1px; border-radius: 6px; border: 2px solid var(--app); background: rgba(58,107,64,.07); }
+
+  .org { position: absolute; top: 170px; width: 395px; height: 228px; border: 1px solid #e3e7e1; border-radius: 8px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.05); padding: 22px 20px; }
+  .org .on_ { font-size: 17px; font-weight: 700; display: flex; gap: 10px; align-items: center; color: #111; }
+  .chipS { display: inline-block; font-size: 8.5px; font-weight: 800; letter-spacing: .04em; border-radius: 6px; padding: 3px 8px; }
+  .org .desc { font-size: 13px; color: #7b828b; font-style: italic; margin-top: 12px; }
+  .org .area { font-size: 11.5px; color: #7b828b; margin-top: 10px; }
+  .org .pa { position: absolute; left: 20px; bottom: 22px; height: 28px; border-radius: 6px; background: #e3eee2; color: #2f4f33; font-size: 12px; font-weight: 700; padding: 0 12px; display: flex; align-items: center; gap: 6px; }
+  .org .ba { position: absolute; right: 20px; bottom: 20px; height: 34px; width: 132px; border-radius: 6px; background: var(--app); color: #fff; font-size: 13.5px; font-weight: 700; display: grid; place-items: center; }
+
+  .toast { position: absolute; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.18); padding: 12px 16px 12px 50px; font-size: 14px; font-weight: 700; }
+  .toast small { display: block; font-size: 12px; color: #7b828b; font-weight: 500; margin-top: 2px; }
+  .toast .tk { position: absolute; left: 12px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
+
+  #cursor { position: absolute; left: 0; top: 0; width: 34px; height: 34px; z-index: 100; transform-origin: 4px 4px; }
+  #clickFx { position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%; border: 3px solid rgba(45,141,49,.8); }
 
   /* Matching-Karten */
-  .match { position: absolute; top: 1270px; width: 300px; height: 220px; background: #fff; border-radius: 26px; padding: 26px 24px;
+  .matchLbl { position: absolute; left: 70px; top: 1282px; font-size: 30px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 14px; }
+  .match { position: absolute; top: 1340px; width: 300px; height: 190px; background: #fff; border-radius: 26px; padding: 24px;
     box-shadow: 0 24px 50px rgba(31,58,32,.18), 0 5px 14px rgba(31,58,32,.08); }
-  .match .ic { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; background: #e8f3e7; }
-  .match .ic svg { width: 36px; height: 36px; }
-  .match .tt { margin-top: 16px; font-size: 32px; font-weight: 700; line-height: 1.1; }
-  .match .ok { position: absolute; left: 24px; bottom: 22px; font-size: 22px; font-weight: 800; letter-spacing: .06em; color: var(--green-d); background: #e2f2e1; padding: 6px 14px; border-radius: 10px; }
+  .match .ic { width: 60px; height: 60px; border-radius: 18px; display: grid; place-items: center; background: #e8f3e7; }
+  .match .ic svg { width: 34px; height: 34px; }
+  .match .tt { margin-top: 14px; font-size: 32px; font-weight: 700; line-height: 1.1; }
+  .match .ok { position: absolute; right: 22px; top: 26px; font-size: 20px; font-weight: 800; letter-spacing: .06em; color: #fff; background: var(--amber); padding: 5px 12px; border-radius: 10px; }
 
   /* ---------- Preis ---------- */
   #pricing { background: var(--forest); color: #fff; }
@@ -112,7 +201,6 @@
   #pricing .list { left: 90px; top: 800px; display: grid; gap: 34px; }
   #pricing .li { display: flex; align-items: center; gap: 28px; font-size: 52px; font-weight: 700; }
   #pricing .li .ck { width: 78px; height: 78px; border-radius: 50%; background: var(--green); display: grid; place-items: center; flex: none; }
-  #pricing .li small { display: block; font-size: 32px; font-weight: 500; color: rgba(255,255,255,.75); margin-top: 4px; }
   #pricing .note { left: 90px; right: 90px; top: 1270px; font-size: 40px; line-height: 1.35; font-weight: 500; color: rgba(255,255,255,.85); border-left: 6px solid var(--mint); padding-left: 30px; }
 
   /* ---------- CTA ---------- */
@@ -136,7 +224,7 @@
   <div id="hook" class="scene">
     <div class="abs kicker" id="hookKicker"><i></i>Privatwald</div>
     <h1 class="abs"><span id="hookL1" style="display:block">Du hast</span><span id="hookL2" style="display:block">Wald?</span></h1>
-    <p class="abs" id="hookSub">Und willst endlich wissen, was in ihm steckt – und was du daraus machen kannst?</p>
+    <p class="abs" id="hookSub">Hol mehr aus ihm raus.</p>
   </div>
 
   <!-- Logo -->
@@ -157,14 +245,14 @@
     <div id="dots"><b><s id="d1"></s></b><b><s id="d2"></s></b><b><s id="d3"></s></b><b><s id="d4"></s></b><b><s id="d5"></s></b></div>
 
     <div class="stepHead" id="h1"><div class="num"><i></i>01 · Überblick</div><h2>Dein Wald.<br><em>Auf einen Blick.</em></h2></div>
-    <div class="stepHead" id="h2"><div class="num"><i></i>02 · Karte &amp; Geodaten</div><h2>Satellit, Baumart,<br><em>Kronenhöhe.</em></h2></div>
-    <div class="stepHead" id="h3"><div class="num"><i></i>03 · Objekte</div><h2>Bestände, Bäume<br><em>&amp; Polter erfassen.</em></h2></div>
-    <div class="stepHead" id="h4"><div class="num"><i></i>04 · Maßnahmen <span class="soon">BALD VERFÜGBAR</span></div><h2>Maßnahmen planen.<br><em>Schritt für Schritt.</em></h2></div>
-    <div class="stepHead" id="h5"><div class="num"><span class="usp">NUR BEI WOODMATCH</span></div><h2>Marktplatz<br><em>mit Matching.</em></h2><p>Passende Partner finden dich – automatisch.</p></div>
+    <div class="stepHead" id="h2"><div class="num"><i></i>02 · Flurstücke</div><h2>Flurnummer eingeben.<br><em>Wald sehen.</em></h2></div>
+    <div class="stepHead" id="h3"><div class="num"><i></i>03 · Objekte</div><h2>Bestände &amp; Polter<br><em>einzeichnen.</em></h2></div>
+    <div class="stepHead" id="h4"><div class="num"><i></i>04 · Maßnahmen</div><h2>Maßnahmen planen.<br><em>Schritt für Schritt.</em></h2></div>
+    <div class="stepHead" id="h5"><div class="num"><span class="pill g">NUR BEI WOODMATCH</span></div><h2>Marktplatz<br><em>&amp; Matching.</em></h2><p>Finde schon heute die FBG in deiner Nähe.</p></div>
 
-    <div class="sub" id="sub1">Kennzahlen, Schätzungen und <b>persönliche Handlungsempfehlungen</b> für deinen digitalen Wald.</div>
-    <div class="sub" id="sub2"><b>Öffentliche Geodaten &amp; Satellitenbilder</b> für jedes deiner Flurstücke – ohne Fachwissen.</div>
-    <div class="sub" id="sub3" style="right:470px">Einfach auf der Karte <b>einzeichnen</b> – alles sicher dokumentiert.</div>
+    <div class="sub" id="sub1">Kennzahlen, Schätzungen und <b>persönliche Handlungsempfehlungen</b> für deinen Wald.</div>
+    <div class="sub" id="sub2"><b>Geodaten &amp; Satellitenbilder</b> für jedes Flurstück – Baumart, Kronenhöhe, Biomasse.</div>
+    <div class="sub" id="sub3">Bestände, Bäume &amp; Polter <b>direkt auf der Karte</b> – alles sicher dokumentiert.</div>
     <div class="sub" id="sub4">Pflanzung, Durchforstung, Holzernte &amp; mehr – <b>geführt in 4 Schritten.</b></div>
 
     <div id="laptop">
@@ -172,28 +260,205 @@
       <div id="base"></div>
       <div id="lid"><div id="cam"></div>
         <div id="screen">
-          <div class="shot" id="sc1"><img src="assets/screens/uebersicht.png"></div>
-          <div class="shot" id="sc2"><img src="assets/screens/flurstuecke.png"></div>
-          <div class="shot" id="sc4"><img src="assets/screens/massnahmen.png"></div>
-          <div class="shot" id="sc5"><img src="assets/screens/suche.png"><div class="ring" id="ring5" style="left:404px;top:228px;width:203px;height:24px"></div></div>
-          <div id="soonTag">BALD VERFÜGBAR</div>
+          <div id="app">
+            <!-- Sidebar -->
+            <div id="side">
+              <div class="lg"><span class="brand-wood">Wood</span><span class="brand-match">Match</span></div>
+              <div id="navHi"></div>
+              <div id="navItems"></div>
+              <div id="user"><svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Waldemar Holzhausen<small>Eigentümer</small></div>
+              <div id="sideFoot"><i></i><i></i><i></i><i></i></div>
+            </div>
+
+            <!-- Seite: Übersicht -->
+            <div class="page" id="pgHome">
+              <h1>Guten Morgen, Waldemar</h1>
+              <div class="ps">Willkommen in deinem digitalen Wald – Waldemar Holzhausen.</div>
+              <div class="lbl" style="left:40px;top:118px">KENNZAHLEN</div>
+              <div class="kc" style="left:40px;top:140px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="1"/><path d="M7 8v3M11 8v3M15 8v3M19 8v3"/></svg></div><div class="vv"><span id="nHa" data-d="1">0</span> ha</div><div class="kl">Waldfläche gesamt</div><div class="ks">über <span id="nFs">0</span> Flurstücke</div></div>
+              <div class="kc" style="left:342px;top:140px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg></div><div class="vv" id="nMa">0</div><div class="kl">Aktive Maßnahmen</div><div class="ks">1 geplant · 1 ausgeschrieben</div></div>
+              <div class="kc" style="left:644px;top:140px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2"><path d="M3 10v4h4l6 4V6L7 10H3z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg></div><div class="vv" id="nAu">0</div><div class="kl">Aktive Ausschreibungen</div><div class="ks">3 Bewerbungen eingegangen</div></div>
+              <div class="lbl" style="left:40px;top:328px">SCHÄTZUNGEN ⓘ</div>
+              <div class="kc br" style="left:40px;top:350px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#a0673f" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><div class="vv"><span id="nFm">0</span> Fm</div><div class="kl">Holzvorrat gesamt</div><div class="ks">aus dem geschätzten Gesamtbestand</div></div>
+              <div class="kc br" style="left:342px;top:350px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#a0673f" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-3-1.5c-1.7 0-3 .9-3 2s1.3 1.6 3 2 3 .9 3 2-1.3 2-3 2a3 3 0 0 1-3-1.5M12 6.5v11"/></svg></div><div class="vv">≈ <span id="nEur">0</span> €</div><div class="gs">GESCHÄTZT</div><div class="kl">Holzwert (Orientierung)</div><div class="ks">aus dem geschätzten Gesamtbestand</div></div>
+              <div class="kc br" style="left:644px;top:350px"><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="#a0673f" stroke-width="2"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5 19l7-7"/></svg></div><div class="vv"><span id="nCo">0</span> t</div><div class="kl">CO₂-Speicher</div><div class="ks">im stehenden Holz gebunden</div></div>
+              <div class="lbl" style="left:40px;top:540px">AUSWERTUNGEN</div>
+              <div class="card" style="left:40px;top:562px;width:890px;height:250px;border-left:4px solid #5b8fc9">
+                <div style="position:absolute;left:22px;top:20px;font-size:16px;font-weight:700">Fläche je Bestand</div>
+                <div style="position:absolute;left:22px;top:42px;font-size:12px;color:#7b828b">Schätzwerte – keine Verkaufsgrundlage. Gesamt: 6,6 ha.</div>
+                <div id="bars"></div>
+              </div>
+              <div class="lbl" style="left:950px;top:118px">AKTUELLES</div>
+              <div class="card" style="left:950px;top:140px;width:360px;height:410px">
+                <div style="position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:8px;background:#fbe3cf;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0673f" stroke-width="2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18"/></svg></div>
+                <div style="position:absolute;left:56px;top:14px;font-size:15px;font-weight:700">Handlungsempfehlungen</div>
+                <div style="position:absolute;left:56px;top:34px;font-size:11.5px;color:#7b828b">3 offen</div>
+                <svg style="position:absolute;right:14px;top:10px;transform:rotate(-90deg)" width="44" height="44" viewBox="0 0 42 42"><circle cx="21" cy="21" r="16" fill="none" stroke="#eee" stroke-width="5"/><circle id="ring" cx="21" cy="21" r="15.915" fill="none" stroke="#c0692e" stroke-width="5" stroke-dasharray="0 100" stroke-linecap="round"/></svg>
+                <div id="nScore" style="position:absolute;right:14px;top:10px;width:44px;height:44px;display:grid;place-items:center;font-size:12px;font-weight:800">0</div>
+                <div class="rec" id="rec1" style="top:66px"><div class="ri"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 12h6M9 16h4"/></svg></div><div class="rt">Erste Maßnahme planen</div><div class="rd">Pflanzung, Ernte, Verkehrssicherung … – wir führen dich Schritt für Schritt.</div><div class="pts">+20 PUNKTE</div><div class="rb">Maßnahme planen ›</div></div>
+                <div class="rec" id="rec2" style="top:182px"><div class="ri"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg></div><div class="rt">Waldbesitzer-Vereinigung finden</div><div class="rd">Gemeinsam vermarkten, Maßnahmen bündeln und von Beratung profitieren.</div><div class="rb">Zusammenschlüsse suchen ›</div></div>
+                <div class="rec bl" id="rec3" style="top:298px"><div class="ri" style="background:#e1ecf7"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8fc9" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="rt">Profil vervollständigen (1/5)</div><div class="rd">Vollständige Profile wirken seriöser und werden zuerst vorgeschlagen.</div></div>
+              </div>
+              <div class="card" style="left:950px;top:566px;width:360px;height:246px">
+                <div style="position:absolute;left:18px;top:18px;font-size:15px;font-weight:700">📣 Bekanntmachungen</div>
+                <div style="position:absolute;left:18px;right:18px;top:60px;background:#f5f8f4;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.4"><b>FBG Holzhausen</b> · vor 2 Tagen<br><span style="color:#6f7680">Sammelbestellung Pflanzgut bis 15.10. – jetzt Bedarf melden.</span></div>
+              </div>
+            </div>
+
+            <!-- Seite: Flurstücke -->
+            <div class="page" id="pgParc">
+              <h1>Meine Flurstücke</h1>
+              <div class="ps">Hier verwaltest du deine Flurstücke und Objekte</div>
+              <div class="card" style="left:40px;top:100px;width:700px;height:730px"></div>
+              <div class="btnG" id="btnSearch" style="left:56px;top:116px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/></svg>Flurstück suchen</div>
+              <div class="btnL" style="left:222px;top:116px">🗑 Löschen</div>
+              <div class="tbl" style="left:56px;top:176px;width:668px">
+                <div class="tr hd" style="top:0"><span style="width:150px">Gemeinde</span><span style="width:160px">Gemarkung</span><span style="width:60px" class="rt">Flur</span><span style="width:90px" class="rt">Flurstück</span><span style="width:120px">Lage</span><span style="width:88px" class="rt">Fläche [ha]</span></div>
+                <div class="rowHi" id="pRowHi" style="top:44px"></div>
+                <div id="pRows"></div>
+              </div>
+              <div id="searchPop" class="card" style="left:56px;top:162px;width:560px;height:118px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:5;padding:16px 18px">
+                <div style="font-size:13px;font-weight:700;color:#444">Flurstück suchen</div>
+                <div style="position:absolute;left:18px;top:44px;width:400px;height:44px;border:2px solid var(--app);border-radius:8px;display:flex;align-items:center;padding:0 12px;gap:8px;font-size:16px">
+                  <span style="color:#9aa0a6;font-size:13px;white-space:nowrap">Gemarkung · Flur · Nr.</span><b id="typed" data-text="Holzhausen · Flur 23 · 7" style="font-weight:600;white-space:nowrap"></b><i id="caret" style="display:block;width:2px;height:22px;background:var(--app)"></i>
+                </div>
+                <div class="btnG" id="btnFind" style="left:432px;top:47px">Suchen</div>
+              </div>
+              <div class="mapBox" id="map1" style="left:760px;top:100px;width:570px;height:730px"></div>
+            </div>
+
+            <!-- Seite: Objekte -->
+            <div class="page" id="pgObj">
+              <h1>Meine Objekte</h1>
+              <div class="ps">Hier verwaltest du deine Flurstücke und Objekte</div>
+              <div class="card" style="left:40px;top:100px;width:700px;height:730px"></div>
+              <div class="btnG" id="btnNew" style="left:56px;top:116px">＋ Neues Objekt ⌄</div>
+              <div class="btnL" style="left:216px;top:116px">✎ Bearbeiten</div>
+              <div class="tbl" style="left:56px;top:176px;width:668px">
+                <div class="tr hd" style="top:0"><span style="width:110px">Typ</span><span style="width:230px">Name</span><span style="width:170px">Baumart / Sortiment</span><span style="width:150px" class="rt">Fläche / Menge</span></div>
+                <div class="tr" style="top:44px"><span style="width:110px">🌳 Bestand</span><span style="width:230px">Buchen-Mischwald</span><span style="width:170px">Buche, Eiche</span><span style="width:150px" class="rt">2,6 ha</span></div>
+                <div class="tr" style="top:88px"><span style="width:110px">🌲 Bestand</span><span style="width:230px">Fichte Nordhang</span><span style="width:170px">Fichte</span><span style="width:150px" class="rt">2,5 ha</span></div>
+                <div class="tr" style="top:132px"><span style="width:110px">🌳 Baum</span><span style="width:230px">Habitatbaum Eiche</span><span style="width:170px">Eiche</span><span style="width:150px" class="rt">–</span></div>
+                <div class="rowHi" id="oRowHi" style="top:176px"></div>
+                <div class="tr" id="oRowNew" style="top:176px"><span style="width:110px">🪵 Polter</span><span style="width:230px">Polter am Waldweg</span><span style="width:170px">Fi/Ta L2b</span><span style="width:150px" class="rt">48 Fm</span></div>
+              </div>
+              <div class="menu" id="menuNew" style="left:56px;top:160px;z-index:5">
+                <div class="miHi" id="miHi" style="top:78px"></div>
+                <div class="mi"><i style="background:#5b8fc9"></i>Bestand einzeichnen</div>
+                <div class="mi"><i style="background:#3f9a44"></i>Baum setzen</div>
+                <div class="mi"><i style="background:#e0a060"></i>Polter setzen</div>
+                <div class="mi"><i style="background:#d9534f"></i>Kalamität einzeichnen</div>
+                <div class="mi"><i style="background:#a58bd6"></i>Bereich einzeichnen</div>
+                <div class="mdiv"></div>
+                <div class="mi"><i style="background:#5b8fc9"></i>Bestand für Flurstücke erstellen</div>
+                <div class="mi"><i style="background:#d9534f"></i>Kalamität für Flurstücke erstellen</div>
+                <div class="mi"><i style="background:#a58bd6"></i>Bereich für Flurstücke erstellen</div>
+              </div>
+              <div class="mapBox" id="map2" style="left:760px;top:100px;width:570px;height:730px"></div>
+              <svg id="polterPin" style="position:absolute;left:1040px;top:470px;overflow:visible" width="1" height="1">
+                <ellipse cx="0" cy="4" rx="12" ry="5" fill="rgba(0,0,0,.25)"/>
+                <path d="M0 0 C -22 -30, -22 -60, 0 -60 C 22 -60, 22 -30, 0 0 Z" fill="#a0673f" stroke="#fff" stroke-width="3"/>
+                <g transform="translate(-10 -48)" fill="#fff"><circle cx="5" cy="14" r="4"/><circle cx="15" cy="14" r="4"/><circle cx="10" cy="7" r="4"/></g>
+              </svg>
+              <div class="toast" id="polterToast" style="left:1080px;top:380px;width:230px"><div class="tk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>Polter angelegt<small>Fi/Ta L2b · 48 Fm · abfuhrbereit</small></div>
+            </div>
+
+            <!-- Seite: Maßnahmen -->
+            <div class="page" id="pgMass">
+              <h1>Maßnahmen</h1>
+              <div class="ps">Hier planst du deine Maßnahmen</div>
+              <div class="card" style="left:40px;top:100px;width:1270px;height:730px"></div>
+              <div class="btnG" style="left:56px;top:116px">＋ Maßnahme planen</div>
+              <div class="tbl" style="left:56px;top:176px;width:1238px">
+                <div class="tr hd" style="top:0"><span style="width:300px">Name</span><span style="width:250px">Maßnahme</span><span style="width:200px">Status</span><span style="width:200px">Sichtbarkeit</span><span style="width:200px">Erstellt am</span></div>
+                <div class="tr" style="top:44px"><span style="width:300px">Pflanzung Perspektivisch</span><span style="width:250px">Pflanzung</span><span style="width:200px"><b class="chipS" style="background:#eee">GEPLANT</b></span><span style="width:200px"><b class="chipS" style="background:#eee">PRIVAT</b></span><span style="width:200px">12.09.2026</span></div>
+              </div>
+            </div>
+            <div id="massOverlay" style="position:absolute;inset:0">
+              <div class="dim"></div>
+              <div class="modal" id="modal">
+                <div class="mt">Maßnahme planen</div>
+                <div style="position:absolute;right:22px;top:18px;font-size:20px;color:#666">✕</div>
+                <div class="sline" style="left:170px;width:120px"><s id="sl1"></s></div>
+                <div class="sline" style="left:400px;width:110px"></div>
+                <div class="sline" style="left:620px;width:100px"></div>
+                <div class="stp" style="left:24px"><b style="border-color:var(--app)">1</b><div class="st">Maßnahme<small>Art des Auftrags</small></div></div>
+                <div class="stp" style="left:300px"><b>2<s id="st2">2</s></b><div class="st">Objekte<small>Auswahl auf der Karte</small></div></div>
+                <div class="stp" style="left:520px"><b>3</b><div class="st">Details<small>Zusatzinfos</small></div></div>
+                <div class="stp" style="left:730px"><b>4</b><div class="st">Speichern<small>Name &amp; Sichtbarkeit</small></div></div>
+                <div id="mStep1">
+                  <div style="position:absolute;left:24px;top:128px;font-size:15px;font-weight:700">Welche Maßnahme möchtest du planen?</div>
+                  <div class="tiles" id="tiles"></div>
+                </div>
+                <div id="mStep2">
+                  <div style="position:absolute;left:24px;top:128px;font-size:15px;font-weight:700">Welche Objekte sind betroffen? <span style="font-weight:500;color:#7b828b">– Auswahl auf der Karte</span></div>
+                  <div class="mapBox" style="left:24px;top:160px;width:832px;height:336px">
+                    <svg width="832" height="336" viewBox="0 0 832 336">
+                      <rect width="832" height="336" fill="#e7eddc"/>
+                      <path d="M0 250 C 200 230, 380 280, 560 240 S 760 200, 832 220" stroke="#fff" stroke-width="12" fill="none"/>
+                      <path d="M60 40 L 380 20 L 420 200 L 90 230 Z" fill="#cfe0c3" stroke="#8aa886" stroke-width="2" stroke-dasharray="6 5"/>
+                      <path d="M440 40 L 760 60 L 740 210 L 460 190 Z" fill="#cfe0c3" stroke="#8aa886" stroke-width="2" stroke-dasharray="6 5"/>
+                      <path id="selA" d="M60 40 L 380 20 L 420 200 L 90 230 Z" fill="rgba(58,107,64,.35)" stroke="#3a6b40" stroke-width="4"/>
+                      <path id="selB" d="M440 40 L 760 60 L 740 210 L 460 190 Z" fill="rgba(58,107,64,.35)" stroke="#3a6b40" stroke-width="4"/>
+                      <text x="200" y="130" font-size="16" font-weight="700" fill="#2f4f33">Fichte Nordhang</text>
+                      <text x="540" y="130" font-size="16" font-weight="700" fill="#2f4f33">Buchen-Mischwald</text>
+                    </svg>
+                  </div>
+                  <div id="selCount" style="position:absolute;left:160px;top:540px;font-size:14px;font-weight:700;color:var(--app)">✓ 2 Objekte ausgewählt · 5,1 ha</div>
+                </div>
+                <div class="btnL" style="left:24px;top:530px;background:#fff;border:1px solid #ddd;color:#222" id="btnCancel">Abbrechen</div>
+                <div class="btnG" id="btnNext" style="left:776px;top:530px">Weiter</div>
+              </div>
+            </div>
+
+            <!-- Seite: Suche -->
+            <div class="page" id="pgSearch">
+              <h1>Suche</h1>
+              <div class="ps">Finde forstwirtschaftliche Organisationen.</div>
+              <div class="card" style="left:40px;top:100px;width:1270px;height:330px"></div>
+              <div style="position:absolute;left:62px;top:122px;width:450px;height:34px;border:1px solid #dcdfdb;border-radius:6px;font-size:13.5px;color:#9aa0a6;display:flex;align-items:center;padding-left:12px">🔍&nbsp; Organisation nach Name suchen</div>
+              <div class="org" id="org1" style="left:62px">
+                <div class="on_"><span style="color:var(--green)">▦</span>Forstbetriebsvereinigung Holzhausen e.V.</div>
+                <div style="margin-top:12px"><b class="chipS" style="background:#f1f1f1;color:#333">FORSTBETRIEBSVEREINIGUNG (FBV)</b></div>
+                <div style="margin-top:8px;position:relative;display:inline-block"><b class="chipS" style="background:#34b53a;color:#fff">◎ DEINE FLURSTÜCKE IM ARBEITSGEBIET</b><div id="badgeRing" style="position:absolute;inset:-5px;border-radius:9px;box-shadow:0 0 0 3px #2d8d31, 0 0 0 9px rgba(45,141,49,.25)"></div></div>
+                <div class="desc">Gemeinsam vermarkten, Maßnahmen bündeln.</div>
+                <div class="area">◎ Arbeitsgebiet: Holzhausen</div>
+                <div class="pa">👁 Profil ansehen</div>
+                <div class="ba" id="ba1">Beitritt anfragen</div>
+                <div class="ba" id="ba1ok" style="background:#2d8d31">✓ Anfrage gesendet</div>
+              </div>
+              <div class="org" style="left:477px">
+                <div class="on_"><span style="color:var(--green)">▦</span>FBG Hessische Rhön</div>
+                <div class="desc">Keine Beschreibung hinterlegt.</div>
+                <div class="pa">👁 Profil ansehen</div><div class="ba">Beitritt anfragen</div>
+              </div>
+              <div class="org" style="left:892px">
+                <div class="on_"><span style="color:var(--green)">▦</span>FBG Odenwald</div>
+                <div class="desc">Keine Beschreibung hinterlegt.</div>
+                <div class="pa">👁 Profil ansehen</div><div class="ba">Beitritt anfragen</div>
+              </div>
+            </div>
+
+            <!-- Mauszeiger -->
+            <div id="cursor"><div id="clickFx"></div><svg width="34" height="34" viewBox="0 0 24 24"><path d="M4 2l15 11-6.5 1.2L16 21l-3 1.4-3.4-6.8L4 19z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="menuCard"><img src="assets/screens/objekte-menu.png"><div id="menuHi"></div></div>
-
+    <!-- Matching (bald) -->
+    <div class="matchLbl" id="mLbl"><span class="pill a">BALD</span>Automatisches Matching mit …</div>
     <div class="match" id="m1" style="left:60px">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
-      <div class="tt">FBG vor Ort</div><div class="ok">✓ MATCH</div>
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+      <div class="tt">Forstprofis</div>
     </div>
     <div class="match" id="m2" style="left:390px">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
-      <div class="tt">Forstprofis</div><div class="ok">✓ MATCH</div>
+      <div class="ic" style="background:#f3ece8"><svg viewBox="0 0 24 24" fill="none" stroke="#643c2d" stroke-width="2"><circle cx="6" cy="16" r="3"/><circle cx="12" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><circle cx="9" cy="10.5" r="3"/><circle cx="15" cy="10.5" r="3"/></svg></div>
+      <div class="tt">Holzkäufern</div>
     </div>
     <div class="match" id="m3" style="left:720px">
-      <div class="ic" style="background:#f3ece8"><svg viewBox="0 0 24 24" fill="none" stroke="#643c2d" stroke-width="2"><circle cx="6" cy="16" r="3"/><circle cx="12" cy="16" r="3"/><circle cx="18" cy="16" r="3"/><circle cx="9" cy="10.5" r="3"/><circle cx="15" cy="10.5" r="3"/></svg></div>
-      <div class="tt">Holzkäufer</div><div class="ok">✓ MATCH</div>
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2d8d31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+      <div class="tt">Sägewerken</div>
     </div>
   </div>
 
@@ -216,7 +481,7 @@
     <div id="ctaShade"></div>
     <div class="abs logoCard" id="ctaLogo"><img src="assets/logo-woodmatch.svg" alt="WoodMatch"></div>
     <h2 class="abs"><span id="ctaL1" style="display:block">Dein Wald.</span><span id="ctaL2" style="display:block">In <em>deiner</em> Hand.</span></h2>
-    <div class="abs sub2" id="ctaSub">Digitaler Wald, Marktplatz &amp; Matching – alles auf einer Plattform.</div>
+    <div class="abs sub2" id="ctaSub">Digitaler Wald, Maßnahmen &amp; Marktplatz – alles auf einer Plattform.</div>
     <div class="abs button" id="ctaBtn">Kostenlos starten <span>→</span></div>
     <div class="abs url" id="ctaUrl">app.woodmatch.de</div>
     <div class="abs fine" id="ctaFine">Kein Abo · Keine Grundgebühr</div>
@@ -224,20 +489,103 @@
 </div>
 
 <script>
+/* ================= App-Inhalte per JS erzeugen ================= */
+const $ = id => document.getElementById(id);
+const ic = {
+  grid: '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>',
+  chat: '<rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21l3-4M8 10h8M8 13h5"/>',
+  map: '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  tree: '<circle cx="9" cy="9" r="5"/><path d="M9 14v7M16 21v-5M13 16h6l-3-6z"/>',
+  clip: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>',
+  bld: '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
+  ppl: '<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M12 15c1-.6 2.4-1 4-1 3 0 6 2 6 5"/>',
+  mem: '<path d="M4 21V8l8-5 8 5v13z"/><path d="M9 21v-6h6v6"/>',
+};
+const NAV = [
+  ['sec', 'START', 70], ['nvHome', 'Übersicht', 92, 'grid'], ['nvChat', 'Unterhaltungen', 132, 'chat'],
+  ['sec', 'WALD', 182], ['nvParc', 'Flurstücke', 202, 'map'], ['nvObj', 'Objekte', 242, 'tree'], ['nvMass', 'Maßnahmen', 282, 'clip'],
+  ['sec', 'MARKTPLATZ', 332], ['nvAus', 'Ausschreibungen', 352, 'clip'],
+  ['sec', 'ORGANISATION', 402], ['nvSet', 'Einstellungen', 422, 'gear'], ['nvStaff', 'Mitarbeitende', 462, 'bld'], ['nvSearch', 'Suche', 502, 'ppl'], ['nvMem', 'Mitgliedschaften', 542, 'mem'],
+];
+$('navItems').innerHTML = NAV.map(([id, t, y, i]) => id === 'sec'
+  ? `<div class="sec" style="top:${y}px">${t}</div>`
+  : `<div class="nav" id="${id}" style="top:${y}px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ic[i]}</svg>${t}</div>`).join('');
+
+// Balken "Fläche je Bestand"
+const BARS = [['Buchen-Mischwald', 2.6], ['Fichte Nordhang', 2.5], ['Eichen-Jungbestand', 1.5]];
+$('bars').innerHTML = BARS.map(([n, v], i) => `
+  <div style="position:absolute;left:22px;top:${80 + i * 52}px;width:840px;font-size:13.5px">
+    <span>${n}</span><b style="position:absolute;right:0">${v.toLocaleString('de-DE')} ha</b>
+    <div style="position:absolute;left:0;top:24px;width:840px;height:8px;border-radius:4px;background:#eef1ed"></div>
+    <div id="bar${i}" style="position:absolute;left:0;top:24px;width:${Math.round(v / 2.6 * 840 * .9)}px;height:8px;border-radius:4px;background:var(--app);transform-origin:left"></div>
+  </div>`).join('');
+
+// Flurstücks-Tabelle (fiktive Beispieldaten)
+const PARC = [['Buchenau', 'Holzhausen', 23, '7', 'Am Buchenhang', '2,52'], ['Buchenau', 'Holzhausen', 23, '18', 'Hohe Tanne', '0,58'],
+  ['Buchenau', 'Holzhausen', 24, '142/5', 'Fuchslöcher', '1,36'], ['Buchenau', 'Holzhausen', 4, '36/3', 'Im Eichengrund', '1,12'],
+  ['Buchenau', 'Oberweiler', 10, '44/1', 'Langenäcker', '0,26'], ['Buchenau', 'Oberweiler', 3, '45/4', 'Kleiner Eichwald', '0,76']];
+$('pRows').innerHTML = PARC.map((r, i) => `<div class="tr" id="pr${i}" style="top:${44 + i * 44}px"><span style="width:150px">${r[0]}</span><span style="width:160px">${r[1]}</span><span style="width:60px" class="rt">${r[2]}</span><span style="width:90px" class="rt">${r[3]}</span><span style="width:120px">${r[4]}</span><span style="width:88px" class="rt">${r[5]}</span></div>`).join('');
+
+// Karte (nachgebaut) inkl. Baumarten-Layer aus deterministischem Zufall
+function rng(seed) { return () => (seed = (seed * 16807) % 2147483647) / 2147483647; }
+const FOREST = 'M30 70 L 300 40 L 540 110 L 555 430 L 470 690 L 230 715 L 50 610 L 15 330 Z';
+const PARCELS = ['M250 300 L 390 285 L 415 430 L 270 455 Z', 'M90 150 L 230 135 L 245 270 L 105 290 Z', 'M300 120 L 470 140 L 470 250 L 310 262 Z', 'M110 470 L 250 455 L 280 610 L 140 630 Z'];
+function speckles(seed, n) {
+  const r = rng(seed), cols = ['#2e7d32', '#43a047', '#7cb342', '#c0ca33', '#fdd835', '#fb8c00', '#e53935', '#8d6e63', '#1b5e20'];
+  let s = '';
+  for (let i = 0; i < n; i++) s += `<circle cx="${(r() * 570).toFixed(1)}" cy="${(r() * 730).toFixed(1)}" r="${(1.2 + r() * 2.8).toFixed(1)}" fill="${cols[Math.floor(r() * cols.length)]}"/>`;
+  return s;
+}
+function mapSVG(k, withLayers) {
+  return `<svg width="570" height="730" viewBox="0 0 570 730">
+    <defs><clipPath id="fc${k}"><path d="${FOREST}"/></clipPath></defs>
+    <rect width="570" height="730" fill="#f1eee4"/>
+    <path d="M0 0 L 200 0 L 120 60 L 0 90 Z" fill="#ece6c8"/><path d="M400 700 L 570 620 L 570 730 L 380 730 Z" fill="#e6ecd0"/>
+    <path d="${FOREST}" fill="#d6e6cb"/>
+    <g id="spk${k}" clip-path="url(#fc${k})" opacity=".92">${speckles(7 + k, 5200)}</g>
+    <path d="M-10 520 C 120 500, 260 560, 360 520 S 520 440, 580 470" stroke="#d6cfbd" stroke-width="13" fill="none"/>
+    <path d="M-10 520 C 120 500, 260 560, 360 520 S 520 440, 580 470" stroke="#fff" stroke-width="9" fill="none"/>
+    <path d="M190 -10 C 220 120, 170 260, 240 380 S 280 600, 220 740" stroke="#a9cde3" stroke-width="5" fill="none"/>
+    <g fill="#d9d4cb"><rect x="30" y="660" width="26" height="20"/><rect x="64" y="672" width="20" height="18"/><rect x="40" y="695" width="30" height="20"/></g>
+    <g fill="none" stroke="#5c7a58" stroke-width="1.6" stroke-dasharray="6 5">${PARCELS.map(p => `<path d="${p}"/>`).join('')}</g>
+    <path id="par${k}" d="${PARCELS[0]}" fill="rgba(58,107,64,.28)" stroke="#2d8d31" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1"/>
+    <g font-size="12" font-weight="700" fill="#2f4f33"><text x="310" y="375">23/7</text><text x="150" y="220">23/18</text><text x="370" y="200">24/142/5</text><text x="170" y="550">4/36/3</text></g>
+  </svg>
+  ${withLayers ? `<div class="layers" id="layers${k}"><div class="lh">Kartenebenen<small>Reihenfolge per Griff ändern</small></div>
+    ${[['Luftbild Länder', 'Länder · DOP · ~20 cm', 'linear-gradient(135deg,#6b8f4e,#3d5a2f)'], ['Topographische Karte', 'Länder · DTK', 'linear-gradient(135deg,#f3e3c7,#c9d9b3)'],
+       ['Baumart', 'DLR · 10 Arten · 10 m', 'conic-gradient(#e53935,#fdd835,#43a047,#fb8c00,#e53935)'], ['Kronenhöhe', 'DLR · RH95 · 10 m', 'linear-gradient(135deg,#9ecae1,#3182bd)'],
+       ['Biomasse', 'DLR · 10 m · Stand 2023', 'linear-gradient(135deg,#f4a6d7,#c51b8a)'], ['Sentinel-2 Vitalität (NDVI)', 'Copernicus · 10 m', 'linear-gradient(135deg,#d9ef8b,#1a9850)']]
+      .map(([n, s, g], i) => `<div class="lr"><div class="th" style="background:${g}"></div><div class="ln">${n}<small>${s}</small></div><div class="tg">${i === 2 ? `<div class="on" id="tgOn${k}"></div><div class="kn" id="tgKn${k}"></div>` : '<div class="kn"></div>'}</div></div>`).join('')}
+  </div>` : ''}
+  <div class="mctl" style="bottom:52px">+</div><div class="mctl" style="bottom:14px">−</div>`;
+}
+$('map1').innerHTML = mapSVG(1, true);
+$('map2').innerHTML = mapSVG(2, false);
+
+// Maßnahmen-Kacheln
+const T = [['Pflanzung', '<path d="M12 21v-7"/><path d="M12 14c-4 0-6-3-6-6 3 0 6 2 6 6z"/><path d="M12 14c4 0 6-3 6-6-3 0-6 2-6 6z"/>'],
+  ['Zaunbau', '<path d="M5 21V6l2-3 2 3v15M15 21V6l2-3 2 3v15M3 10h18M3 16h18"/>'], ['Bestandespflege / Kulturpflege', '<path d="M12 21v-9M12 12l-5-5M12 12l5-5M7 7h0M17 7h0"/>'],
+  ['Durchforstung', ic.clip], ['Holzernte', ic.clip], ['Verkehrssicherungsmaßnahme', '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/>'],
+  ['Holz verkaufen', '<path d="M16 7a6 6 0 1 0 0 10M5 10h8M5 14h8"/>'], ['Habitatbaum / Totholz markieren', '<circle cx="12" cy="9" r="5"/><path d="M12 14v7"/>'], ['Vertragsnaturschutz', '<path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5 19l7-7"/>']];
+$('tiles').innerHTML = T.map(([n, p], i) => `<div class="tile" id="tl${i}">${i === 4 ? '<div class="sel" id="tlSel"></div>' : ''}<div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#3a6b40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg></div>${n}</div>`).join('');
+
 /* ============ Mini-Timeline (deterministisch, per Frame gesetzt) ============ */
-const DURATION = 37;
+const DURATION = 38;
 const E = {
   lin: t => t,
   out: t => 1 - Math.pow(1 - t, 3),
   in: t => t * t * t,
   io: t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
   back: t => { const c = 1.9; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); },
+  step: t => t < 1 ? 0 : 1,
 };
 const tracks = {};
 function tw(id, t0, t1, props, ease = 'out') {
   tracks[id] ??= {};
   for (const [k, v] of Object.entries(props)) (tracks[id][k] ??= []).push({ t0, t1, from: v[0], to: v[1], ease: E[ease] });
 }
+function set(id, t, props) { for (const k in props) tw(id, t, t, { [k]: [props[k], props[k]] }); }
 function val(list, t) {
   if (t < list[0].t0) return list[0].from;
   let cur = list[0];
@@ -245,18 +593,28 @@ function val(list, t) {
   const p = cur.t1 === cur.t0 ? 1 : Math.min(1, Math.max(0, (t - cur.t0) / (cur.t1 - cur.t0)));
   return cur.from + (cur.to - cur.from) * cur.ease(p);
 }
-// Kamera im Laptop-Bildschirm: fokussiert Punkt (cx, cy) des 1916×1020-Screenshots mit Zoom z
-const SW = 964, SH = 513, K = SW / 1916;
-function cam(id, t0, t1, from, to, ease = 'io') { tw(id, t0, t1, { cx: [from[0], to[0]], cy: [from[1], to[1]], z: [from[2], to[2]] }, ease); }
+const fmt = (n, d = 0) => n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// Kamera auf die App: Punkt (cx, cy) der 1600×852-App mittig, Zoom z
+const SW = 964, SH = 513, AW = 1600, AH = 852, K = SW / AW;
+let camPos = [800, 426, 1];
+function cam(t0, t1, to, ease = 'io') { tw('app', t0, t1, { cx: [camPos[0], to[0]], cy: [camPos[1], to[1]], z: [camPos[2], to[2]] }, ease); camPos = to; }
+// Mauszeiger (App-Koordinaten)
+let cur = [900, 700];
+function move(t0, t1, to, ease = 'io') { tw('cursor', t0, t1, { x: [cur[0], to[0]], y: [cur[1], to[1]] }, ease); cur = to; }
+function click(t) {
+  tw('cursor', t, t + .08, { scale: [1, .82] }, 'out'); tw('cursor', t + .08, t + .2, { scale: [.82, 1] }, 'out');
+  tw('clickFx', t, t + .45, { o: [1, 0], scale: [.3, 1.4] }, 'out');
+}
 
 function render(t) {
   for (const id in tracks) {
-    const el = document.getElementById(id); const tr = tracks[id]; const s = {};
+    const el = $(id); const tr = tracks[id]; const s = {};
     for (const k in tr) { tr[k].sort((a, b) => a.t0 - b.t0); s[k] = val(tr[k], t); }
     if ('z' in s) {
       const sc = K * s.z;
-      const tx = Math.min(0, Math.max(SW - 1916 * sc, SW / 2 - s.cx * sc));
-      const ty = Math.min(0, Math.max(SH - 1020 * sc, SH / 2 - s.cy * sc));
+      const tx = Math.min(0, Math.max(SW - AW * sc, SW / 2 - s.cx * sc));
+      const ty = Math.min(0, Math.max(SH - AH * sc, SH / 2 - s.cy * sc));
       el.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`;
     } else {
       const tf = [];
@@ -268,103 +626,199 @@ function render(t) {
     }
     if ('o' in s) { el.style.opacity = s.o; el.style.visibility = s.o <= 0.001 ? 'hidden' : 'visible'; }
     if ('pct' in s) el.style.width = s.pct + '%';
+    if ('top' in s) el.style.top = s.top + 'px';
+    if ('on' in s) el.classList.toggle('on', s.on > .5);
+    if ('chars' in s) el.textContent = el.dataset.text.slice(0, Math.round(s.chars));
+    if ('num' in s) el.textContent = fmt(s.num, +(el.dataset.d || 0));
+    if ('arc' in s) el.setAttribute('stroke-dasharray', `${s.arc} ${100 - s.arc}`);
+    if ('draw' in s) el.setAttribute('stroke-dashoffset', s.draw);
   }
+  $('caret').style.opacity = Math.floor(t * 3) % 2 ? 0 : 1;
 }
 
-/* ================= Hook (0 – 3.2 s) ================= */
-tw('forest', 0, 3.4, { scale: [1.12, 1.0] }, 'lin');
-tw('forest', 31.8, 37, { scale: [1.14, 1.02] }, 'lin');
-tw('forestWrap', 2.9, 3.3, { o: [1, 0] }, 'io');
-tw('forestWrap', 31.7, 32.2, { o: [0, 1] }, 'io');
-tw('hookKicker', 0.2, 0.9, { o: [0, 1], x: [-40, 0] });
-tw('hookL1', 0.3, 1.0, { o: [0, 1], y: [70, 0] });
-tw('hookL2', 0.5, 1.2, { o: [0, 1], y: [70, 0] });
-tw('hookSub', 1.2, 1.9, { o: [0, 1], y: [30, 0] });
-tw('hook', 2.8, 3.2, { o: [1, 0], y: [0, -60] }, 'in');
+/* ================= Hook (0 – 2.6 s) ================= */
+tw('forest', 0, 2.8, { scale: [1.12, 1.0] }, 'lin');
+tw('forest', 32.6, 38, { scale: [1.14, 1.02] }, 'lin');
+tw('forestWrap', 2.3, 2.7, { o: [1, 0] }, 'io');
+tw('forestWrap', 32.5, 33.0, { o: [0, 1] }, 'io');
+tw('hookKicker', 0.15, 0.7, { o: [0, 1], x: [-40, 0] });
+tw('hookL1', 0.2, 0.8, { o: [0, 1], y: [70, 0] });
+tw('hookL2', 0.35, 0.95, { o: [0, 1], y: [70, 0] });
+tw('hookSub', 0.9, 1.4, { o: [0, 1], y: [30, 0] });
+tw('hook', 2.25, 2.6, { o: [1, 0], y: [0, -60] }, 'in');
 
-/* ================= Logo (3.2 – 6.0 s) ================= */
-tw('logoScene', 2.9, 3.3, { o: [0, 1] }, 'io');
-tw('logoScene', 5.7, 6.1, { o: [1, 0] }, 'io');
-tw('lgW', 3.2, 3.9, { o: [0, 1], x: [-120, 0] });
-tw('lgM', 3.35, 4.05, { o: [0, 1], x: [120, 0] });
-tw('lgRule', 3.9, 4.5, { sx: [0, 1] }, 'io');
-tw('lgClaim', 4.2, 4.8, { o: [0, 1], y: [30, 0] });
-tw('leaf1', 3, 6, { y: [40, -40], rot: [0, 25] }, 'lin');
-tw('leaf2', 3, 6, { y: [60, -30], rot: [0, -20] }, 'lin');
-tw('leaf3', 3, 6, { y: [20, -60], rot: [0, 40] }, 'lin');
+/* ================= Logo (2.6 – 5.0 s) ================= */
+tw('logoScene', 2.3, 2.7, { o: [0, 1] }, 'io');
+tw('logoScene', 4.7, 5.1, { o: [1, 0] }, 'io');
+tw('lgW', 2.6, 3.2, { o: [0, 1], x: [-120, 0] });
+tw('lgM', 2.72, 3.32, { o: [0, 1], x: [120, 0] });
+tw('lgRule', 3.2, 3.7, { sx: [0, 1] }, 'io');
+tw('lgClaim', 3.4, 3.9, { o: [0, 1], y: [30, 0] });
+tw('leaf1', 2.4, 5, { y: [40, -40], rot: [0, 25] }, 'lin');
+tw('leaf2', 2.4, 5, { y: [60, -30], rot: [0, -20] }, 'lin');
+tw('leaf3', 2.4, 5, { y: [20, -60], rot: [0, 40] }, 'lin');
 
-/* ================= Features (6.0 – 27.0 s) ================= */
-const STEPS = [['1', 6.0, 10.2], ['2', 10.2, 14.4], ['3', 14.4, 18.4], ['4', 18.4, 22.4], ['5', 22.4, 27.0]];
-tw('features', 5.8, 6.2, { o: [0, 1] }, 'io');
-tw('features', 26.8, 27.2, { o: [1, 0] }, 'io');
-tw('laptop', 5.9, 6.8, { y: [700, 0], scale: [.9, 1] }, 'out');
-tw('laptop', 26.4, 27.0, { y: [0, 120], scale: [1, .94] }, 'in');
-tw('blob1', 6, 27, { y: [0, -200] }, 'lin');
-tw('blob2', 6, 27, { y: [0, -260] }, 'lin');
-tw('dots', 6.1, 6.6, { o: [0, 1] });
+/* ================= Features ================= */
+const S1 = 5.0, S2 = 9.8, S3 = 14.8, S4 = 19.2, S5 = 23.4, SE = 28.0;
+const STEPS = [['1', S1, S2], ['2', S2, S3], ['3', S3, S4], ['4', S4, S5], ['5', S5, SE]];
+tw('features', S1 - .2, S1 + .2, { o: [0, 1] }, 'io');
+tw('features', SE - .2, SE + .2, { o: [1, 0] }, 'io');
+tw('laptop', S1 - .1, S1 + .8, { y: [700, 0], scale: [.9, 1] }, 'out');
+tw('laptop', SE - .6, SE, { y: [0, 120], scale: [1, .94] }, 'in');
+tw('blob1', S1, SE, { y: [0, -200] }, 'lin');
+tw('blob2', S1, SE, { y: [0, -260] }, 'lin');
+tw('dots', S1 + .1, S1 + .6, { o: [0, 1] });
 for (const [n, a, b] of STEPS) {
   tw('d' + n, a + .1, b, { pct: [0, 100] }, 'lin');
   tw('h' + n, a + .15, a + .75, { o: [0, 1], y: [50, 0] });
   if (n !== '5') tw('h' + n, b - .3, b, { o: [1, 0], y: [0, -40] }, 'in');
-  if (document.getElementById('sub' + n)) {
-    tw('sub' + n, a + .7, a + 1.2, { o: [0, 1], y: [30, 0] });
-    tw('sub' + n, b - .3, b, { o: [1, 0] }, 'in');
-  }
+  if ($('sub' + n)) { tw('sub' + n, a + .7, a + 1.2, { o: [0, 1], y: [30, 0] }); tw('sub' + n, b - .3, b, { o: [1, 0] }, 'in'); }
 }
 
-// 01 Übersicht: Gesamtansicht → Handlungsempfehlungen
-tw('sc1', 0, 0, { o: [1, 1] });
-cam('sc1', 7.0, 8.0, [958, 510, 1], [830, 300, 1.35]);
-cam('sc1', 8.4, 9.6, [830, 300, 1.35], [1505, 300, 2.6]);
+// Seitenwechsel + Navigation
+const PAGES = [['pgHome', 'nvHome', 92, 0], ['pgParc', 'nvParc', 202, S2], ['pgObj', 'nvObj', 242, S3], ['pgMass', 'nvMass', 282, S4], ['pgSearch', 'nvSearch', 502, S5]];
+let navY = 92;
+PAGES.forEach(([pg, nv, y, t], i) => {
+  if (i === 0) { set(pg, 0, { o: 1 }); set(nv, 0, { on: 1 }); return; }
+  tw(pg, t - .05, t + .3, { o: [0, 1] }, 'io');
+  tw('navHi', t - .3, t + .05, { top: [navY, y] }, 'io'); navY = y;
+  set(PAGES[i - 1][1], t - .12, { on: 0 }); set(nv, 0, { on: 0 }); set(nv, t - .12, { on: 1 });
+  if (i < PAGES.length - 1) tw(pg, PAGES[i + 1][3] + .3, PAGES[i + 1][3] + .35, { o: [1, 0] });
+});
+tw('pgHome', S2 + .3, S2 + .35, { o: [1, 0] });
+tw('cursor', 0, 0, { o: [0, 0] });
+tw('cursor', S2 + .1, S2 + .4, { o: [0, 1] });
+tw('clickFx', 0, 0, { o: [0, 0] });
 
-// 02 Flurstücke & Karte: Gesamtansicht → Kartenebenen
-tw('sc2', 9.95, 10.35, { o: [0, 1] }, 'io');
-cam('sc2', 10.8, 12.1, [958, 510, 1], [1650, 420, 2.2]);
-// 03 Objekte: in die Baumarten-Karte, Menü „Neues Objekt“ poppt auf
-cam('sc2', 14.4, 15.5, [1650, 420, 2.2], [1610, 848, 3.4]);
-tw('menuCard', 15.0, 15.6, { o: [0, 1], y: [60, 0], scale: [.9, 1] }, 'back');
-tw('menuHi', 15.2, 15.2, { o: [0, 0] });
-tw('menuHi', 16.2, 16.5, { o: [0, 1] }, 'out');
-tw('menuCard', 18.0, 18.35, { o: [1, 0], y: [0, 40] }, 'in');
+// ---- 01 Übersicht ----
+cam(S1 + 1.1, S1 + 2.0, [735, 330, 1.75]);
+tw('nHa', S1 + 1.5, S1 + 2.8, { num: [0, 6.6] });
+tw('nFs', S1 + 1.5, S1 + 2.4, { num: [0, 8] });
+tw('nMa', S1 + 1.6, S1 + 2.2, { num: [0, 2] });
+tw('nAu', S1 + 1.7, S1 + 2.3, { num: [0, 1] });
+tw('nFm', S1 + 1.8, S1 + 3.1, { num: [0, 1920] });
+tw('nEur', S1 + 1.9, S1 + 3.2, { num: [0, 96000] });
+tw('nCo', S1 + 2.0, S1 + 3.3, { num: [0, 1760] });
+BARS.forEach((_, i) => tw('bar' + i, S1 + 1.2 + i * .1, S1 + 2.2 + i * .1, { sx: [0, 1] }));
+cam(S1 + 3.0, S1 + 3.9, [1380, 340, 1.85]);
+['rec1', 'rec2', 'rec3'].forEach((id, i) => tw(id, S1 + 3.2 + i * .15, S1 + 3.7 + i * .15, { o: [0, 1], x: [40, 0] }));
+tw('ring', S1 + 3.4, S1 + 4.3, { arc: [0, 49] });
+tw('nScore', S1 + 3.4, S1 + 4.3, { num: [0, 49] });
 
-// 04 Maßnahmen (bald verfügbar)
-tw('sc4', 18.15, 18.55, { o: [0, 1] }, 'io');
-cam('sc4', 18.9, 20.0, [958, 510, 1], [960, 511, 1.95]);
-tw('soonTag', 19.0, 19.5, { o: [0, 1], scale: [.6, 1] }, 'back');
-tw('soonTag', 22.1, 22.4, { o: [1, 0] }, 'in');
+// ---- 02 Flurstücke ----
+cam(S2 - .4, S2 + .3, [800, 426, 1]);
+PARC.forEach((_, i) => set('pr' + i, 0, { o: 0 }));
+set('pRowHi', 0, { o: 0 });
+tw('searchPop', 0, 0, { o: [0, 0] });
+move(S2 + .1, S2 + .7, [390, 135]);
+click(S2 + .8);
+tw('btnSearch', S2 + .8, S2 + 1.0, { scale: [.95, 1] });
+tw('searchPop', S2 + .9, S2 + 1.2, { o: [0, 1], y: [-10, 0] });
+cam(S2 + .9, S2 + 1.6, [560, 230, 1.9]);
+move(S2 + 1.2, S2 + 1.5, [560, 232]);
+tw('typed', S2 + 1.6, S2 + 2.6, { chars: [0, 24] }, 'lin');
+move(S2 + 2.6, S2 + 2.9, [772, 230]);
+click(S2 + 3.0);
+tw('searchPop', S2 + 3.1, S2 + 3.3, { o: [1, 0] });
+PARC.forEach((_, i) => tw('pr' + i, S2 + 3.2 + i * .06, S2 + 3.5 + i * .06, { o: [0, 1] }));
+tw('pRowHi', S2 + 3.3, S2 + 3.6, { o: [0, 1] });
+cam(S2 + 3.2, S2 + 3.9, [1290, 440, 1.25]);
+tw('par1', S2 + 3.4, S2 + 4.0, { draw: [1, 0] }, 'io');
+set('spk1', 0, { o: 0 });
+move(S2 + 3.4, S2 + 4.0, [1537, 268]);
+click(S2 + 4.05);
+tw('tgOn1', S2 + 4.05, S2 + 4.25, { o: [0, 1] });
+tw('tgKn1', S2 + 4.05, S2 + 4.25, { x: [0, 14] });
+tw('spk1', S2 + 4.1, S2 + 4.7, { o: [0, 1] }, 'io');
 
-// 05 Marktplatz & Matching
-tw('sc5', 22.15, 22.55, { o: [0, 1] }, 'io');
-cam('sc5', 22.9, 24.0, [958, 510, 1], [590, 262, 2.5]);
-tw('ring5', 24.0, 24.4, { o: [0, 1], scale: [1.4, 1] }, 'out');
-tw('m1', 24.3, 24.8, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
-tw('m2', 24.5, 25.0, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
-tw('m3', 24.7, 25.2, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+// ---- 03 Objekte ----
+cam(S3 - .3, S3 + .5, [560, 360, 1.7]);
+tw('menuNew', 0, 0, { o: [0, 0] });
+set('miHi', 0, { o: 0 });
+set('oRowNew', 0, { o: 0 }); set('oRowHi', 0, { o: 0 });
+set('polterPin', 0, { o: 0 }); set('polterToast', 0, { o: 0 });
+move(S3 + .1, S3 + .7, [380, 136]);
+click(S3 + .8);
+tw('menuNew', S3 + .85, S3 + 1.1, { o: [0, 1], scale: [.92, 1] });
+move(S3 + 1.1, S3 + 1.6, [420, 258]);
+tw('miHi', S3 + 1.5, S3 + 1.7, { o: [0, 1] });
+click(S3 + 1.8);
+tw('menuNew', S3 + 1.9, S3 + 2.05, { o: [1, 0] });
+cam(S3 + 1.9, S3 + 2.7, [1150, 470, 1.5]);
+move(S3 + 2.0, S3 + 2.7, [1290, 470]);
+click(S3 + 2.8);
+tw('polterPin', S3 + 2.8, S3 + 3.2, { o: [0, 1], y: [-80, 0] }, 'back');
+tw('polterToast', S3 + 3.1, S3 + 3.5, { o: [0, 1], y: [20, 0] }, 'back');
+tw('oRowNew', S3 + 3.2, S3 + 3.5, { o: [0, 1] }); tw('oRowHi', S3 + 3.2, S3 + 3.5, { o: [0, 1] });
 
-/* ================= Preis (27.0 – 32.0 s) ================= */
-tw('pricing', 26.8, 27.2, { o: [0, 1] }, 'io');
-tw('pricing', 31.7, 32.1, { o: [1, 0] }, 'io');
-tw('pKick', 27.1, 27.7, { o: [0, 1], x: [-40, 0] });
-tw('pL1', 27.2, 27.9, { o: [0, 1], y: [60, 0] });
-tw('pL2', 27.5, 28.2, { o: [0, 1], y: [60, 0] });
-tw('li1', 28.3, 28.8, { o: [0, 1], x: [-60, 0] });
-tw('li2', 28.6, 29.1, { o: [0, 1], x: [-60, 0] });
-tw('li3', 28.9, 29.4, { o: [0, 1], x: [-60, 0] });
-tw('pNote', 29.6, 30.2, { o: [0, 1], y: [30, 0] });
-tw('pleaf1', 27, 32, { y: [0, -80], rot: [0, 20] }, 'lin');
-tw('pleaf2', 27, 32, { y: [0, -60], rot: [0, -15] }, 'lin');
+// ---- 04 Maßnahmen ----
+tw('massOverlay', 0, 0, { o: [0, 0] });
+tw('massOverlay', S4 + .3, S4 + .6, { o: [0, 1] });
+tw('massOverlay', S5 - .05, S5 + .25, { o: [1, 0] });
+tw('modal', S4 + .3, S4 + .7, { scale: [.94, 1], y: [20, 0] }, 'out');
+cam(S4 - .3, S4 + .6, [800, 445, 1.42]);
+T.forEach((_, i) => tw('tl' + i, S4 + .5 + i * .04, S4 + .85 + i * .04, { o: [0, 1], scale: [.9, 1] }, 'back'));
+set('tlSel', 0, { o: 0 });
+set('mStep2', 0, { o: 0 });
+set('st2', 0, { o: 0 });
+move(S4 + .4, S4 + 1.2, [800, 490]);
+click(S4 + 1.3);
+tw('tlSel', S4 + 1.3, S4 + 1.5, { o: [0, 1] });
+tw('tl4', S4 + 1.3, S4 + 1.5, { scale: [.96, 1] }, 'back');
+move(S4 + 1.6, S4 + 2.2, [1180, 700]);
+click(S4 + 2.3);
+tw('mStep1', S4 + 2.35, S4 + 2.55, { o: [1, 0] });
+tw('mStep2', S4 + 2.45, S4 + 2.75, { o: [0, 1] });
+tw('sl1', S4 + 2.35, S4 + 2.7, { pct: [0, 100] }, 'io');
+tw('st2', S4 + 2.6, S4 + 2.8, { o: [0, 1] });
+set('selA', 0, { o: 0 }); set('selB', 0, { o: 0 }); set('selCount', 0, { o: 0 });
+move(S4 + 2.6, S4 + 3.0, [600, 450]);
+click(S4 + 3.05); tw('selA', S4 + 3.05, S4 + 3.25, { o: [0, 1] });
+move(S4 + 3.15, S4 + 3.55, [1000, 450]);
+click(S4 + 3.6); tw('selB', S4 + 3.6, S4 + 3.8, { o: [0, 1] });
+tw('selCount', S4 + 3.7, S4 + 3.9, { o: [0, 1] });
 
-/* ================= CTA (32.0 – 37 s) ================= */
-tw('cta', 31.8, 32.2, { o: [0, 1] }, 'io');
-tw('ctaLogo', 32.1, 32.8, { o: [0, 1], y: [-40, 0], scale: [.9, 1] }, 'back');
-tw('ctaL1', 32.4, 33.1, { o: [0, 1], y: [60, 0] });
-tw('ctaL2', 32.6, 33.3, { o: [0, 1], y: [60, 0] });
-tw('ctaSub', 33.2, 33.8, { o: [0, 1], y: [30, 0] });
-tw('ctaBtn', 33.6, 34.2, { o: [0, 1], scale: [.7, 1] }, 'back');
-tw('ctaBtn', 35.0, 35.3, { scale: [1, 1.05] }, 'io');
-tw('ctaBtn', 35.3, 35.6, { scale: [1.05, 1] }, 'io');
-tw('ctaUrl', 34.1, 34.7, { o: [0, 1], y: [20, 0] });
-tw('ctaFine', 34.5, 35.1, { o: [0, 1], y: [20, 0] });
+// ---- 05 Suche / Marktplatz ----
+cam(S5 - .3, S5 + .4, [800, 426, 1]);
+cam(S5 + .6, S5 + 1.4, [560, 290, 1.9]);
+set('badgeRing', 0, { o: 0 });
+tw('badgeRing', S5 + 1.3, S5 + 1.6, { o: [0, 1], scale: [1.3, 1] });
+set('ba1ok', 0, { o: 0 });
+move(S5 + .2, S5 + 1.8, [625, 355]);
+click(S5 + 1.95);
+tw('ba1', S5 + 2.0, S5 + 2.15, { scale: [.94, 1] });
+tw('ba1ok', S5 + 2.05, S5 + 2.25, { o: [0, 1] });
+tw('mLbl', S5 + 2.2, S5 + 2.6, { o: [0, 1], y: [20, 0] });
+tw('m1', S5 + 2.4, S5 + 2.9, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+tw('m2', S5 + 2.55, S5 + 3.05, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+tw('m3', S5 + 2.7, S5 + 3.2, { o: [0, 1], y: [80, 0], scale: [.85, 1] }, 'back');
+
+/* ================= Preis (28.0 – 32.8 s) ================= */
+const P = SE;
+tw('pricing', P - .2, P + .2, { o: [0, 1] }, 'io');
+tw('pricing', P + 4.6, P + 5.0, { o: [1, 0] }, 'io');
+tw('pKick', P + .1, P + .7, { o: [0, 1], x: [-40, 0] });
+tw('pL1', P + .2, P + .9, { o: [0, 1], y: [60, 0] });
+tw('pL2', P + .5, P + 1.2, { o: [0, 1], y: [60, 0] });
+tw('li1', P + 1.3, P + 1.8, { o: [0, 1], x: [-60, 0] });
+tw('li2', P + 1.6, P + 2.1, { o: [0, 1], x: [-60, 0] });
+tw('li3', P + 1.9, P + 2.4, { o: [0, 1], x: [-60, 0] });
+tw('pNote', P + 2.6, P + 3.2, { o: [0, 1], y: [30, 0] });
+tw('pleaf1', P, P + 5, { y: [0, -80], rot: [0, 20] }, 'lin');
+tw('pleaf2', P, P + 5, { y: [0, -60], rot: [0, -15] }, 'lin');
+
+/* ================= CTA (32.8 – 38 s) ================= */
+const C = 32.8;
+tw('cta', C - .2, C + .2, { o: [0, 1] }, 'io');
+tw('ctaLogo', C + .1, C + .8, { o: [0, 1], y: [-40, 0], scale: [.9, 1] }, 'back');
+tw('ctaL1', C + .4, C + 1.1, { o: [0, 1], y: [60, 0] });
+tw('ctaL2', C + .6, C + 1.3, { o: [0, 1], y: [60, 0] });
+tw('ctaSub', C + 1.2, C + 1.8, { o: [0, 1], y: [30, 0] });
+tw('ctaBtn', C + 1.6, C + 2.2, { o: [0, 1], scale: [.7, 1] }, 'back');
+tw('ctaBtn', C + 3.0, C + 3.3, { scale: [1, 1.05] }, 'io');
+tw('ctaBtn', C + 3.3, C + 3.6, { scale: [1.05, 1] }, 'io');
+tw('ctaUrl', C + 2.1, C + 2.7, { o: [0, 1], y: [20, 0] });
+tw('ctaFine', C + 2.5, C + 3.1, { o: [0, 1], y: [20, 0] });
 
 tw('hook', 0, 0, { o: [1, 1] });
 

@@ -8,9 +8,9 @@ import path from 'node:path';
 
 const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 const FPS = 30;
-// Musik: "Forest" von Damtaro (freetouse.com). Ab 11,6 s, damit der Drop (0:34) auf die Marktplatz-Szene fällt.
+// Musik: "Forest" von Damtaro (freetouse.com). Ab 10,6 s, damit der Drop (0:34) auf die Marktplatz-Szene fällt.
 const MUSIC = process.env.MUSIC ?? 'assets/music-damtaro-forest.mp3';
-const MUSIC_START = 11.6;
+const MUSIC_START = 10.6;
 const args = process.argv.slice(2);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
