@@ -18,10 +18,13 @@ Stand: 25.09.2026 · Grundlage: Briefing „WoodMatch – Briefing für Marketin
 | Asset | Format | Datei | Einsatz |
 |---|---|---|---|
 | Video A: Produkt-Demo mit Waldemar | 9:16, 38 s | `woodmatch-ad/woodmatch-reel-9x16.mp4` | Anzeige + organisches Reel |
+| Video A kurz (19 s) | 9:16, 19 s | `woodmatch-kampagne/video/woodmatch-reel-kurz-9x16.mp4` | Anzeige (Hook → Flurnummer → Wald auf einen Blick → Kostenlos → CTA) |
 | Video B: „Waldemars Geschichte“ | 9:16, 31 s | `woodmatch-ad/woodmatch-reel-B-story.mp4` | Anzeige + organisches Reel |
 | Karussell 1: „Weißt du, was in deinem Wald steckt?“ | 4:5, 7 Slides | `woodmatch-ad/carousels/export/karussell-1-fragen/` | Organisch + dritte Anzeigenvariante |
 | Karussell 2: „Was kostet WoodMatch?“ | 4:5, 6 Slides | `…/karussell-2-kostenlos/` | Organisch (räumt den Einwand „Was kostet das?“ aus) |
 | Karussell 3: „So wird dein Wald digital“ | 4:5, 6 Slides | `…/karussell-3-so-gehts/` | Organisch + Retargeting auf Video-Zuschauer |
+| Comeback-Karussell „Es war still bei uns“ | 4:5, 4 Slides | `woodmatch-kampagne/posts/export/post-1-comeback/` | Erster organischer Post |
+| Umfrage „Was beschäftigt dich?“ | 4:5, 1 Bild | `woodmatch-kampagne/posts/export/post-2-umfrage/` | Zweiter organischer Post |
 | Karussell „Was ist dein Wald 2026 wert?“ | 4:5, 5 Slides | Canva: https://canva.link/7ory9ufugfhykgq | Nur als Entwurf, anderer Stil. Besser im Stil der Karussells 1–3 nachbauen |
 | Blog (6 Artikel) | Link | woodmatch.de/wissen | Karussells + Facebook-Link-Posts |
 
@@ -29,7 +32,7 @@ Stand: 25.09.2026 · Grundlage: Briefing „WoodMatch – Briefing für Marketin
 
 | Phase | Budget | Inhalt |
 |---|---|---|
-| Woche 1–2 | ca. 250 € (ca. 18 €/Tag) | 1 Kampagne, 1 Anzeigengruppe (DE ohne BY, 28–65+, breit), 3 Anzeigen: Video A, Video B, Karussell 1 |
+| Woche 1–2 | ca. 250 € (ca. 18 €/Tag) | 1 Kampagne, 1 Anzeigengruppe (DE ohne BY, 28–65+, breit), 3 Anzeigen: Video A kurz, Video B, Karussell 1 |
 | Auswertung nach ca. 10 Tagen | – | Das schwächste Creative nach Kosten pro Registrierung abschalten (Ersatzkriterium: Link-Klickrate) |
 | Woche 3–4 | ca. 250 € | Gewinner weiterlaufen lassen. Dazu Retargeting mit Karussell 3 an alle, die Video A oder B zu mindestens 50 % gesehen haben (funktioniert ohne Pixel) |
 
@@ -46,6 +49,8 @@ UTM-Vorlage für alle Anzeigen:
 
 Die ersten 1–2 Wochen läuft das Profil organisch an, danach starten die Anzeigen. Wer dann auf eine Anzeige klickt, sieht schon ein gefülltes Profil.
 
+Vorlauf: Comeback-Karussell „Es war still bei uns“, 2–3 Tage später die Umfrage.
+
 | Woche | Mo | Mi | Fr |
 |---|---|---|---|
 | 1 | Karussell 1 „Weißt du, was in deinem Wald steckt?“ | Reel: Video A | Karussell 2 „Was kostet WoodMatch?“ |
@@ -58,12 +63,10 @@ Blog-Posts: Auf Instagram als Karussell mit „Link in Bio“ oder Link-Sticker 
 
 ## Vor dem Start klären
 
-1. **„Keine Laufzeit“** (Karussell 2): Stimmt das für Waldbesitzer? Sonst die Slide ändern.
-2. **Matching „BALD“** (Video A): Das ist in Ordnung, solange es so gekennzeichnet bleibt. Keine Funktion als live bewerben, die es noch nicht gibt.
-3. **Musik** (Damtaro – Forest, freetouse.com): Die Lizenz muss Werbeanzeigen erlauben, eventuell ist ein Credit im Text nötig.
-4. **KI-Bilder in Video B:** Meta kennzeichnet solche Bilder eventuell mit „KI-Info“. Offenlegen ist die sichere Variante.
-5. **Beispielwerte** (1.920 Fm, ≈ 96 T€) sind als BEISPIEL gekennzeichnet, das so lassen.
-6. **Länge von Video A:** 38 s sind für Anzeigen lang. Eine gekürzte Version mit 15–20 s (Hook → Flurstück → Holzwert → CTA) testen.
+1. **„Keine Laufzeit“** (Karussell 2, Slide 3): Die Slide sagt, dass es keine Vertragslaufzeit gibt. Das stimmt nur, wenn Waldbesitzer jederzeit kündigen bzw. ihr Konto löschen können. Wenn ja, bleibt die Slide so.
+2. **Musik (geprüft):** Die kostenlose Lizenz von freetouse.com deckt nur private Inhalte (User-Generated Content) ab. **Werbeanzeigen und Firmen-Posts gelten als Commercial Content** und brauchen den Commercial Plan oder eine Pro-Lizenz für den einzelnen Track (Quelle: freetouse.com/license). Optionen: Lizenz kaufen oder die Tonspur durch lizenzfreie Musik aus der Meta Sound Collection ersetzen.
+3. **KI-Bilder in Video B:** Offenlegen reicht im Anzeigentext, z. B. am Ende: „Bilder KI-generiert, Personen fiktiv.“ Zusätzlich kann Meta automatisch das Label „KI-Info“ setzen.
+4. **Matching „BALD“** (Video A) und **Beispielwerte** (1.920 Fm, ≈ 96 T€) bleiben so gekennzeichnet.
 
 ## Checkliste bis zum Start
 
@@ -71,6 +74,7 @@ Blog-Posts: Auf Instagram als Karussell mit „Link in Bio“ oder Link-Sticker 
 - [ ] UTM-Quelle bei der Registrierung speichern
 - [ ] Werbekonto anlegen, Facebook-Seite und Instagram verbinden, Ausgabenlimit von 500 € setzen
 - [ ] Link in Bio einrichten (Registrierung + Blog)
-- [ ] Offene Punkte 1–4 klären
+- [ ] Offene Punkte 1–3 klären (Laufzeit, Musiklizenz, KI-Hinweis im Text)
+- [ ] Comeback-Post und Umfrage posten
 - [ ] Woche 1 organisch posten
 - [ ] Anzeigen starten (ca. Mitte Oktober)
