@@ -1,0 +1,32 @@
+/Strings/Violin Section/susVib/
+/Strings/Violin Section/Spic/
+/Strings/Violin Section/Pizz/
+/Strings/Viola Section/susvib/
+/Strings/Viola Section/spic/
+/Strings/Cello Section/susvib/
+/Strings/Cello Section/spic/
+/Strings/Cello Section/pizzT/
+/Strings/Solo Contrabass/SusNV/
+/Strings/Solo Contrabass/Spic/
+/Strings/Harp/
+/Brass/F Horn/sus/
+/Brass/Tenor Trombone/sus/
+/Brass/Trumpet/sus/
+/Keys/Upright Piano/
+/Percussion/Timpani/
+/Percussion/Glock/
+/Percussion/Marimba/
+/Percussion/BDrumNewhit*
+/Percussion/Snare2-HitNS*
+/Percussion/cymbal-crash*
+/Percussion/susCymb1-cresc*
+/Percussion/susCymb1-hit_*
+/Percussion/Tamb1-*
+/Percussion/Sleighbells*
+/Percussion/Claves1*
+/Percussion/Conga-HitN*
+/Percussion/Triangle3-Hit_*
+/Woodwinds/Flute/susvib/
+/Woodwinds/Clarinet/susLong/
+/Woodwinds/Oboe/Vib/
+/Miscellania Raw/Misc 2/rtomtom_frame*
